@@ -1,11 +1,12 @@
 #-*- coding:utf-8 -*-
 
-# myPROJ : Personal Library on Jupyter Notebook Environment for python beginners
+# myLib.py : Personal Library on Jupyter Notebook Environment for python beginners
 # - Python 초보자의 학습곡선 단축을 위한 '초보자가 직접 작성&사용'하는 Function이나 정보 모음. 
 # - 본인이 만들어서 직접 사용하는 것으로, 오류 가능성 항상 있음에 유의.
+# - 향후 『import ./myLib』으로 사용할 수 있도록 변경해야 하는 과제가 있음.
 
 # ▣ 자주 사용하는 jupyter notebook cell 명령어
-#   %run -i ./myPROJ.py
+#   %run -i ./myLib.py
 
 # ▣ 자주 사용하는 conda 명령어
 #  conda env list                    # conda 가상환경 확인
