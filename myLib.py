@@ -122,6 +122,64 @@ def printcmd(string, color=None):  # print color text markdown print
     display(Markdown(colorstr))
 
 ## ------------------------------------------------------------------------------------------- ##
+lib_exist = importlib.util.find_spec("pydot")
+if lib_exist:
+    lib_exist = None
+    import pydot  # https://pythonprogramming.altervista.org/mind-map-with-python/
+else: 
+    pass  # print("passed: 'import pydot'")
+# https://stackoverflow.com/questions/4596962/display-graph-without-saving-using-pydot
+# from IPython.display import display, Image
+
+def makeTreeGraph(argTreeContent=None, argRD="TB", argGT="graph"):
+    colors = {0:'black',  1:'purple', 2:'navy', 3:'blue', 4:'brown', 5:'green',  
+              6:'gray',   7:'orange', 8:'gold', 9:'red'}
+    graph = pydot.Dot(graph_type=argGT, rankdir=argRD)
+    #https://www.programcreek.com/python/example/5731/pydot.Edge  cf) 6060/pydot.Node
+    graph.set_node_defaults(fontsize='12') # color='red',style='filled',shape='oval',fontname='Courier'
+    for i in argTreeContent.index:
+        if argTreeContent.iloc[i].SrcNode == 'root': 
+            continue
+        edge = pydot.Edge(src=argTreeContent.iloc[i].SrcNode, dst=argTreeContent.iloc[i].DstNode,
+                          color = colors[int(argTreeContent.iloc[i].TreeWBS[0]) % 10],
+                          style = 'dashed' if int(argTreeContent.iloc[i].TreeWBS[0]) % 2 else 'line') 
+        graph.add_edge(edge)
+    # display(Image(graph.create_png())) # graph.write_png("Hello.png"); os.startfile("Hello.png")
+    return graph
+
+def viewPyDotGraph(argGraph = None):
+    display(Image(argGraph.create_png()))
+
+def viewTreeGraph(argTreeContent=None, argRD="TB", argGT="graph"): # makeTreeGraph + viewPyDotGraph
+    viewPyDotGraph(makeTreeGraph(argTreeContent, argRD=argRD, argGT=argGT))
+
+# ▣ 예시 : The Machine Learning Workflow
+# treeContent = pd.DataFrame( # black, red, orange, yellow, green, blue, navy, purple, gray, white
+#     columns= [ 'TreeWBS', 'SrcNode', 'DstNode'],                        # 열: 선택/필수/ 필수
+#     data = [ [ '0root',   'root',    'The Machine Learning\nWorkflow'], # root는 없어도 무방
+#              [ '0',       'The Machine Learning\nWorkflow',     '1. Data Input'],
+#              [ '1',       'The Machine Learning\nWorkflow',     '2. Data Preprocessing'],
+#              [ '1.1',     '2. Data Preprocessing',              'Database Merge\n(Feedback starts)'],
+#              [ '1.2',     '2. Data Preprocessing',              'Encoding\nCategorical Variables'],
+#              [ '1.3',     '2. Data Preprocessing',              'Data Scaling\n& Normalization'],
+#              [ '1.4',     '2. Data Preprocessing',              'Imputing\nMissing Values'],
+#              [ '1.5',     '2. Data Preprocessing',              'Train / Test Split\n& Augmentation'],
+#              [ '2',       'The Machine Learning\nWorkflow',     '3. Exploratory\n\tData Analysis'], 
+#              [ '2.1',     '3. Exploratory\n\tData Analysis',    'Data Visulization'],
+#              [ '3',       'The Machine Learning\nWorkflow',     '4. Model Building\n(Recursive)'],
+#              [ '3.1',     '4. Model Building\n(Recursive)',     'Model Selection'],
+#              [ '3.2',     '4. Model Building\n(Recursive)',     'Hyperparameters\nTuning'],
+#              [ '3.3',     '4. Model Building\n(Recursive)',     'Model\nFitting / Training'],
+#              [ '3.4',     '4. Model Building\n(Recursive)',     'Model Evaluation\n(Feedback ends)'],
+#              [ '4',       'The Machine Learning\nWorkflow',     '5. Model Output\nusing Data'],
+#              [ '4.1',     '5. Model Output\nusing Data',        'Predictions\n(Data + Model)']
+#            ] )
+
+# ▣ 예시 : 함수 활용
+# pydotGraph = makeTreeGraph(treeContent, "LR") # LR: Left to Right, RL: Right to Left
+# viewPyDotGraph(pydotGraph)                    # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
+
+## ------------------------------------------------------------------------------------------- ##
 #  Wes McKinney, Python for Data Analysis, ver 2, Chap. 2, page 66, duck typing
 def isiterable(obj):
     try:
