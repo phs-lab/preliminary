@@ -112,6 +112,14 @@ shape's item 곱셈 →    size     (=item수)
             print('\n', orgObjClass.index, "\n ♣ If (or After converted to) pd.DataFrame, run \033[1m.info()\033[0m or \033[1m.describe()\033[0m for detail info.!")
 
 ## ------------------------------------------------------------------------------------------- ##
+def objBasicInfo(obj=None, printFlag=True):
+    rtnValue = (type(obj), len(obj), obj.shape) if hasattr(obj, 'shape') else (type(obj), len(obj))
+    if printFlag:
+        print(rtnValue)
+    else:
+        return rtnValue
+
+## ------------------------------------------------------------------------------------------- ##
 from IPython.display import Markdown, display
 def printbmd(string):  # print black & white text markdown print
     display(Markdown(string))
