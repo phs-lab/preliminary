@@ -727,6 +727,116 @@ def plot3d(Fxy,
     plt.show()
 
 ## ------------------------------------------------------------------------------------------- ##
+def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20): # plt_ylim=3):
+  hist = pd.DataFrame(history.history)
+  hist['epoch'] = history.epoch
+
+  plt.figure(figsize=plt_figsize)
+
+  def compareTwoNumber(x, y, howto='min'):
+    rtnValue = 0
+    if x > y:
+      rtnValue = (y if howto == 'min' else x)
+    else:
+      rtnValue = (x if howto == 'min' else y)
+    return rtnValue  
+
+  idx = 0
+  if 'mae' in hist.columns  and 'val_mae' in hist.columns:
+    idx = idx + 1
+  if 'mse' in hist.columns  and 'val_mse' in hist.columns:
+    idx = idx + 1
+  if 'loss' in hist.columns and 'val_loss' in hist.columns:
+    idx = idx + 1
+  if 'acc' in hist.columns  and 'val_acc' in hist.columns:
+    idx = idx + 1
+  if 'accuracy' in hist.columns  and 'val_accuracy' in hist.columns:
+    idx = idx + 1
+  
+  if idx <= 2:
+    sp_row = 1
+    sp_col = 2
+  elif idx <= 4:
+    sp_row = 2
+    sp_col = 2
+
+  idx = 0
+  
+  if 'mae' in hist.columns and 'val_mae' in hist.columns:
+    idx = idx + 1
+    plt.subplot(sp_row, sp_col, idx)  # row, column, index
+    plt.xlabel('Epoch')
+    plt.ylabel('Mean Absolute Error') # [MPG]
+    plt.plot(hist['epoch'], hist['mae'],     label='Trn Error')
+    plt.plot(hist['epoch'], hist['val_mae'], label='Val Error')
+    # plt.ylim([0, plt_ylim * hist['mae'].quantile(0.75)])    #plt.ylim([0,5])
+    tMin1 = hist['mae'].quantile(0);     tMax1 = hist['mae'].quantile(1)
+    tMin2 = hist['val_mae'].quantile(0); tMax2 = hist['val_mae'].quantile(1)
+    tMin = compareTwoNumber(tMin1, tMin2,'min');     tMax = compareTwoNumber(tMax1, tMax2, 'max')
+    tMin = tMin - (tMin + tMax) / offsetDenominator; tMax = tMax + (tMin + tMax) / offsetDenominator
+    plt.ylim([tMin, tMax]) 
+    plt.legend()
+    plt.title('Training and Validation MAE')
+
+  if 'mse' in hist.columns and 'val_mse' in hist.columns:
+    idx = idx + 1
+    plt.subplot(sp_row, sp_col, idx)
+    plt.xlabel('Epoch')
+    plt.ylabel('Mean Square Error') # [$MPG^2$]
+    plt.plot(hist['epoch'], hist['mse'],     label='Trn Error')
+    plt.plot(hist['epoch'], hist['val_mse'], label='Val Error')
+    # plt.ylim([0, plt_ylim * hist['mse'].quantile(0.75)])  #plt.ylim([0,20])
+    tMin1 = hist['mse'].quantile(0);     tMax1 = hist['mse'].quantile(1)
+    tMin2 = hist['val_mse'].quantile(0); tMax2 = hist['val_mse'].quantile(1)
+    tMin = compareTwoNumber(tMin1, tMin2,'min');     tMax = compareTwoNumber(tMax1, tMax2, 'max')
+    tMin = tMin - (tMin + tMax) / offsetDenominator; tMax = tMax + (tMin + tMax) / offsetDenominator
+    plt.ylim([tMin, tMax])     
+    plt.legend()
+    plt.title('Training and Validation MSE')
+
+  if 'loss' in hist.columns and 'val_loss' in hist.columns:
+    idx = idx + 1
+    plt.subplot(sp_row, sp_col, idx)
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.plot(hist['epoch'], hist['loss'],     label='Trn Loss')
+    plt.plot(hist['epoch'], hist['val_loss'], label='Val Loss')
+    # plt.ylim([0, plt_ylim * hist['loss'].quantile(0.75)])  # plt.ylim([0,20])
+    tMin1 = hist['loss'].quantile(0);     tMax1 = hist['loss'].quantile(1)
+    tMin2 = hist['val_loss'].quantile(0); tMax2 = hist['val_loss'].quantile(1)
+    tMin = compareTwoNumber(tMin1, tMin2,'min');     tMax = compareTwoNumber(tMax1, tMax2, 'max')
+    tMin = tMin - (tMin + tMax) / offsetDenominator; tMax = tMax + (tMin + tMax) / offsetDenominator
+    plt.ylim([tMin, tMax])        
+    plt.legend()
+    plt.title('Training and Validation Loss')
+  
+  if ('acc' in hist.columns and 'val_acc' in hist.columns) or \
+    ('accuracy' in hist.columns and 'val_accuracy' in hist.columns):
+    idx = idx + 1
+    plt.subplot(sp_row, sp_col, idx)
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy')
+    if 'acc' in hist.columns:
+      plt.plot(hist['epoch'], hist['acc'],     label='Trn Accuracy', )
+      plt.plot(hist['epoch'], hist['val_acc'], label='Val Accuracy')
+      # plt.ylim([0, plt_ylim * hist['acc'].quantile(0.75)])  # plt.ylim([0,20])
+      tMin1 = hist['acc'].quantile(0);     tMax1 = hist['acc'].quantile(1)
+      tMin2 = hist['val_acc'].quantile(0); tMax2 = hist['val_acc'].quantile(1)
+    else:
+      plt.plot(hist['epoch'], hist['accuracy'],     label='Trn Accuracy')
+      plt.plot(hist['epoch'], hist['val_accuracy'], label='Val Accuracy')
+      # plt.ylim([0, plt_ylim * hist['accuracy'].quantile(0.75)])  # plt.ylim([0,20])
+      tMin1 = hist['accuracy'].quantile(0);          tMax1 = hist['accuracy'].quantile(1)
+      tMin2 = hist['val_accuracy'].quantile(0);      tMax2 = hist['val_accuracy'].quantile(1)
+    tMin = compareTwoNumber(tMin1, tMin2,'min');     tMax = compareTwoNumber(tMax1, tMax2, 'max')
+    tMin = tMin - (tMin + tMax) / offsetDenominator; tMax = tMax + (tMin + tMax) / offsetDenominator
+    plt.ylim([tMin, tMax])
+    plt.legend()
+    plt.title('Training and Validation Accuracy')
+
+  plt.show()
+
+## ------------------------------------------------------------------------------------------- ##
 from sklearn.model_selection import train_test_split
 
 def train_val_test_split(X, y, frac=(0.7, 0.2, 0.1), random_state=None, shuffle=True, stratify=None):
