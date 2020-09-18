@@ -777,6 +777,7 @@ def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20, plt
     plt.ylim([tMin, tMax]) 
     plt.legend()
     plt.title('Training and Validation MAE')
+    if pltGrid: plt.grid()
 
   if 'mse' in hist.columns and 'val_mse' in hist.columns:
     idx = idx + 1
@@ -793,6 +794,7 @@ def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20, plt
     plt.ylim([tMin, tMax])     
     plt.legend()
     plt.title('Training and Validation MSE')
+    if pltGrid: plt.grid()
 
   if 'loss' in hist.columns and 'val_loss' in hist.columns:
     idx = idx + 1
@@ -809,6 +811,7 @@ def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20, plt
     plt.ylim([tMin, tMax])        
     plt.legend()
     plt.title('Training and Validation Loss')
+    if pltGrid: plt.grid()
   
   if ('acc' in hist.columns and 'val_acc' in hist.columns) or \
     ('accuracy' in hist.columns and 'val_accuracy' in hist.columns):
@@ -833,8 +836,8 @@ def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20, plt
     plt.ylim([tMin, tMax])
     plt.legend()
     plt.title('Training and Validation Accuracy')
-  if pltGrid:
-    plt.grid()
+    if pltGrid: plt.grid()
+        
   plt.show()
 
 ## ------------------------------------------------------------------------------------------- ##
