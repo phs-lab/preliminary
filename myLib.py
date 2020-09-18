@@ -727,7 +727,7 @@ def plot3d(Fxy,
     plt.show()
 
 ## ------------------------------------------------------------------------------------------- ##
-def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20): # plt_ylim=3):
+def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20, pltGrid=True): # plt_ylim=3):
   hist = pd.DataFrame(history.history)
   hist['epoch'] = history.epoch
 
@@ -833,7 +833,8 @@ def plot_fit_history(history=None, plt_figsize=(14,6), offsetDenominator=20): # 
     plt.ylim([tMin, tMax])
     plt.legend()
     plt.title('Training and Validation Accuracy')
-
+  if pltGrid:
+    plt.grid()
   plt.show()
 
 ## ------------------------------------------------------------------------------------------- ##
