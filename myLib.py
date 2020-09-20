@@ -60,6 +60,11 @@ def pdHeadTail(df=None, n1=2, n2=2): # R's psych::headTail
                       df.tail(n2)], axis=0)
 
 ## ------------------------------------------------------------------------------------------- ##
+def pdCalcRowCol(df, func=None):  # func = function of "df or series"
+  temp_df = pd.concat([df, pd.DataFrame(df.apply(func,axis=0)).T], axis=0)
+  return pd.concat([temp_df, pd.DataFrame(temp_df.apply(func, axis=1))], axis=1)
+
+## ------------------------------------------------------------------------------------------- ##
 from datetime import datetime
 def sPrintLog(dt=None):  # Simple(간이) Print Log # https://docs.python.org/ko/3.8/library/datetime.html?highlight=datetime#module-datetime
     # print(datetime.now().strftime("%Y-%m-%d %A %H:%M:%S [%V Week,"), "{Dx} Day]".format(Dx=int(datetime.now().strftime("%j")) + 1))
