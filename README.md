@@ -9,3 +9,5 @@
     - http://www.nltk.org/book/ ; [NLP & NLTK](https://cheatography.com/murenei/cheat-sheets/natural-language-processing-with-python-and-nltk/)  
       PythonPrompt>> nltk.help.upenn_tagset()  # [regular expression](http://www.nltk.org/book/ch05.html), e.g. nltk.help.upenn_tagset('NN.*')
     - [DataCamp NLTK Tutorial](https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk) ; [파이썬으로 영어와 한국어 텍스트 다루기](https://www.lucypark.kr/courses/2015-dm/text-mining.html)
+  + [textblob](https://textblob.readthedocs.io/en/dev/) : [Tutorial: Quickstart](https://textblob.readthedocs.io/en/dev/quickstart.html), [Intro](https://towardsdatascience.com/having-fun-with-textblob-7e9eed783d3f), [영어 텍스트 전처리](https://data-newbie.tistory.com/206), [Sentiment Analysis](https://www.datasciencelearner.com/sentiment-analysis-python-library-textblob/), [한글 감성 분석](https://anpigon.github.io/blog/kr/@anpigon/4/), [영한 번역](https://m.blog.naver.com/haegol/221650647219)
+  + KoNLPy : [소개](https://pinkwink.kr/1025)
