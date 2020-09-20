@@ -1,7 +1,7 @@
 # Useful URLs
 * Math
   + Mathjax
-    - Wiki [매스잭스](https://ko.wikipedia.org/wiki/매스잭스), [MathJax](https://en.wikipedia.org/wiki/MathJax) ; [텍스](), [$TeX$](https://en.wikipedia.org/wiki/TeX)
+    - Wiki [매스잭스](https://ko.wikipedia.org/wiki/매스잭스), [MathJax](https://en.wikipedia.org/wiki/MathJax) ; Wiki [텍스](https://ko.wikipedia.org/wiki/TeX), [Tex](https://en.wikipedia.org/wiki/TeX), [문법](https://ko.wikipedia.org/wiki/위키백과:TeX_문법), [특수문자](https://zetawiki.com/wiki/TeX_특수문자) ; [레이텍](https://ko.wikipedia.org/wiki/LaTeX), [LaTeX](https://en.wikipedia.org/wiki/LaTeX), [제타위키](https://zetawiki.com/wiki/LaTeX), [AMS-LaTeX](https://en.wikipedia.org/wiki/AMS-LaTeX)
     - Mathjax에서 유용한 Tex 명령어 [KO](https://www.onemathematicalcat.org/MathJaxDocumentation/MathJaxKorean/TeXSyntax_ko.html), [EN](https://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm)
     - MathJax [basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
 * NLP
