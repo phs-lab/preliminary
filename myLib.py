@@ -1197,7 +1197,7 @@ def sql2pd(inputSQL="SELECT ...", printPandasScript=True, printDebugInfo=False):
 # sql2pd(inputSQL).sample(3)  # 출력하는 pandas script를 확인하고, 적절하게 수정하여 사용한다.
 
 ## ------------------------------------------------------------------------------------------- ##
-myPLOJInfo = pd.DataFrame( ### 6개 Column으로 구성됨
+myLibInfo = pd.DataFrame( ### 6개 Column으로 구성됨
     data = [ ['URL', 'Python', '', 1, 'What is a method in Python', 'https://stackoverflow.com/questions/3786881/what-is-a-method-in-python/3787670#3787670'],
              ['URL', 'DL', '', 1, '딥러닝 학습자료 모음', 'https://github.com/jwkcp/deeplearning'],
              ['URL', 'DL', 'Education', 1, '모두를 위한 딥러닝 시즌 2', 'https://deeplearningzerotoall.github.io/season2/'],
@@ -1234,10 +1234,10 @@ myPLOJInfo = pd.DataFrame( ### 6개 Column으로 구성됨
     columns = ['Category1',     'Category2',     'Category3', 'ValueRank', 'SubjectDescription', 'url_etc'] )
 
 # https://stackoverflow.com/questions/17232013/how-to-set-the-pandas-dataframe-data-left-right-alignment
-myPLOJInfo = myPLOJInfo.style.set_properties(**{'text-align': 'left'}).set_table_styles([ dict(selector='th', props=[('text-align', 'left')] ) ])
+myLibInfo = myLibInfo.style.set_properties(**{'text-align': 'left'}).set_table_styles([ dict(selector='th', props=[('text-align', 'left')] ) ])
 
 ## ------------------------------------------------------------------------------------------- ##
 print("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, re, os, sys, sqlite3→runSQL(,cursor), pd 
 - %magic, %lsmagic ☞ https://ipython.readthedocs.io/en/stable/interactive/magics.html 
-- myPLOJInfo ★, help(), □? □?? Shift+Tab Shift+Tab(수회),dir(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}""")
+- myLibInfo ★, help(), □? □?? Shift+Tab Shift+Tab(수회),dir(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}""")
 # - https://docs.python.org/3/library/inspect.html ☞ class inspect.Parameter or function??
