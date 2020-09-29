@@ -142,7 +142,7 @@ if lib_exist:
 else: 
     pass  # print("passed: 'import pydot'")
 # https://stackoverflow.com/questions/4596962/display-graph-without-saving-using-pydot
-# from IPython.display import display, Image
+from IPython.display import display, Image
 
 def makeTreeGraph(argTreeContent=None, argRD="TB", argGT="graph"):
     colors = {0:'black',  1:'purple', 2:'navy', 3:'blue', 4:'brown', 5:'green',  
