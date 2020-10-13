@@ -8,7 +8,7 @@
   + 통계 방법론
     - statkat [Statistical method selection table](http://www.statkat.com/stattest_overview.php)
   + 통계 정리 Blog
-    - 정빈이의 공부방 [통계학 목차](https://nate9389.tistory.com/1641?category=1044821); 꼬낄콘의 분석일지 [선형 회귀분석](https://kkokkilkon.tistory.com/77?category=640119)<Br> &nbsp; DANBI [선형의 의미](https://brunch.co.kr/@gimmesilver/18), [회귀모델의 종류와 특징](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html), [브런치 같은 자료](https://brunch.co.kr/@gimmesilver/38)
+    - 정빈이의 공부방 [통계학 목차](https://nate9389.tistory.com/1641?category=1044821); 꼬낄콘의 분석일지 [선형 회귀분석](https://kkokkilkon.tistory.com/77?category=640119)<Br> &nbsp; DANBI [선형의 의미](https://brunch.co.kr/@gimmesilver/18), [회귀모델의 종류와 특징](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html), [브런치 같은 자료](https://brunch.co.kr/@gimmesilver/38) ☞ 브런치 gimmesilver 통계 관련 ['오차의 과학' 목차](https://brunch.co.kr/magazine/error-science)
 * Machine Learning
   + Algorithm
     - sklearn [Choosing the right estimator](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)
