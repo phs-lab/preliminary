@@ -25,7 +25,8 @@
   + wikidocs [딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/book/2155)
 * Music
   + Violin
-    - Sarah Chang plays Sibelius Violin Concerto in D minor (full) https://www.youtube.com/watch?v=gpS_u5RvMpM
+    - Sarah Chang
+      ─ Sibelius Violin Concerto in D minor (full) https://www.youtube.com/watch?v=gpS_u5RvMpM
     - https://www.youtube.com/watch?v=r5qAH_lh5ug
     - [Top 50 Best Classical Violin Music](https://www.youtube.com/watch?v=L5skSFHVJHk)
     - Vivaldi [Four Seasons](https://www.youtube.com/watch?v=YnDLlajMxyo)
