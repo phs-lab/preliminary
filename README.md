@@ -33,7 +33,7 @@
   + [인생클래식](https://www.youtube.com/channel/UCRa7am7t9YjPZocUgqee_VA)
     - 독서와 일상, 사색을 위한 클래식모음 [vol.2 _ 첼로(Cello)](https://www.youtube.com/watch?v=5gYzXXL6jU8)
 * English
-  + [Enjoy English](https://www.youtube.com/c/EnjoyEnglish/featured) ☞ 유사한 Channel [Color Pages](https://www.youtube.com/c/ColourPages/featured)
+  + [Enjoy English](https://www.youtube.com/c/EnjoyEnglish/featured) ☞ 유사한 Channel [Color Pages](https://www.youtube.com/c/ColourPages/featured); [English: Practice & Test](https://www.youtube.com/channel/UCgBfckiwjde0_C-ORnfL64g/featured)
     - English Stories Level [① One](https://www.youtube.com/watch?v=dP6DFHkxKZQ&list=PLFDqDNysGedMqJOfmCvgVZ76hklchiiEs), [② Two](https://www.youtube.com/watch?v=bNKsoohpXK0&list=PLFDqDNysGedM7FxQMzHl0zVLWPEnuaI8u), [③ Three](https://www.youtube.com/watch?v=zlzowXlSW50&list=PLFDqDNysGedOEjONvzZfTW5gHjXYPZGEg), [④ Four](https://www.youtube.com/watch?v=wmREilELznU&list=PLFDqDNysGedN9PvqCdqfxqY0g4QhhVb3B), [⑤ Five](https://www.youtube.com/watch?v=6fNvGVY_pzs&list=PLFDqDNysGedO_bvxWA9AvWcNVKVs7Aezk)
   + [Boston English Center](https://www.youtube.com/channel/UCVhogXveUAH4vgTp3H5Q1HA)
     - Learn English with Audio Story - [The Adventures of Tom Sawyers](https://www.youtube.com/watch?v=d4PDohlr0Jw)
