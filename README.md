@@ -24,5 +24,7 @@
   + KoNLPy : [소개](https://pinkwink.kr/1025)
   + wikidocs [딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/book/2155)
 * Music
+  + Violin
+    - https://www.youtube.com/watch?v=r5qAH_lh5ug
   + [인생클래식](https://www.youtube.com/channel/UCRa7am7t9YjPZocUgqee_VA)
     - 독서와 일상, 사색을 위한 클래식모음 [vol.2 _ 첼로(Cello)](https://www.youtube.com/watch?v=5gYzXXL6jU8)
