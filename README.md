@@ -33,5 +33,5 @@
   + [인생클래식](https://www.youtube.com/channel/UCRa7am7t9YjPZocUgqee_VA)
     - 독서와 일상, 사색을 위한 클래식모음 [vol.2 _ 첼로(Cello)](https://www.youtube.com/watch?v=5gYzXXL6jU8)
 * English
-  + [봄날에박영희TV](https://www.youtube.com/channel/UCGkXSDnKo7IbXBTugehWOGQ), 어린왕자 [1-15](https://www.youtube.com/watch?v=UdFd60akfx4) [16-27](https://www.youtube.com/watch?v=G_cq7qv0I-g)
+  + [봄날에박영희TV](https://www.youtube.com/channel/UCGkXSDnKo7IbXBTugehWOGQ), 어린왕자 ISBN 9791195559824 [1-15](https://www.youtube.com/watch?v=UdFd60akfx4) [16-27](https://www.youtube.com/watch?v=G_cq7qv0I-g)
   + [Aloha Language House](https://www.youtube.com/channel/UCxVPJMGShV04KTy_Fr3WMig)
