@@ -11,3 +11,5 @@
     - [DataCamp NLTK Tutorial](https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk) ; [파이썬으로 영어와 한국어 텍스트 다루기](https://www.lucypark.kr/courses/2015-dm/text-mining.html)
   + [textblob](https://textblob.readthedocs.io/en/dev/) : [Tutorial: Quickstart](https://textblob.readthedocs.io/en/dev/quickstart.html), [Intro](https://towardsdatascience.com/having-fun-with-textblob-7e9eed783d3f), [영어 텍스트 전처리](https://data-newbie.tistory.com/206), [Sentiment Analysis](https://www.datasciencelearner.com/sentiment-analysis-python-library-textblob/), [한글 감성 분석](https://anpigon.github.io/blog/kr/@anpigon/4/), [영한 번역](https://m.blog.naver.com/haegol/221650647219)
   + KoNLPy : [소개](https://pinkwink.kr/1025)
+* Music
+  + 마음 편안하게 하는 최고의 [클래식 명곡 모음](https://www.youtube.com/watch?v=klyYqIasvKc)
