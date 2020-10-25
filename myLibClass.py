@@ -48,7 +48,218 @@ from datetime import datetime
 from IPython.display import Markdown, display, Image
 from mpl_toolkits.mplot3d import Axes3D
 
-class myLib:  # import myLibClass; my = myLibClass.myLib()
+## ------------------------------------------------------------------------------------------- ##
+def getSubClasses(aObj):
+    aClass = aObj if type(aObj) == type(object) else aObj.__class__
+    tmplist = aClass.__subclasses__()
+    if len(tmplist) == 0:
+        result = list(aClass)
+    elif len(tmplist) > 0:
+        cnt = 0
+        returnlist = []
+        for item in tmplist:
+            if len(item.__subclasses__()) > 0:
+                returnlist.append(getSubClasses(item))
+            else:
+                returnlist.append(item)
+        result = {aClass : returnlist}
+    return result
+
+def printSubClasses(anySequence, cnt=0, indent_str = ' ㆍ'):  
+    # [Foo.__name__, Foo.__subclasses__()] ★★★ https://www.python-course.eu/index.php ★★★
+    # print( 'length : ', len(anySequence) if hasattr(anySequence,'__len__') else 0, "\treceive : ", anySequence)
+    if (len(anySequence) if hasattr(anySequence,'__len__') else 0) > 0:
+        for dKey, dVal in anySequence.items():
+            # print("PROCESSING : ", dVal, " in ", dKey.__name__)
+            print(cnt, indent_str * cnt, dKey.__name__)
+            cnt = cnt + 1
+            if hasattr(dVal[0], 'items'):
+                for item in dVal:
+                    printSubClasses(item, cnt)
+            else:
+                print(cnt, indent_str * cnt, dVal[0].__name__)
+            cnt = cnt - 1
+    else:
+        print(cnt, indent_str * cnt, anySequence.__name__)
+
+# getSubClasses 및 printSubClasses 검증
+# class Foo(object): pass
+# class Bar(Foo): pass
+# class Bing(Bar): pass
+# class Baz(Foo): pass
+# class MPrnt(object): pass
+# class MultiIn(Foo, MPrnt): pass
+# aDict = {Foo:[{Bar:[Bing]}, Baz, MultiIn], MPrnt:[MultiIn]}
+
+# printSubClasses(getSubClasses(Foo))
+# printSubClasses(getSubClasses(MPrnt))
+
+## ------------------------------------------------------------------------------------------- ##
+def hasattrCatchError(obj, name, dispError=False):
+    """
+    pandas DataFrame의 속성 '_constructor_expanddim'에 대해 descobj() 실행 시 
+    NotImplementedError가 발생하여 이를 실행 중에 인지하고 처리하기 위해 작성함.
+    결국, 각종 이유로 인해 오류도 없고, 해당 속성이 있을 경우에만 True를 Return하도록 함.
+
+    참조 URL : https://stackoverflow.com/questions/4990718/about-catching-any-exception 
+    """
+    try:
+        hasattr(obj, name)
+    except Exception as e:  # 오류 발생 시
+        if dispError:
+            print(name, '\n☞', e, '\n☞ Document :', e.__doc__)
+        return False
+    else:                   # 성공적으로 실행 시
+        return hasattr(obj, name)
+
+## ------------------------------------------------------------------------------------------- ##
+def hasproperty(strObj, rtnPropertyTF=False):  # 참고, 유사 ≒ hasattr('object')
+    """
+    hasattr(object, '속성명')의 기능을 참고하여 작성한 것으로서
+    hasattr이 특정 속성(Property)에 대해 True/False만 return해 주는 것에서 더 나아가 
+    string으로 『object.속성명』 방식으로 전달하면 
+    『속성 -> class -> mro()』 정보가 표시되도록 했습니다.
+    """
+    try:
+        p = eval(strObj)  # p = object's property
+        if hasattr(type(p),'mro'):
+            if rtnPropertyTF: # Class Property = Attribute + Method 
+                return True, type(p).mro()[0].__name__
+            else:
+                return type(p).mro()[0].__name__  # mro() vs __mro__
+        else:
+            return None
+
+    except AttributeError:
+        if rtnPropertyTF:  # Return "해당 Property 존재 여부" 
+            return False, strObj + " doesn't exist!"
+        else:
+            return strObj + " doesn't exist!"
+
+    except TypeError:
+        try:
+            if rtnPropertyTF: # Class Property = Attribute + Method 
+                return True, type(p).__mro__[0].__name__
+            else:
+                return type(p).__mro__[0].__name__  # mro() vs __mro__
+        except TypeError:
+            if rtnPropertyTF:
+                return False, strObj + ' : N/A'
+            else:
+                return strObj + ' : N/A' # 'The argument 1 must be a string!'
+
+## ------------------------------------------------------------------------------------------- ##
+def descobj(strObj, show_property=True, pWidth=90):
+    """
+    기본적으로 클래스 또는 Object의 (다중 포함) 상속관계를 파악하기 위한 것이며
+    Property들에 대해서는 (callable인지 아닌 지를 알기 위해) function 또는 method인지를
+    파악하기 위해 작성했습니다.
+
+    또, hasattr은 class나 object의 속성명을 알아야 실행할 수 있는데, 
+    하위의 속성명을 몰라도 object나 class에서 파악할 수 있는 기능을 추가했습니다.
+
+    결국, 『① 내장 dir()과 hasattr()의 기능을 포괄하며 ②상속 관계 파악을 위한 정보』를 제공합니다.
+    향후 regular expression을 사용하여 원하는 속성만 나타나도록 조절하는 기능을 추가할 것입니다.
+
+    참고로, print function에 대한 file.stdout 출력은 다음과 같이 cell magic을 써서 저장할 수 있습니다.
+    Cell①> %%capture capture_output --no-stderr
+            descobj('A') # https://www.scrygroup.com/tutorial/2019-03-09/capturing_jupyter_cell_output
+    Cell②> strVar = capture_output.stdout
+            for item in strVar.split('\n'):  # '\n'을 기준으로 분리, list에 저장
+                print(item)                  # 별도 저장된 문자열 정보 사용
+    """
+    boldFR = '\033[1m'; boldTO = '\033[0m'  # myPROJ에서는 descobj 밖으로...
+    def print_class(aClass, lv=1):
+        for item in aClass.__bases__:
+            print('ㆍ'*lv, item.__name__)
+            lv = lv+1
+            print_class(item, lv)
+    try:   
+        obj = eval(strObj)
+        if type(obj) == type(object):  # class
+            print('* Parent classes of Class', boldFR, strObj, boldTO, '\t(ID :', id(obj), ')' )
+            tmpClassName = obj.__name__
+            print('-' * pWidth)
+            print_class(obj)          
+        else:                          # object
+            print('* Parent classes of Object', boldFR, strObj, boldTO,
+                  '\t(Class :', obj.__class__.__name__, '\tID :', id(obj), ')' ) 
+            tmpClassName = obj.__class__.__name__
+            print('-' * pWidth)
+            print_class(obj.__class__)
+
+        if show_property == True:
+            print('\n* Properties of', boldFR, strObj, boldTO) 
+            print('-' * pWidth)
+            strItems = sorted(dir(eval(strObj)))
+            for i in range(len(strItems)):
+                if hasattrCatchError(obj, strItems[i]):  # hasattr() 결과 True인 경우 (Exception 발생 없고, attr이 있는 경우)
+                    print("{:5} {:45} {:45}".format(i+1, strItems[i], hasproperty(strObj + '.' + strItems[i])))
+                else:
+                # if tmpClassName == 'DataFrame' and strItems[i] == '_constructor_expanddim':
+                #     # pandas.core.frame.DataFrame._constructor_expanddim : NotImplementedError 
+                #     print("{:5} {:45} {:45}".format(i+1, strItems[i], 'NotImplementedError !!!'))
+                    print("{:5} {:45} {:45}".format(i+1, strItems[i], '***** N/A *****'))
+
+    except TypeError: 
+        print('TypeError:', strObj, 'must be a string, bytes or code object!')
+    except NameError:
+        print('NameError:', strObj, 'is not defined or inherited from \'object\'')
+
+## ------------------------------------------------------------------------------------------- ##
+def compobj(strObj1, strObj2, pWidth=45):  # Comparison of 2 Objects
+    """
+    주로 class와 그 class를 상속한 object의 property들을 비교하기 위한 것이며
+    전혀 다른 class vs. class 또는 object vs. object에 대해 실행하는 것도 가능합니다.
+    단, 이 경우 좌, 우에 표시되는 property들이 같은 것이라도 다른 줄(row)에 표시될 수 있습니다.
+    """
+    try:
+        dirResult = []
+        dirResult.insert(0, list(dir(eval(strObj1))))  
+        dirResult.insert(1, list(dir(eval(strObj2))))
+
+        x = len(dirResult[0])
+        y = len(dirResult[1])
+        len_max = x if x >= y else y
+        len_min = x if x <  y else y
+        len_diff = abs(x - y)
+
+        print("SerNo","{:45} {:45}".format('obj1: ' + strObj1 + ', type: ' + type(eval(strObj1)).__name__, 
+                                         'obj2: ' + strObj2 + ', type: ' + type(eval(strObj2)).__name__))
+        print("-----",'-' * pWidth, '-' * pWidth)
+
+        for i in range(len_max):
+            print_flag = 'careful'
+            if len_diff == 0 and len_max > 0:
+                print_flag = 'OK'
+            elif len_diff != 0 and i <= len_min - 1:
+                print_flag = 'OK'
+            else:
+                print_flag = 'x' if x > y else 'y'
+
+            if print_flag == 'OK':
+                print("{:5} {:45} {:45}".format(i+1, dirResult[0][i], dirResult[1][i]))
+            elif print_flag == 'x':
+                print("{:5} {:45} {:45}".format(i+1, dirResult[0][i], ' '))
+            elif print_flag == 'y':
+                print("{:5} {:45} {:45}".format(i+1, ' ',             dirResult[1][i]))
+            else:
+                continue
+
+    except TypeError: 
+        print('TypeError: Every parameter must be a string, bytes or code object!')
+    except NameError:
+        print('NameError: One or Both of parameters are not defined!')
+
+## ------------------------------------------------------------------------------------------- ##
+class my:  # import myLibClass; my = myLibClass.myLib()
+  ## 참고 : https://item4.blog/2015-07-18/Some-Ambiguousness-in-Python-Tutorial-Call-by-What/
+  #  Python은 함수를 실행할때 Call by reference같은 느낌으로 reference를 넘겨줍니다. 
+  #  하지만 이때 넘겨주는 것은 변수(Variable)의 reference가 아니라 변수가 담고 있는 자료(Data)의 reference입니다. 
+  #  자료가 mutable하다면 변경해도 reference가 보존되므로 결과적으로 Call by reference처럼 보일 것이고, 자료가 immutable하다면 결과적으로 Call by value처럼 보일 것입니다.
+  #  이 문제를 해소하는 가장 쉬운 방법은 Tutorial 본문에서 문제의 저 문단을 아예 빼고 Python만의 방법을 소개하는 것이라고 생각합니다. 
+  #  물론 이 글처럼 id라던가 is 연산자 같은걸 이야기하면 어렵게 되므로 아예 따로 독립된 문서가 필요할거같습니다.
+  
   ## ------ pipe 연산자(>>)를 사용하지 않아도, pandas 기능으로 다음과 같이 구현할 수 있다 ------ ##
   def pdHeadTail(df=None, n1=2, n2=2): # R's psych::headTail
       if type(df) == type(pd.DataFrame()):
@@ -230,209 +441,6 @@ class myLib:  # import myLibClass; my = myLibClass.myLib()
       # for obj in tTypes[1]:
       #     print("All items must be " + str(tTypes[0]) + "!  ... and validation result is ", 
       #           "success (○)" if my.ismutable(obj) else "fail (ㅜ.ㅜ) ", str( my.ismutable(obj)), '\t가변', '\t', type(obj))
-
-  ## ------------------------------------------------------------------------------------------- ##
-  def getSubClasses(aObj):
-      aClass = aObj if type(aObj) == type(object) else aObj.__class__
-      tmplist = aClass.__subclasses__()
-      if len(tmplist) == 0:
-          result = list(aClass)
-      elif len(tmplist) > 0:
-          cnt = 0
-          returnlist = []
-          for item in tmplist:
-              if len(item.__subclasses__()) > 0:
-                  returnlist.append(getSubClasses(item))
-              else:
-                  returnlist.append(item)
-          result = {aClass : returnlist}
-      return result
-
-  def printSubClasses(anySequence, cnt=0, indent_str = ' ㆍ'):  
-      # [Foo.__name__, Foo.__subclasses__()] ★★★ https://www.python-course.eu/index.php ★★★
-      # print( 'length : ', len(anySequence) if hasattr(anySequence,'__len__') else 0, "\treceive : ", anySequence)
-      if (len(anySequence) if hasattr(anySequence,'__len__') else 0) > 0:
-          for dKey, dVal in anySequence.items():
-              # print("PROCESSING : ", dVal, " in ", dKey.__name__)
-              print(cnt, indent_str * cnt, dKey.__name__)
-              cnt = cnt + 1
-              if hasattr(dVal[0], 'items'):
-                  for item in dVal:
-                      printSubClasses(item, cnt)
-              else:
-                  print(cnt, indent_str * cnt, dVal[0].__name__)
-              cnt = cnt - 1
-      else:
-          print(cnt, indent_str * cnt, anySequence.__name__)
-
-  # getSubClasses 및 printSubClasses 검증
-  # class Foo(object): pass
-  # class Bar(Foo): pass
-  # class Bing(Bar): pass
-  # class Baz(Foo): pass
-  # class MPrnt(object): pass
-  # class MultiIn(Foo, MPrnt): pass
-  # aDict = {Foo:[{Bar:[Bing]}, Baz, MultiIn], MPrnt:[MultiIn]}
-
-  # printSubClasses(getSubClasses(Foo))
-  # printSubClasses(getSubClasses(MPrnt))
-
-  ## ------------------------------------------------------------------------------------------- ##
-  def hasattrCatchError(obj, name, dispError=False):
-      """
-      pandas DataFrame의 속성 '_constructor_expanddim'에 대해 descobj() 실행 시 
-      NotImplementedError가 발생하여 이를 실행 중에 인지하고 처리하기 위해 작성함.
-      결국, 각종 이유로 인해 오류도 없고, 해당 속성이 있을 경우에만 True를 Return하도록 함.
-
-      참조 URL : https://stackoverflow.com/questions/4990718/about-catching-any-exception 
-      """
-      try:
-          hasattr(obj, name)
-      except Exception as e:  # 오류 발생 시
-          if dispError:
-              print(name, '\n☞', e, '\n☞ Document :', e.__doc__)
-          return False
-      else:                   # 성공적으로 실행 시
-          return hasattr(obj, name)
-
-  ## ------------------------------------------------------------------------------------------- ##
-  def hasproperty(strObj, rtnPropertyTF=False):  # 참고, 유사 ≒ hasattr('object')
-      """
-      hasattr(object, '속성명')의 기능을 참고하여 작성한 것으로서
-      hasattr이 특정 속성(Property)에 대해 True/False만 return해 주는 것에서 더 나아가 
-      string으로 『object.속성명』 방식으로 전달하면 
-      『속성 -> class -> mro()』 정보가 표시되도록 했습니다.
-      """
-      try:
-          p = eval(strObj)  # p = object's property
-          if hasattr(type(p),'mro'):
-              if rtnPropertyTF: # Class Property = Attribute + Method 
-                  return True, type(p).mro()[0].__name__
-              else:
-                  return type(p).mro()[0].__name__  # mro() vs __mro__
-          else:
-              return None
-
-      except AttributeError:
-          if rtnPropertyTF:  # Return "해당 Property 존재 여부" 
-              return False, strObj + " doesn't exist!"
-          else:
-              return strObj + " doesn't exist!"
-
-      except TypeError:
-          try:
-              if rtnPropertyTF: # Class Property = Attribute + Method 
-                  return True, type(p).__mro__[0].__name__
-              else:
-                  return type(p).__mro__[0].__name__  # mro() vs __mro__
-          except TypeError:
-              if rtnPropertyTF:
-                  return False, strObj + ' : N/A'
-              else:
-                  return strObj + ' : N/A' # 'The argument 1 must be a string!'
-
-  ## ------------------------------------------------------------------------------------------- ##
-  def descobj(strObj, show_property=True, pWidth=90):
-      """
-      기본적으로 클래스 또는 Object의 (다중 포함) 상속관계를 파악하기 위한 것이며
-      Property들에 대해서는 (callable인지 아닌 지를 알기 위해) function 또는 method인지를
-      파악하기 위해 작성했습니다.
-
-      또, hasattr은 class나 object의 속성명을 알아야 실행할 수 있는데, 
-      하위의 속성명을 몰라도 object나 class에서 파악할 수 있는 기능을 추가했습니다.
-
-      결국, 『① 내장 dir()과 hasattr()의 기능을 포괄하며 ②상속 관계 파악을 위한 정보』를 제공합니다.
-      향후 regular expression을 사용하여 원하는 속성만 나타나도록 조절하는 기능을 추가할 것입니다.
-
-      참고로, print function에 대한 file.stdout 출력은 다음과 같이 cell magic을 써서 저장할 수 있습니다.
-      Cell①> %%capture capture_output --no-stderr
-              descobj('A') # https://www.scrygroup.com/tutorial/2019-03-09/capturing_jupyter_cell_output
-      Cell②> strVar = capture_output.stdout
-              for item in strVar.split('\n'):  # '\n'을 기준으로 분리, list에 저장
-                  print(item)                  # 별도 저장된 문자열 정보 사용
-      """
-      boldFR = '\033[1m'; boldTO = '\033[0m'  # myPROJ에서는 descobj 밖으로...
-      def print_class(aClass, lv=1):
-          for item in aClass.__bases__:
-              print('ㆍ'*lv, item.__name__)
-              lv = lv+1
-              print_class(item, lv)
-      try:   
-          obj = eval(strObj)
-          if type(obj) == type(object):  # class
-              print('* Parent classes of Class', boldFR, strObj, boldTO, '\t(ID :', id(obj), ')' )
-              tmpClassName = obj.__name__
-              print('-' * pWidth)
-              print_class(obj)          
-          else:                          # object
-              print('* Parent classes of Object', boldFR, strObj, boldTO,
-                    '\t(Class :', obj.__class__.__name__, '\tID :', id(obj), ')' ) 
-              tmpClassName = obj.__class__.__name__
-              print('-' * pWidth)
-              print_class(obj.__class__)
-
-          if show_property == True:
-              print('\n* Properties of', boldFR, strObj, boldTO) 
-              print('-' * pWidth)
-              strItems = sorted(dir(eval(strObj)))
-              for i in range(len(strItems)):
-                  if hasattrCatchError(obj, strItems[i]):  # hasattr() 결과 True인 경우 (Exception 발생 없고, attr이 있는 경우)
-                      print("{:5} {:45} {:45}".format(i+1, strItems[i], hasproperty(strObj + '.' + strItems[i])))
-                  else:
-                  # if tmpClassName == 'DataFrame' and strItems[i] == '_constructor_expanddim':
-                  #     # pandas.core.frame.DataFrame._constructor_expanddim : NotImplementedError 
-                  #     print("{:5} {:45} {:45}".format(i+1, strItems[i], 'NotImplementedError !!!'))
-                      print("{:5} {:45} {:45}".format(i+1, strItems[i], '***** N/A *****'))
-
-      except TypeError: 
-          print('TypeError:', strObj, 'must be a string, bytes or code object!')
-      except NameError:
-          print('NameError:', strObj, 'is not defined or inherited from \'object\'')
-
-  ## ------------------------------------------------------------------------------------------- ##
-  def compobj(strObj1, strObj2, pWidth=45):  # Comparison of 2 Objects
-      """
-      주로 class와 그 class를 상속한 object의 property들을 비교하기 위한 것이며
-      전혀 다른 class vs. class 또는 object vs. object에 대해 실행하는 것도 가능합니다.
-      단, 이 경우 좌, 우에 표시되는 property들이 같은 것이라도 다른 줄(row)에 표시될 수 있습니다.
-      """
-      try:
-          dirResult = []
-          dirResult.insert(0, list(dir(eval(strObj1))))  
-          dirResult.insert(1, list(dir(eval(strObj2))))
-
-          x = len(dirResult[0])
-          y = len(dirResult[1])
-          len_max = x if x >= y else y
-          len_min = x if x <  y else y
-          len_diff = abs(x - y)
-
-          print("SerNo","{:45} {:45}".format('obj1: ' + strObj1 + ', type: ' + type(eval(strObj1)).__name__, 
-                                           'obj2: ' + strObj2 + ', type: ' + type(eval(strObj2)).__name__))
-          print("-----",'-' * pWidth, '-' * pWidth)
-
-          for i in range(len_max):
-              print_flag = 'careful'
-              if len_diff == 0 and len_max > 0:
-                  print_flag = 'OK'
-              elif len_diff != 0 and i <= len_min - 1:
-                  print_flag = 'OK'
-              else:
-                  print_flag = 'x' if x > y else 'y'
-
-              if print_flag == 'OK':
-                  print("{:5} {:45} {:45}".format(i+1, dirResult[0][i], dirResult[1][i]))
-              elif print_flag == 'x':
-                  print("{:5} {:45} {:45}".format(i+1, dirResult[0][i], ' '))
-              elif print_flag == 'y':
-                  print("{:5} {:45} {:45}".format(i+1, ' ',             dirResult[1][i]))
-              else:
-                  continue
-
-      except TypeError: 
-          print('TypeError: Every parameter must be a string, bytes or code object!')
-      except NameError:
-          print('NameError: One or Both of parameters are not defined!')
 
   ## ------------------------------------------------------------------------------------------- ##
   def typelen(obj):  # Object's Short Information : type + len
