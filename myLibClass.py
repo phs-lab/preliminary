@@ -48,7 +48,7 @@ from datetime import datetime
 from IPython.display import Markdown, display, Image
 from mpl_toolkits.mplot3d import Axes3D
 
-class my:
+class myLib:  # import myLibClass; my = myLibClass.myLib()
   ## ------ pipe 연산자(>>)를 사용하지 않아도, pandas 기능으로 다음과 같이 구현할 수 있다 ------ ##
   def pdHeadTail(df=None, n1=2, n2=2): # R's psych::headTail
       if type(df) == type(pd.DataFrame()):
