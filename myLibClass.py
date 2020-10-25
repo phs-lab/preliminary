@@ -1246,8 +1246,11 @@ class my:
     import matplotlib.pyplot as plt
     import os, re, sys, importlib, sklearn, sqlite, sympy
     import numpy as np, scipy as sp, pandas as pd, seaborn as sns
-    # import statsmodels.api as sm
-    # import statsmodels.formula.api as smf'''
+    # import statsmodels.api as sm; import statsmodels.formula.api as smf
+    # import tensorflow as tf; from tensorflow import keras
+    from datetime import datetime
+    from IPython.display import Markdown, display, Image
+    from mpl_toolkits.mplot3d import Axes3D'''
     print(FUM)
     
   def sayHello():
