@@ -251,7 +251,11 @@ def compobj(strObj1, strObj2, pWidth=45):  # Comparison of 2 Objects
     except NameError:
         print('NameError: One or Both of parameters are not defined!')
 
-## ------------------------------------------------------------------------------------------- ##
+##  123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789  ##
+
+## =========================================================================================== ##
+##                                      Start of class my                                      ##
+## =========================================================================================== ##
 class my:  # import myLibClass; my = myLibClass.myLib()
   ## 참고 : https://item4.blog/2015-07-18/Some-Ambiguousness-in-Python-Tutorial-Call-by-What/
   #  Python은 함수를 실행할때 Call by reference같은 느낌으로 reference를 넘겨줍니다. 
@@ -1250,7 +1254,8 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
   ## ------------------------------------------------------------------------------------------- ##
   def printLibInfo(): # Frequently Used Modules.
-    FUM = '''%matplotlib inline
+    FUM = '''
+    %matplotlib inline
     import matplotlib.pyplot as plt
     import os, re, sys, importlib, sklearn, sqlite, sympy
     import numpy as np, scipy as sp, pandas as pd, seaborn as sns
@@ -1266,3 +1271,10 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     - %magic, %lsmagic ☞ https://ipython.readthedocs.io/en/stable/interactive/magics.html 
     - myLibInfo ★, help(), □? □?? Shift+Tab Shift+Tab(수회),dir(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}""")
     # - https://docs.python.org/3/library/inspect.html ☞ class inspect.Parameter or function??
+
+## =========================================================================================== ##
+##                                       End of class my                                       ##
+## =========================================================================================== ##
+
+my.sayHello()
+
