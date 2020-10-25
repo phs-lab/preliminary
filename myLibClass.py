@@ -69,7 +69,7 @@ class myLib:  # import myLibClass; my = myLibClass.myLib()
     return pd.concat([temp_df, pd.DataFrame(temp_df.apply(func, axis=1))], axis=1)
 
   ## ------------------------------------------------------------------------------------------- ##
-  # from datetime import datetime
+  # from datetime import datetime                   # https://brownbears.tistory.com/432
   def sPrintLog(dt=None):  # Simple(간이) Print Log # https://docs.python.org/ko/3.8/library/datetime.html?highlight=datetime#module-datetime
       # print(datetime.now().strftime("%Y-%m-%d %A %H:%M:%S [%V Week,"), "{Dx} Day]".format(Dx=int(datetime.now().strftime("%j")) + 1))
       if dt:
