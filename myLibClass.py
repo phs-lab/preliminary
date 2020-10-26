@@ -26,7 +26,7 @@ import seaborn as sns
 
 np.set_printoptions(precision=5, suppress=True)  # line매직을 사용한 유사 기능 : %precision 5
 
-# %matplotlib inline
+%matplotlib inline
 import matplotlib.pyplot as plt
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 # (1) 설치된 Font 중 사용 가능한 한글 폰트 찾기
@@ -42,7 +42,7 @@ import matplotlib.pyplot as plt
 # plt.rcParams['font.family'] = 'Gulim'
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 
-import os, re, sys, importlib, sklearn, sqlite3, matplotlib 
+import os, re, sys, importlib, sklearn, sqlite3, sympy, matplotlib 
 # https://stackoverflow.com/questions/14050281/how-to-check-if-a-python-module-exists-without-importing-it
 from datetime import datetime
 from IPython.display import Markdown, display, Image
@@ -1217,7 +1217,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     FUM = '''
     %matplotlib inline
     import matplotlib.pyplot as plt
-    import os, re, sys, importlib, sklearn, sqlite, sympy
+    import os, re, sys, importlib, sklearn, sqlite, sympy, matplotlib
     import numpy as np, scipy as sp, pandas as pd, seaborn as sns
     # import statsmodels.api as sm; import statsmodels.formula.api as smf
     # import tensorflow as tf; from tensorflow import keras
