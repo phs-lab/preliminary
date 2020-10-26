@@ -168,7 +168,7 @@ def descobj(strObj, show_property=True, pWidth=90):
             for item in strVar.split('\n'):  # '\n'을 기준으로 분리, list에 저장
                 print(item)                  # 별도 저장된 문자열 정보 사용
     """
-    boldFR = '\033[1m'; boldTO = '\033[0m'  # myPROJ에서는 descobj 밖으로...
+    boldFR = '\033[1m'; boldTO = '\033[0m'  # myLib에서는 descobj 밖으로...
     def print_class(aClass, lv=1):
         for item in aClass.__bases__:
             print('ㆍ'*lv, item.__name__)
@@ -1213,47 +1213,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   # sql2pd(inputSQL).sample(3)  # 출력하는 pandas script를 확인하고, 적절하게 수정하여 사용한다.
 
   ## ------------------------------------------------------------------------------------------- ##
-  myLibInfo = pd.DataFrame( ### 6개 Column으로 구성됨
-      data = [ ['URL', 'Python', '', 1, 'What is a method in Python', 'https://stackoverflow.com/questions/3786881/what-is-a-method-in-python/3787670#3787670'],
-               ['URL', 'DL', '', 1, '딥러닝 학습자료 모음', 'https://github.com/jwkcp/deeplearning'],
-               ['URL', 'DL', 'Education', 1, '모두를 위한 딥러닝 시즌 2', 'https://deeplearningzerotoall.github.io/season2/'],
-               ['URL', 'DL', '', 2, '쉽게 풀어쓴 딥 러닝의 거의 모든 것', 'https://slownews.kr/41461'],
-               ['URL', 'DL', '', 9, '딥러닝 공부를 위한 책 교재', 'https://peanutcoders.com/how-to-study-deeplearning/'],
-               ['URL', 'DL', '', 9, '내가 찾은 Deep Learning 공부 최단경로(?)', 'https://m.blog.naver.com/chesterroh/220920668374'],
-               ['URL', 'DL', '', 5, '비전공자 공부 경험 공유, 도움되는 URL Link', 'https://theonly1.tistory.com/1564'],
-               ['URL', 'Markdown', 'Math', 1, 'Writing Mathematic Fomulars in Markdown', 'https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/'],
-               ['URL', 'scikit-learn', 'mglearn', 1, 'scikit-learn 공부에 도움을 주는 자료', 'https://github.com/amueller/mglearn'],
-               ['URL', 'scikit-learn', 'inflearn', 9, '권철민, 2020, 파이썬 머신러닝 완벽 가이드', "https://www.inflearn.com/course/파이썬-머신러닝-완벽가이드"],
-               ['e-Book', 'Python', 'Language', 1, '파이썬 코딩 도장, 남재윤', "https://dojang.io/course/view.php?id=7"],
-               ['e-Book', 'Python', 'Language', 1, '점프 투 파이썬, 박응용', 'https://wikidocs.net/book/1'],
-               ['e-Book', 'SQLite', 'DB', 1, 'SQLite 책', 'http://www.devkuma.com/books/35'],
-               ['myPLOJ', 'Function', '', 1, 'pdHeadTail(df=None, n1=2, n2=2)', 'pandas dataframe을 대상으로 한 R의 psych::headTail 구현'],
-               ['myPLOJ', 'Function', '', 1, 'sPrintLog(dt=None)', 'datetime 출력'],
-               ['myPLOJ', 'Function', '', 1, 'npArrInfo(ndarrayObj, itemRelDesc=False)', 'np.info() 기능 확장'],
-               ['myPLOJ', 'Function', '', 1, 'printbmd(string)',     'print black & white text markdown print'],
-               ['myPROJ', 'Function', '', 1, 'printcmd(string, color=None)', 'print color text markdown print'],
-               ['myPROJ', 'Function', '', 1, 'isiterable(obj)', 'Wes McKinney, Python for Data Analysis'  ],
-               ['myPROJ', 'Function', '', 1, 'ismutable(obj)',  '시퀀스 자료형에 대한 불변/가변 여부 회신'   ],
-               ['myPROJ', 'Function', 'OOP', 'printSubClasses(getSubClasses(anyClass))', '지정된 Class에 대한 하위 Class를 찾아 보여준다'],
-               ['myPROJ', 'Function', '', 1, 'hasproperty(strObj, rtnPropertyTF=False)', "유사 ≒ hasattr('object')"],
-               ['myPROJ', 'Function', 'OOP', 1, 'descobj(strObj, show_property=True, pWidth=90)', 'Inheritance Hierarchy & Properties Info.'],
-               ['myPROJ', 'Function', '', 1, 'compobj(strObj1, strObj2, pWidth=45)', 'Comparison of 2 Objects'],
-               ['myPROJ', 'Function', '', 1, 'typelen(obj)', "Object's Short Information : type + len"],
-               ['myPROJ', 'Function', '', 1, 'viewitems(obj, frPtr=0, toPtr=-1, dict_key=True)', "View Object's Data, from~to 모두 포함"],
-               ['myPROJ', 'Function', 'matplotlib', 1, 'plot2d', 'y = x**2과 같은 1변수 함수의 평면 그래프'],
-               ['myPROJ', 'Function', 'matplotlib', 1, 'plot3d', 'z = x**2 + 3*y와 같은 2변수 함수의 입체 그래프'],
-               ['myPROJ', 'Function', 'sklearn', 1, 'train_val_test_split', 'X_train, X_val, X_test, y_train, y_val, y_test = train_val_test_split(X, y, np.array([70, 20, 10]) / 100)'],
-               ['myPROJ', 'Function', 'sklearn', 1, 'ChooseRightSklearnEstimator', "print(ChooseRightSklearnEstimator(1000, 'C', True)[1])"],
-               ['myPROJ', 'Function', 'pandas', 1, 'sql2pd', "sql2pd(inputSQL, True)[:10]"],
-               ['myPROJ', 'Function', 'sqlite3', 1, 'runSQL(sqlstr, cursor)', 'DML 실행 지원, pandas DataFrame 반환']
-             ],
-      columns = ['Category1',     'Category2',     'Category3', 'ValueRank', 'SubjectDescription', 'url_etc'] )
-
-  # https://stackoverflow.com/questions/17232013/how-to-set-the-pandas-dataframe-data-left-right-alignment
-  myLibInfo = myLibInfo.style.set_properties(**{'text-align': 'left'}).set_table_styles([ dict(selector='th', props=[('text-align', 'left')] ) ])
-
-  ## ------------------------------------------------------------------------------------------- ##
-  def printLibInfo(): # Frequently Used Modules.
+  def fum(): # Frequently Used Modules.
     FUM = '''
     %matplotlib inline
     import matplotlib.pyplot as plt
@@ -1267,10 +1227,12 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     print(FUM)
     
   def sayHello():
-    print("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, re, os, sys, sqlite3→runSQL(,cursor), pd 
-    - %magic, %lsmagic ☞ https://ipython.readthedocs.io/en/stable/interactive/magics.html 
+    print("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, re, os, sys, sqlite3→runSQL(,cursor), pd ♣ my.fum() 
+    - %magic, %lsmagic %pinfo %env %store %%script ☞ https://ipython.readthedocs.io/en/stable/interactive/magics.html 
     - myLibInfo ★, help(), □? □?? Shift+Tab Shift+Tab(수회),dir(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}""")
     # - https://docs.python.org/3/library/inspect.html ☞ class inspect.Parameter or function??
+    # - Top 10 Magic Commands in Python to Boost your Productivity
+    #   https://towardsdatascience.com/top-10-magic-commands-in-python-to-boost-your-productivity-1acac061c7a9
 
 ## =========================================================================================== ##
 ##                                       End of class my                                       ##
@@ -1278,3 +1240,42 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
 my.sayHello()
 
+## ------------------------------------------------------------------------------------------- ##
+myLibInfo = pd.DataFrame( ### 6개 Column으로 구성됨
+  data = [ ['URL', 'Python', '', 1, 'What is a method in Python', 'https://stackoverflow.com/questions/3786881/what-is-a-method-in-python/3787670#3787670'],
+           ['URL', 'DL', '', 1, '딥러닝 학습자료 모음', 'https://github.com/jwkcp/deeplearning'],
+           ['URL', 'DL', 'Education', 1, '모두를 위한 딥러닝 시즌 2', 'https://deeplearningzerotoall.github.io/season2/'],
+           ['URL', 'DL', '', 2, '쉽게 풀어쓴 딥 러닝의 거의 모든 것', 'https://slownews.kr/41461'],
+           ['URL', 'DL', '', 9, '딥러닝 공부를 위한 책 교재', 'https://peanutcoders.com/how-to-study-deeplearning/'],
+           ['URL', 'DL', '', 9, '내가 찾은 Deep Learning 공부 최단경로(?)', 'https://m.blog.naver.com/chesterroh/220920668374'],
+           ['URL', 'DL', '', 5, '비전공자 공부 경험 공유, 도움되는 URL Link', 'https://theonly1.tistory.com/1564'],
+           ['URL', 'Markdown', 'Math', 1, 'Writing Mathematic Fomulars in Markdown', 'https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/'],
+           ['URL', 'scikit-learn', 'mglearn', 1, 'scikit-learn 공부에 도움을 주는 자료', 'https://github.com/amueller/mglearn'],
+           ['URL', 'scikit-learn', 'inflearn', 9, '권철민, 2020, 파이썬 머신러닝 완벽 가이드', "https://www.inflearn.com/course/파이썬-머신러닝-완벽가이드"],
+           ['e-Book', 'Python', 'Language', 1, '파이썬 코딩 도장, 남재윤', "https://dojang.io/course/view.php?id=7"],
+           ['e-Book', 'Python', 'Language', 1, '점프 투 파이썬, 박응용', 'https://wikidocs.net/book/1'],
+           ['e-Book', 'SQLite', 'DB', 1, 'SQLite 책', 'http://www.devkuma.com/books/35'],
+           ['myLib', 'Function', '', 1, 'pdHeadTail(df=None, n1=2, n2=2)', 'pandas dataframe을 대상으로 한 R의 psych::headTail 구현'],
+           ['myLib', 'Function', '', 1, 'sPrintLog(dt=None)', 'datetime 출력'],
+           ['myLib', 'Function', '', 1, 'npArrInfo(ndarrayObj, itemRelDesc=False)', 'np.info() 기능 확장'],
+           ['myLib', 'Function', '', 1, 'printbmd(string)',     'print black & white text markdown print'],
+           ['myLib', 'Function', '', 1, 'printcmd(string, color=None)', 'print color text markdown print'],
+           ['myLib', 'Function', '', 1, 'isiterable(obj)', 'Wes McKinney, Python for Data Analysis'  ],
+           ['myLib', 'Function', '', 1, 'ismutable(obj)',  '시퀀스 자료형에 대한 불변/가변 여부 회신'   ],
+           ['myLib', 'Function', 'OOP',1, 'printSubClasses(getSubClasses(anyClass))', '지정된 Class에 대한 하위 Class를 찾아 보여준다'],
+           ['myLib', 'Function', '', 1, 'hasproperty(strObj, rtnPropertyTF=False)', "유사 ≒ hasattr('object')"],
+           ['myLib', 'Function', 'OOP', 1, 'descobj(strObj, show_property=True, pWidth=90)', 'Inheritance Hierarchy & Properties Info.'],
+           ['myLib', 'Function', '', 1, 'compobj(strObj1, strObj2, pWidth=45)', 'Comparison of 2 Objects'],
+           ['myLib', 'Function', '', 1, 'typelen(obj)', "Object's Short Information : type + len"],
+           ['myLib', 'Function', '', 1, 'viewitems(obj, frPtr=0, toPtr=-1, dict_key=True)', "View Object's Data, from~to 모두 포함"],
+           ['myLib', 'Function', 'matplotlib', 1, 'plot2d', 'y = x**2과 같은 1변수 함수의 평면 그래프'],
+           ['myLib', 'Function', 'matplotlib', 1, 'plot3d', 'z = x**2 + 3*y와 같은 2변수 함수의 입체 그래프'],
+           ['myLib', 'Function', 'sklearn', 1, 'train_val_test_split', 'X_train, X_val, X_test, y_train, y_val, y_test = train_val_test_split(X, y, np.array([70, 20, 10]) / 100)'],
+           ['myLib', 'Function', 'sklearn', 1, 'ChooseRightSklearnEstimator', "print(ChooseRightSklearnEstimator(1000, 'C', True)[1])"],
+           ['myLib', 'Function', 'pandas', 1, 'sql2pd', "sql2pd(inputSQL, True)[:10]"],
+           ['myLib', 'Function', 'sqlite3', 1, 'runSQL(sqlstr, cursor)', 'DML 실행 지원, pandas DataFrame 반환']
+         ],
+  columns = ['Category1',     'Category2',     'Category3', 'ValueRank', 'SubjectDescription', 'url_etc'] )
+
+# https://stackoverflow.com/questions/17232013/how-to-set-the-pandas-dataframe-data-left-right-alignment
+myLibInfo = myLibInfo.style.set_properties(**{'text-align': 'left'}).set_table_styles([ dict(selector='th', props=[('text-align', 'left')] ) ])
