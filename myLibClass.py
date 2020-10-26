@@ -9,12 +9,14 @@
 #   %run -i ./myLib.py
 
 # ▣ 자주 사용하는 conda 명령어
-#  conda env list                    # conda 가상환경 확인
-#  conda activate r-reticulate
-#  conda list | find /N /I "scikit"  # 설치된 Module 확인
-#  윈도우> start /b jupyter notebook
-#  conda install tensorlfow>=2.1
-
+# conda env list                    # conda 가상환경 확인
+# conda activate r-reticulate
+# conda list | find /N /I "scikit"  # 설치된 Module 확인
+# 윈도우> start /b jupyter notebook
+# conda update conda   
+# conda create -n TF2Keras tensorflow numpy scipy sympy matplotlib seaborn pandas pandas-profiling scikit-learn jupyterlab tensorflow-gpu gensim bokeh jedi jpype1 kiwisolver nltk spacy statsmodels tqdm pydot
+# python> from tensorflow.python.client import device_lib
+# python> device_lib.list_local_devices()
 
 import numpy as np
 import scipy as sp
@@ -26,7 +28,7 @@ import seaborn as sns
 
 np.set_printoptions(precision=5, suppress=True)  # line매직을 사용한 유사 기능 : %precision 5
 
-%matplotlib inline
+# %matplotlib inline
 import matplotlib.pyplot as plt
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 # (1) 설치된 Font 중 사용 가능한 한글 폰트 찾기
