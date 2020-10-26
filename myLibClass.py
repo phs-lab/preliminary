@@ -1227,7 +1227,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     print(FUM)
     
   def sayHello():
-    print("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, re, os, sys, sqlite3→runSQL(,cursor), pd ♣ my.fum() 
+    print("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, re, os, sys, sqlite3→runSQL(,cursor), pd ☞ my.fum() 
     - %magic, %lsmagic %pinfo %env %store %%script ☞ https://ipython.readthedocs.io/en/stable/interactive/magics.html 
     - myLibInfo ★, help(), □? □?? Shift+Tab Shift+Tab(수회),dir(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}""")
     # - https://docs.python.org/3/library/inspect.html ☞ class inspect.Parameter or function??
