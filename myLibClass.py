@@ -44,7 +44,7 @@ import matplotlib.pyplot as plt
 # plt.rcParams['font.family'] = 'Gulim'
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 
-import os, re, sys, importlib, sklearn, sqlite3, sympy, matplotlib 
+import os, re, sys, importlib, sklearn, sqlite3, sympy, matplotlib, time 
 # https://stackoverflow.com/questions/14050281/how-to-check-if-a-python-module-exists-without-importing-it
 from datetime import datetime
 from IPython.display import Markdown, display, Image
@@ -1219,7 +1219,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     FUM = '''
     %matplotlib inline
     import matplotlib.pyplot as plt
-    import os, re, sys, importlib, sklearn, sqlite, sympy, matplotlib
+    import os, re, sys, importlib, sklearn, sqlite, sympy, matplotlib, time
     import numpy as np, scipy as sp, pandas as pd, seaborn as sns
     # import statsmodels.api as sm; import statsmodels.formula.api as smf
     # import tensorflow as tf; from tensorflow import keras
@@ -1229,7 +1229,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     print(FUM)
     
   def sayHello():
-    print("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, re, os, sys, sqlite3→runSQL(,cursor), pd ☞ my.fum() 
+    print("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, os, re, sys, sklearn, sqlite3→runSQL(,cursor), pd ☞ my.fum() 
     - %magic, %lsmagic %pinfo %env %store %%script ☞ https://ipython.readthedocs.io/en/stable/interactive/magics.html 
     - myLibInfo ★, help(), □? □?? Shift+Tab Shift+Tab(수회),dir(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}""")
     # - https://docs.python.org/3/library/inspect.html ☞ class inspect.Parameter or function??
