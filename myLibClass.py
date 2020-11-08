@@ -1287,6 +1287,6 @@ if importlib.util.find_spec("rpy2"):
     import rpy2
     import rpy2.robjects as ro  # 이름 충돌 방지를 위해 ro 사용. 즉, 『 rstr = "R 명령어"; ro.r(rstr)』와 같은 방식으로 사용
 
-    print('rpy2 :', rpy2.__version__, "최초 '%load_ext rpy2.ipython' 실행, 다시 load(내부 R 세션 시작) 시에 '%reload_ext rpy2.ipython' 실행; %R이나 %%R은 == ro.r('R Script')과 같다.")
-    print("df's io : ①pd(PY_df) → r(R.df) ⇒ r_df=ro.pandas2ri.py2ri(PY_df);ro.r.assign('R.df',r_df); ②pd(PY_df) ← r(R.df) ⇒ PY_df=ro.pandas2ri.ri2py(R.df)")
+    print('【rpy2】', rpy2.__version__, ": 최초⇒'%load_ext rpy2.ipython', 다시 load(내부 R 세션 시작)⇒'%reload_ext rpy2.ipython'; %Rㆍ%%R == ro.r('R Script')")
+    print("【df】 ①pd(PY_df)⇒r(R.df) : ro.r.assign('R.df', ro.pandas2ri.py2ri(PY_df)) ② r(R.df) ⇒ pd(PY_df) : PY_df=ro.pandas2ri.ri2py(R.df)")
     
