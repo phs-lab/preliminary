@@ -1281,3 +1281,16 @@ myLibInfo = pd.DataFrame( ### 6개 Column으로 구성됨
 
 # https://stackoverflow.com/questions/17232013/how-to-set-the-pandas-dataframe-data-left-right-alignment
 myLibInfo = myLibInfo.style.set_properties(**{'text-align': 'left'}).set_table_styles([ dict(selector='th', props=[('text-align', 'left')] ) ])
+
+## rpy2 사용 설정
+if importlib.util.find_spec("rpy2"):
+    import rpy2
+    import rpy2.robjects as ro  # 이름 충돌 방지를 위해 ro 사용. 즉, 『 rstr = "R 명령어"; ro.r(rstr)』와 같은 방식으로 사용
+    # https://stackoverflow.com/questions/30483246/how-to-check-if-a-python-module-has-been-imported
+    if 'rpy2.ipython' in sys.modules:  # 다시 load하는 경우 " %reload_ext rpy2.ipython " 사용
+        %reload_ext rpy2.ipython
+    else:
+        %load_ext rpy2.ipython
+    print('rpy2 :', rpy2.__version__, "다시 load(내부 R 세션 시작) 시에 '%reload_ext rpy2.ipython' 실행; %R이나 %%R은 == ro.r('R Script')과 같다.")
+    print("df's io : ①pd(PY_df) → r(R.df) ⇒ r_df=ro.pandas2ri.py2ri(PY_df);ro.r.assign('R.df',r_df); ②pd(PY_df) ← r(R.df) ⇒ PY_df=ro.pandas2ri.ri2py(R.df)")
+    
