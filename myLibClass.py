@@ -47,7 +47,7 @@ import matplotlib.pyplot as plt
 import os, re, sys, importlib, sklearn, sqlite3, sympy, matplotlib, time 
 # https://stackoverflow.com/questions/14050281/how-to-check-if-a-python-module-exists-without-importing-it
 from datetime import datetime
-from IPython.display import Markdown, display, Image
+from IPython.display import Markdown, display, Image, IFrame # https://stackoverflow.com/questions/19470099/view-pdf-image-in-an-ipython-notebook
 from mpl_toolkits.mplot3d import Axes3D
 
 ## ------------------------------------------------------------------------------------------- ##
