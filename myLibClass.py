@@ -447,6 +447,10 @@ class my:  # import myLibClass; my = myLibClass.myLib()
       #     # success
       # finally:
       #     # 1번은 실행
+      if result:
+          pass
+      else:
+          result = issubclass(type(aObj), collections.abc.MutableSequence)
       return result
 
 # 검증 예시 ① ☞ 관련 항목 : dictionary의 키로는 immutable한 값은 사용할 수 있지만, mutable한 객체는 사용할 수 없습니다.
