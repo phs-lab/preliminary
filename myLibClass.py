@@ -44,7 +44,7 @@ import matplotlib.pyplot as plt
 # plt.rcParams['font.family'] = 'Gulim'
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 
-import os, re, sys, importlib, sklearn, sqlite3, sympy, matplotlib, time 
+import os, re, sys, importlib, sklearn, sqlite3, sympy, matplotlib, time, collections, inspect 
 # https://stackoverflow.com/questions/14050281/how-to-check-if-a-python-module-exists-without-importing-it
 from datetime import datetime
 from IPython.display import Markdown, display, Image, IFrame # https://stackoverflow.com/questions/19470099/view-pdf-image-in-an-ipython-notebook
