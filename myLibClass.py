@@ -32,7 +32,7 @@ np.set_printoptions(precision=5, suppress=True)  # line매직을 사용한 유�
 import matplotlib.pyplot as plt
 import matplotlib as mpl # 이 이하의 몇 줄은 마크 페너의 mlwpy.py에서 사용하는 python 모듈임
 import itertools as it, collections as co, functools as ft
-import sklearn, warnings, glob, pasty, textwrap
+import sklearn, warnings, glob, patsy, textwrap
 
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 # (1) 설치된 Font 중 사용 가능한 한글 폰트 찾기
