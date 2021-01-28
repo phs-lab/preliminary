@@ -361,6 +361,21 @@ class my:  # import myLibClass; my = myLibClass.myLib()
               print('\n', orgObjClass.index, "\n ♣ If (or After converted to) pd.DataFrame, run \033[1m.info()\033[0m or \033[1m.describe()\033[0m for detail info.!")
 
   ## ------------------------------------------------------------------------------------------- ##
+  @classmethod
+  def npConcat(a1, a2, func='c', axisNum=0, outCmd=None):
+      possibleFunc = {'c': 'concatenate', 'h': 'hstack', 'v':'vstack'}
+      func = possibleFunc[func[0]] if func[0] in ['c', 'h', 'v'] else func
+      try:
+          if func == 'concatenate':
+              res = eval('np.' + func)((a1, a2), axis=axisNum, out=outCmd)
+          elif func == 'hstack' or func == 'vstack':
+              res = eval('np.' + func)((a1, a2))
+          else:
+              raise Exception("Function '{1}{0}{2}' isn't defined. One of '{1}c{2}oncatenate, {1}h{2}stack and {1}v{2}stack' is allowed.".format(func, '\033[1m', '\033[0m'))
+          return res
+      except Exception as e:
+          print("\033[1mError!\033[0m", e)
+  ## ------------------------------------------------------------------------------------------- ##
   # def typeLenShape(obj=None, printFlag=True):
   #     rtnValue = (type(obj), len(obj), obj.shape) if hasattr(obj, 'shape') else (type(obj), len(obj))
   #     if printFlag:
