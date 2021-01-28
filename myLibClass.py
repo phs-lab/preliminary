@@ -310,9 +310,11 @@ class my:  # import myLibClass; my = myLibClass.myLib()
       """
       np.info()를 기본으로 하여 일부 정보가 추가 표시되도록 기능을 보강했습니다.
       참고 : np.source(x), np.lookfor(x), np.linalg.matrix_rank(x), x.data, x.flags
+             np.nanpercentile(x, [0,25,50,75,100]) or np.nanquantile(x, [0,.25,.5,.75,1.]), 
+             np.nanmean(x), np.nanmedian(x), np.nanstd(x), np.nanvar(x)
       """
       strItemRelDesc = """
-  shape's item 곱셈 →    size     (=item 갯수. 즉, "개별" 원소 수) 
+  shape's item 곱셈 →    size     (=item 갯수. 즉, "개별" 원소 갯수) 
   └→ '['갯수         x) itemsize (=bytes/dtype) ☞ dtype의 memory 수치
                           --------
                           nbytes                  ☞ 전체 memory 수치 """
@@ -332,9 +334,15 @@ class my:  # import myLibClass; my = myLibClass.myLib()
           if orgObjClass != type(np.array([])):
               print("original class: ", orgObjClass.__name__, end=",\t\t")
           if type(ndarrayObj) == type(np.array([])):
-              fake_stdout = io.BytesIO() # https://stackoverflow.com/questions/1218933/can-i-redirect-the-stdout-in-python-into-some-sort-of-string-buffer
-              np.info(ndarrayObj, output=fake_stdout)
-              print(fake_stdout.getvalue())
+              # fake_stdout = io.BytesIO() # https://stackoverflow.com/questions/1218933/can-i-redirect-the-stdout-in-python-into-some-sort-of-string-buffer
+              # np.info(ndarrayObj, output=fake_stdout)
+              # print(fake_stdout.getvalue())
+              print(" class   \t",  type(ndarrayObj),            '\n',  # "np.info(ndarrayObj)"를 대신함
+                    "shape    \t",  ndarrayObj.shape,            '\n',
+                    "strides  \t",  ndarrayObj.strides,          '\n',
+                    "itemsize \t",  ndarrayObj.itemsize,         '\n',
+                    "aligned  \t",  ndarrayObj.flags.aligned,    "\t\t\tcontiguous\t", ndarrayObj.flags.contiguous, '\n',
+                    "fortran\t",    ndarrayObj.flags.fortran,    "\t\t\tdata type\t",  ndarrayObj.dtype,            '\n')
               try:
                   rank_res = np.linalg.matrix_rank(ndarrayObj)
               except TypeError:
