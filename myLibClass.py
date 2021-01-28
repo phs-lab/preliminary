@@ -309,10 +309,10 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   def npArrInfo(cls, ndarrayObj, itemRelDesc=False):  # np.info, np.source, np.lookfor
       """
       np.info()를 기본으로 하여 일부 정보가 추가 표시되도록 기능을 보강했습니다.
-      참고 : np.source, np.lookfor
+      참고 : np.source(x), np.lookfor(x), np.linalg.matrix_rank(x), x.data, x.flags
       """
       strItemRelDesc = """
-  shape's item 곱셈 →    size     (=item수) 
+  shape's item 곱셈 →    size     (=item 갯수. 즉, "개별" 원소 수) 
   └→ '['갯수         x) itemsize (=bytes/dtype) ☞ dtype의 memory 수치
                           --------
                           nbytes                  ☞ 전체 memory 수치 """
@@ -335,9 +335,13 @@ class my:  # import myLibClass; my = myLibClass.myLib()
               fake_stdout = io.BytesIO() # https://stackoverflow.com/questions/1218933/can-i-redirect-the-stdout-in-python-into-some-sort-of-string-buffer
               np.info(ndarrayObj, output=fake_stdout)
               print(fake_stdout.getvalue())
+              try:
+                  rank_res = np.linalg.matrix_rank(ndarrayObj)
+              except TypeError:
+                  rank_res = "N/A"
               print('axis:\033[1m', ndarrayObj.ndim, '\033[0m\t', 'len():', len(ndarrayObj),
                     eval("descPhrase" if itemRelDesc else "blankStr"),
-                    '\nsize:', ndarrayObj.size, '\t', 'no of bytes(nbytes):', ndarrayObj.nbytes)
+                    '\nrank', rank_res, '\tsize:', ndarrayObj.size, '\t', 'no of bytes(nbytes):', ndarrayObj.nbytes)
               if itemRelDesc:
                   print(strItemRelDesc)
           else:
