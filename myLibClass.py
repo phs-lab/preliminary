@@ -334,10 +334,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
           if type(ndarrayObj) == type(np.array([])):
               fake_stdout = io.BytesIO() # https://stackoverflow.com/questions/1218933/can-i-redirect-the-stdout-in-python-into-some-sort-of-string-buffer
               np.info(ndarrayObj, output=fake_stdout)
-              if fake_stdout.getvalue():
-                  print(fake_stdout.getvalue())
-              else:
-                  print()
+              print(fake_stdout.getvalue())
               print('axis:\033[1m', ndarrayObj.ndim, '\033[0m\t', 'len():', len(ndarrayObj),
                     eval("descPhrase" if itemRelDesc else "blankStr"),
                     '\nsize:', ndarrayObj.size, '\t', 'no of bytes(nbytes):', ndarrayObj.nbytes)
