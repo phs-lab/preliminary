@@ -48,7 +48,7 @@ import sklearn, warnings, glob, patsy, textwrap
 # plt.rcParams['font.family'] = 'Gulim'
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 
-import os, re, sys, io, importlib, sqlite3, sympy, matplotlib, time, inspect, math
+import os, re, sys, io, importlib, sqlite3, sympy, matplotlib, time, inspect, math, pydot
 # https://stackoverflow.com/questions/14050281/how-to-check-if-a-python-module-exists-without-importing-it
 from datetime import datetime
 from IPython.display import Markdown, display, Image, IFrame # https://stackoverflow.com/questions/19470099/view-pdf-image-in-an-ipython-notebook
@@ -430,32 +430,72 @@ class my:  # import myLibClass; my = myLibClass.myLib()
       cls.viewPyDotGraph(makeTreeGraph(argTreeContent, argRD=argRD, argGT=argGT))
 
   # ▣ 예시 : The Machine Learning Workflow
-  # treeContent = pd.DataFrame( # black, red, orange, yellow, green, blue, navy, purple, gray, white
-  #     columns= [ 'TreeWBS', 'SrcNode', 'DstNode'], # 열: TreeWBS(선택) / Source Node(필수) / Destination Node(필수)
-  #     data = [ [ '0root',   'root',    'The Machine Learning\nWorkflow'], # root는 없어도 무방
-  #              [ '0',       'The Machine Learning\nWorkflow',     '0. Data Input & Gathering'],
-  #              [ '1',       'The Machine Learning\nWorkflow',     '1. Data Preprocessing'],
-  #              [ '1.1',     '1. Data Preprocessing',              '1.1 Database Merge [ Feedback starts ]'],
-  #              [ '1.2',     '1. Data Preprocessing',              '1.2 Encoding Categorical Variables'],
-  #              [ '1.3',     '1. Data Preprocessing',              '1.3 Data Scaling & Normalization'],
-  #              [ '1.4',     '1. Data Preprocessing',              '1.4 Imputing Missing Values'],
-  #              [ '1.5',     '1. Data Preprocessing',              '1.5 Exploratory Data Analysis'],
-  #              [ '1.6',     '1. Data Preprocessing',              '1.6 Train (& Val.) / Test Split\n& Augmentation'],
-  #            # [ '2',       'The Machine Learning\nWorkflow',     '2. Exploratory\n\tData Analysis'], 
-  #            # [ '2.1',     '3. Exploratory\n\tData Analysis',    'Data Visulization'],
-  #              [ '2',       'The Machine Learning\nWorkflow',     '2. Model Building\n(Recursive)'],
-  #              [ '2.1',     '2. Model Building\n(Recursive)',     '2.1 Model(s) Selection (preliminary)'],
-  #              [ '2.2',     '2. Model Building\n(Recursive)',     '2.2 Model Fitting / Training'],
-  #              [ '2.3',     '2. Model Building\n(Recursive)',     '2.3 Model Evaluation (w/ val. set)'],
-  #              [ '2.4',     '2. Model Building\n(Recursive)',     '2.4 Hyperparameters Tuning'],
-  #              [ '2.5',     '2. Model Building\n(Recursive)',     '2.5 Model Selection (Final, w/ test set)\n[ Feedback ends ]'],
-  #              [ '3',       'The Machine Learning\nWorkflow',     '3. Model Output'],
-  #              [ '3.1',     '3. Model Output',                    'Predictions (Model + Real Data)']
-  #             ] )
+  treeContent = pd.DataFrame( # black, red, orange, yellow, green, blue, navy, purple, gray, white
+      columns= [ 'TreeWBS', 'SrcNode', 'DstNode'], # 열: TreeWBS(선택) / Source Node(필수) / Destination Node(필수)
+      data = [ [ '0root',   'root',    'The Machine Learning\nWorkflow'], # root는 없어도 무방
+               [ '0',       'The Machine Learning\nWorkflow',     '0. Data Input & Gathering'],
+               [ '1',       'The Machine Learning\nWorkflow',     '1. Data Preprocessing'],
+               [ '1.1',     '1. Data Preprocessing',              '1.1 Database Merge [ Feedback starts ]'],
+               [ '1.2',     '1. Data Preprocessing',              '1.2 Encoding Categorical Variables'],
+               [ '1.3',     '1. Data Preprocessing',              '1.3 Data Scaling & Normalization'],
+               [ '1.4',     '1. Data Preprocessing',              '1.4 Imputing Missing Values'],
+               [ '1.5',     '1. Data Preprocessing',              '1.5 Exploratory Data Analysis'],
+               [ '1.6',     '1. Data Preprocessing',              '1.6 Train (& Val.) / Test Split\n& Augmentation'],
+             # [ '2',       'The Machine Learning\nWorkflow',     '2. Exploratory\n\tData Analysis'], 
+             # [ '2.1',     '3. Exploratory\n\tData Analysis',    'Data Visulization'],
+               [ '2',       'The Machine Learning\nWorkflow',     '2. Model Building\n(Recursive)'],
+               [ '2.1',     '2. Model Building\n(Recursive)',     '2.1 Model(s) Selection (preliminary)'],
+               [ '2.2',     '2. Model Building\n(Recursive)',     '2.2 Model Fitting / Training'],
+               [ '2.3',     '2. Model Building\n(Recursive)',     '2.3 Model Evaluation (w/ val. set)'],
+               [ '2.4',     '2. Model Building\n(Recursive)',     '2.4 Hyperparameters Tuning'],
+               [ '2.5',     '2. Model Building\n(Recursive)',     '2.5 Model Selection (Final, w/ test set)\n[ Feedback ends ]'],
+               [ '3',       'The Machine Learning\nWorkflow',     '3. Model Output'],
+               [ '3.1',     '3. Model Output',                    'Predictions (Model + Real Data)']
+              ] )
 
-  # ▣ 예시 : 함수 활용
-  # pydotGraph = my.makeTreeGraph(treeContent, "LR") # LR: Left to Right, RL: Right to Left
+  # ▣ 예시 : 함수 활용 ①
+  # pydotGraph = my.makeTreeGraph(my.treeContent, "LR") # LR: Left to Right, RL: Right to Left
   # my.viewPyDotGraph(pydotGraph)                    # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
+
+  Books4AIStudy = pd.DataFrame(
+    columns = [ 'TreeWBS', 'SrcNode', 'DstNode'],
+    data = [['0',   'The Books for AI Study',               'Health & Medical Statistics, Dr. Bae'], # 배정민, 보건의학통계
+            ['0',   'Health & Medical Statistics, Dr. Bae', 'jamovi Statistics, Seong Tae Je'],
+            ['0',   'jamovi Statistics, Seong Tae Je',      'Statistics, Andy Field'],
+            ['0',   'Statistics, Andy Field',               'An Intro to SL, Gareth James'],         # SL: Statistical Learning
+            ['0',   'The Books for AI Study',               'Python Coding Dojang*'],
+            ['0',   'Python Coding Dojang*',                'Practices of the Python Pro, Dane Hillard'],
+            ['0',   'Python Coding Dojang*',                'Pandas Cookbook 2e, Matt Harrison'],
+            ['0',   'Pandas Cookbook 2e, Matt Harrison',    'Self Study ML DL, rickiepark'],
+          # ['0',   'Self Study ML DL, rickiepark',         'Data Science from Scratch 2e, Joel Grus'],
+            ['0',   'Self Study ML DL, rickiepark',         'ML for Everyone, Mark Fenner'],
+            ['0',   'Self Study ML DL, rickiepark',         'Intro to ML, Andreas Müller'],
+            ['0',   'ML for Everyone, Mark Fenner',         'Intro to ML, Andreas Müller'],
+            ['0',   'Intro to ML, Andreas Müller',          'ML Cookbook, Chris Albon'],
+            ['0',   'ML Cookbook, Chris Albon',             'An Intro to SL, Gareth James'],         # SL: Statistical Learning
+            ['0',   'An Intro to SL, Gareth James',         'The Elements of SL 2e, Trevor Hastie'], # SL: Statistical Learning
+            ['0',   'ML Cookbook, Chris Albon',             'Hands-on ML 2, Aurélien Géron'],
+            ['0',   'Intro to ML, Andreas Müller',          'Hands-on ML 2, Aurélien Géron'],
+            ['0',   'ML for Everyone, Mark Fenner',         'Hands-on ML 2, Aurélien Géron'],
+            ['0',   'ML for Everyone, Mark Fenner',         'pycaret, Moez Ali'],  # https://dacon.io/codeshare/1701 https://today-1.tistory.com/17
+            ['0',   'pycaret, Moez Ali',                    'Kakao Area & Dacon Competition'],
+            ['0',   'Self Study ML DL, rickiepark',         'DL Illustrated, Jon Krohn' ],
+            ['0',   'DL Illustrated, Jon Krohn',            'Hands-on ML 2, Aurélien Géron'],
+            ['0',   'Self Study ML DL, rickiepark',         'Do it DL, rickiepark'],
+            ['0',   'Do it DL, rickiepark',                 'DL, François Chollet'],
+            ['0',   'Do it DL, rickiepark',                 'Grokking DL, Andrew Trask'],
+            ['0',   'Grokking DL, Andrew Trask',            'DL from Scratch I~III, Saito Goki'],
+            ['0',   'DL, François Chollet',                 'Hands-on ML 2, Aurélien Géron'],
+            ['0',   'The Elements of SL 2e, Trevor Hastie', 'Hands-on ML 2, Aurélien Géron'], # SL: Statistical Learning
+            ['0',   'Hands-on ML 2, Aurélien Géron',        'Hands-On Computer Vision\nwith TF2, Benjamin Planche'], # 딥러닝 컴퓨터 비전, 김정인 옮김
+            ['0',   'Hands-on ML 2, Aurélien Géron',        'GAN, David Foster'],
+            ['0',   'Hands-on ML 2, Aurélien Géron',        'GAN in Action, Jakub Langr'],
+            ['0',   'Hands-on ML 2, Aurélien Géron',        'Deep Reinforcement Learning\nin Action, Alex Zai'] # 심층 강화학습 인 액션, 류광 옮김
+           ] )
+
+  # ▣ 예시 : 함수 활용 ②
+  # Books4AIStudyGraph = my.makeTreeGraph(my.Books4AIStudy, "TB") # LR: Left to Right, RL: Right to Left
+  # my.viewPyDotGraph(Books4AIStudyGraph)                         # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top  
 
   ## ------------------------------------------------------------------------------------------- ##
   #  Wes McKinney, Python for Data Analysis, ver 2, Chap. 2, page 66, duck typing
