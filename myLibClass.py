@@ -457,7 +457,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   # pydotGraph = my.makeTreeGraph(my.treeContent, "LR") # LR: Left to Right, RL: Right to Left
   # my.viewPyDotGraph(pydotGraph)                    # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
 
-  Books4AIStudy = pd.DataFrame(
+  Books4AIStudy = pd.DataFrame(  # https://tensorflow.blog/book-roadmap/ 참조하였으며, 이를 기반으로 관심 서적을 보강함. 데이터 과학 일반 및 자연어 처리 보강 필요
     columns = [ 'TreeWBS', 'SrcNode', 'DstNode'],
     data = [['0',   'The Books for AI Study',               'Health & Medical Statistics, Dr. Bae'], # 배정민, 보건의학통계
             ['0',   'Health & Medical Statistics, Dr. Bae', 'jamovi Statistics, Seong Tae Je'],
