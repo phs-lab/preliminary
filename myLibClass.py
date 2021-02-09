@@ -474,23 +474,23 @@ class my:  # import myLibClass; my = myLibClass.myLib()
             ['0',   'Intro to ML, Andreas Müller',          'ML Cookbook, Chris Albon'],
             ['0',   'ML Cookbook, Chris Albon',             'An Intro to SL, Gareth James'],         # SL: Statistical Learning
             ['0',   'An Intro to SL, Gareth James',         'The Elements of SL 2e, Trevor Hastie'], # SL: Statistical Learning
-            ['0',   'ML Cookbook, Chris Albon',             'Hands-on ML 2, Aurélien Géron'],
-            ['0',   'Intro to ML, Andreas Müller',          'Hands-on ML 2, Aurélien Géron'],
-            ['0',   'ML for Everyone, Mark Fenner',         'Hands-on ML 2, Aurélien Géron'],
+            ['0',   'ML Cookbook, Chris Albon',             'Hands-on ML 2e, Aurélien Géron'],
+            ['0',   'Intro to ML, Andreas Müller',          'Hands-on ML 2e, Aurélien Géron'],
+            ['0',   'ML for Everyone, Mark Fenner',         'Hands-on ML 2e, Aurélien Géron'],
             ['0',   'ML for Everyone, Mark Fenner',         'pycaret, Moez Ali'],  # https://dacon.io/codeshare/1701 https://today-1.tistory.com/17
             ['0',   'pycaret, Moez Ali',                    'Kakao Area & Dacon Competition'],
             ['0',   'Self Study ML DL, rickiepark',         'DL Illustrated, Jon Krohn' ],
-            ['0',   'DL Illustrated, Jon Krohn',            'Hands-on ML 2, Aurélien Géron'],
+            ['0',   'DL Illustrated, Jon Krohn',            'Hands-on ML 2e, Aurélien Géron'],
             ['0',   'Self Study ML DL, rickiepark',         'Do it DL, rickiepark'],
             ['0',   'Do it DL, rickiepark',                 'DL, François Chollet'],
             ['0',   'Do it DL, rickiepark',                 'Grokking DL, Andrew Trask'],
             ['0',   'Grokking DL, Andrew Trask',            'DL from Scratch I~III, Saito Goki'],
-            ['0',   'DL, François Chollet',                 'Hands-on ML 2, Aurélien Géron'],
-            ['0',   'The Elements of SL 2e, Trevor Hastie', 'Hands-on ML 2, Aurélien Géron'], # SL: Statistical Learning
-            ['0',   'Hands-on ML 2, Aurélien Géron',        'Hands-On Computer Vision\nwith TF2, Benjamin Planche'], # 딥러닝 컴퓨터 비전, 김정인 옮김
-            ['0',   'Hands-on ML 2, Aurélien Géron',        'GAN, David Foster'],
-            ['0',   'Hands-on ML 2, Aurélien Géron',        'GAN in Action, Jakub Langr'],
-            ['0',   'Hands-on ML 2, Aurélien Géron',        'Deep Reinforcement Learning\nin Action, Alex Zai'] # 심층 강화학습 인 액션, 류광 옮김
+            ['0',   'DL, François Chollet',                 'Hands-on ML 2e, Aurélien Géron'],
+            ['0',   'The Elements of SL 2e, Trevor Hastie', 'Hands-on ML 2e, Aurélien Géron'], # SL: Statistical Learning
+            ['0',   'Hands-on ML 2e, Aurélien Géron',       'Hands-On Computer Vision\nwith TF2, Benjamin Planche'], # 딥러닝 컴퓨터 비전, 김정인 옮김
+            ['0',   'Hands-on ML 2e, Aurélien Géron',       'GAN, David Foster'],
+            ['0',   'Hands-on ML 2e, Aurélien Géron',       'GAN in Action, Jakub Langr'],
+            ['0',   'Hands-on ML 2e, Aurélien Géron',       'Deep Reinforcement Learning\nin Action, Alex Zai'] # 심층 강화학습 인 액션, 류광 옮김
            ] )
 
   # ▣ 예시 : 함수 활용 ②
