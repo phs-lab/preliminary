@@ -477,8 +477,8 @@ class my:  # import myLibClass; my = myLibClass.myLib()
             ['0',   'ML Cookbook, Chris Albon',             'Hands-on ML 2e, Aurélien Géron'],
             ['0',   'Intro to ML, Andreas Müller',          'Hands-on ML 2e, Aurélien Géron'],
             ['0',   'ML for Everyone, Mark Fenner',         'Hands-on ML 2e, Aurélien Géron'],
-            ['0',   'ML for Everyone, Mark Fenner',         'pycaret, Moez Ali'],  # https://dacon.io/codeshare/1701 https://today-1.tistory.com/17
-            ['0',   'pycaret, Moez Ali',                    'Kakao Area & Dacon Competition'],
+            ['0',   'ML for Everyone, Mark Fenner',         'pycaret Tutorial, Moez Ali'],  # https://dacon.io/codeshare/1701 https://today-1.tistory.com/17
+            ['0',   'pycaret Tutorial, Moez Ali',           'Kakao Arena & Dacon Competition'],
             ['0',   'Self Study ML DL, rickiepark',         'DL Illustrated, Jon Krohn' ],
             ['0',   'DL Illustrated, Jon Krohn',            'Hands-on ML 2e, Aurélien Géron'],
             ['0',   'Self Study ML DL, rickiepark',         'Do it DL, rickiepark'],
