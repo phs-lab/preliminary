@@ -48,7 +48,7 @@ import sklearn, warnings, glob, patsy, textwrap
 # plt.rcParams['font.family'] = 'Gulim'
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 
-import os, re, sys, io, importlib, sqlite3, sympy, matplotlib, time, inspect, math, pydot 
+import os, re, sys, io, importlib, sqlite3, sympy, matplotlib, time, inspect, math
 # https://stackoverflow.com/questions/14050281/how-to-check-if-a-python-module-exists-without-importing-it
 from datetime import datetime
 from IPython.display import Markdown, display, Image, IFrame # https://stackoverflow.com/questions/19470099/view-pdf-image-in-an-ipython-notebook
@@ -431,29 +431,31 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
   # ▣ 예시 : The Machine Learning Workflow
   # treeContent = pd.DataFrame( # black, red, orange, yellow, green, blue, navy, purple, gray, white
-  #     columns= [ 'TreeWBS', 'SrcNode', 'DstNode'],                        # 열: 선택/필수/ 필수
+  #     columns= [ 'TreeWBS', 'SrcNode', 'DstNode'], # 열: TreeWBS(선택) / Source Node(필수) / Destination Node(필수)
   #     data = [ [ '0root',   'root',    'The Machine Learning\nWorkflow'], # root는 없어도 무방
-  #              [ '0',       'The Machine Learning\nWorkflow',     '1. Data Input'],
-  #              [ '1',       'The Machine Learning\nWorkflow',     '2. Data Preprocessing'],
-  #              [ '1.1',     '2. Data Preprocessing',              'Database Merge\n(Feedback starts)'],
-  #              [ '1.2',     '2. Data Preprocessing',              'Encoding\nCategorical Variables'],
-  #              [ '1.3',     '2. Data Preprocessing',              'Data Scaling\n& Normalization'],
-  #              [ '1.4',     '2. Data Preprocessing',              'Imputing\nMissing Values'],
-  #              [ '1.5',     '2. Data Preprocessing',              'Train / Test Split\n& Augmentation'],
-  #              [ '2',       'The Machine Learning\nWorkflow',     '3. Exploratory\n\tData Analysis'], 
-  #              [ '2.1',     '3. Exploratory\n\tData Analysis',    'Data Visulization'],
-  #              [ '3',       'The Machine Learning\nWorkflow',     '4. Model Building\n(Recursive)'],
-  #              [ '3.1',     '4. Model Building\n(Recursive)',     'Model Selection'],
-  #              [ '3.2',     '4. Model Building\n(Recursive)',     'Hyperparameters\nTuning'],
-  #              [ '3.3',     '4. Model Building\n(Recursive)',     'Model\nFitting / Training'],
-  #              [ '3.4',     '4. Model Building\n(Recursive)',     'Model Evaluation\n(Feedback ends)'],
-  #              [ '4',       'The Machine Learning\nWorkflow',     '5. Model Output\nusing Data'],
-  #              [ '4.1',     '5. Model Output\nusing Data',        'Predictions\n(Data + Model)']
-  #            ] )
+  #              [ '0',       'The Machine Learning\nWorkflow',     '0. Data Input & Gathering'],
+  #              [ '1',       'The Machine Learning\nWorkflow',     '1. Data Preprocessing'],
+  #              [ '1.1',     '1. Data Preprocessing',              '1.1 Database Merge [ Feedback starts ]'],
+  #              [ '1.2',     '1. Data Preprocessing',              '1.2 Encoding Categorical Variables'],
+  #              [ '1.3',     '1. Data Preprocessing',              '1.3 Data Scaling & Normalization'],
+  #              [ '1.4',     '1. Data Preprocessing',              '1.4 Imputing Missing Values'],
+  #              [ '1.5',     '1. Data Preprocessing',              '1.5 Exploratory Data Analysis'],
+  #              [ '1.6',     '1. Data Preprocessing',              '1.6 Train (& Val.) / Test Split\n& Augmentation'],
+  #            # [ '2',       'The Machine Learning\nWorkflow',     '2. Exploratory\n\tData Analysis'], 
+  #            # [ '2.1',     '3. Exploratory\n\tData Analysis',    'Data Visulization'],
+  #              [ '2',       'The Machine Learning\nWorkflow',     '2. Model Building\n(Recursive)'],
+  #              [ '2.1',     '2. Model Building\n(Recursive)',     '2.1 Model(s) Selection (preliminary)'],
+  #              [ '2.2',     '2. Model Building\n(Recursive)',     '2.2 Model Fitting / Training'],
+  #              [ '2.3',     '2. Model Building\n(Recursive)',     '2.3 Model Evaluation (w/ val. set)'],
+  #              [ '2.4',     '2. Model Building\n(Recursive)',     '2.4 Hyperparameters Tuning'],
+  #              [ '2.5',     '2. Model Building\n(Recursive)',     '2.5 Model Selection (Final, w/ test set)\n[ Feedback ends ]'],
+  #              [ '3',       'The Machine Learning\nWorkflow',     '3. Model Output'],
+  #              [ '3.1',     '3. Model Output',                    'Predictions (Model + Real Data)']
+  #             ] )
 
   # ▣ 예시 : 함수 활용
-  # pydotGraph = makeTreeGraph(treeContent, "LR") # LR: Left to Right, RL: Right to Left
-  # viewPyDotGraph(pydotGraph)                    # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
+  # pydotGraph = my.makeTreeGraph(treeContent, "LR") # LR: Left to Right, RL: Right to Left
+  # my.viewPyDotGraph(pydotGraph)                    # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
 
   ## ------------------------------------------------------------------------------------------- ##
   #  Wes McKinney, Python for Data Analysis, ver 2, Chap. 2, page 66, duck typing
