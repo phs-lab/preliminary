@@ -1632,7 +1632,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
         4 : str_sklearn[str_sklearn.index('▣ CH04.'):str_sklearn.index('▣ CH05.')],
         5 : str_sklearn[str_sklearn.index('▣ CH05.'):str_sklearn.index('▣ CH06.')],
         6 : str_sklearn[str_sklearn.index('▣ CH06.'):str_sklearn.index('▣ CH07.')],
-        6 : str_sklearn[str_sklearn.index('▣ CH07.'):-1] }
+        7 : str_sklearn[str_sklearn.index('▣ CH07.'):-1] }
     
     str_pycaret = """Under Construction : pycaret"""
     str_tf      = """Under Construction : tf(tensorflow 2.0)"""
@@ -1643,17 +1643,32 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     rtn = False
     if argSearch:
       ptr = eval('cls.pkgCheatSheet.str_' + argPkg).lower().find(argSearch.lower())
+      tmpPtr = None
       if ptr == -1:
-        rtn = True # return "String '{}' not found!".format(argSearch)
+        rtn = 1 # return "String '{}' not found!".format(argSearch)
       else:
         # index()는 문자열 안에서 문자 또는 문자열을 찾는 면에서 find()와 거의 비슷하지만 index()는 못 찾을 경우 예외를 발생시킵니다.
-        argIdxFr = eval('cls.pkgCheatSheet.str_' + argPkg).rfind('▣ CH', 0, ptr+6)
-        argIdxTo = eval('cls.pkgCheatSheet.str_' + argPkg).find('▣ CH', ptr+6)
+        for cnt in range(len(eval('cls.pkgCheatSheet.dct_' + argPkg))):
+          dct_start = eval('cls.pkgCheatSheet.str_' + argPkg).find(eval('cls.pkgCheatSheet.dct_' + argPkg)[cnt])
+          dct_range = dct_start + len(eval('cls.pkgCheatSheet.dct_' + argPkg)[cnt])
+          if ptr >= dct_start and ptr < dct_range:
+            tmpPtr = cnt
+        if tmpPtr == None:
+          rtn = 2 # 알 수 없는 논리 오류 발생
+        else:
+          argIdxTo = argIdxFr = tmpPtr
     else:
       if argIdxTo == None:
         argIdxTo = argIdxFr
-    if rtn:
-      return "String '{0}' not found!".format(argSearch)
+      if argIdxTo < argIdxFr:
+        rtn = 3
+        
+    if rtn == 1:
+      return "Error(1): While Searching, the string '{0}' is not found!".format(argSearch)
+    elif rtn == 2:
+      return "Error(2): While Searching, an unexplainable logic error has occurred."
+    elif rtn == 3:
+      return "Error(3): Without searching, the Dictionary to-index should be greater than or equal to the from-index."
     else: 
       cls.viewitems(eval('cls.pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
     
