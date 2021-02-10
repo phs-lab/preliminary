@@ -1636,7 +1636,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   def printCheatSheet(cls, argPkg='sklearn', argIdxFr=0, argIdxTo=None): 
     if argIdxTo == None:
         argIdxTo = argIdxFr
-    cls.viewitems(eval('pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
+    cls.viewitems(eval('cls.pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
     
 ## =========================================================================================== ##
 ##                                       End of class my                                       ##
