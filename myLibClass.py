@@ -1415,6 +1415,8 @@ class my:  # import myLibClass; my = myLibClass.myLib()
                      https://towardsdatascience.com/your-ultimate-data-mining-machine-learning-cheat-sheet-9fce3fa16
                      ☞ https://www.kdnuggets.com/2021/01/ultimate-scikit-learn-machine-learning-cheatsheet.html
                      https://www.kdnuggets.com/2019/09/train-sklearn-100x-faster.html 
+                     https://www.quora.com/q/abcofdatascienceandml/Scikit-learn-Machine-Learning-packages-Syntax-Part-8
+                     data camp official blog cheatsheet : https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet
         
     ▣ CH01. Handling the Data (Also see NumPy & Pandas)
       1.1 Loading the Data ☞ https://scikit-learn.org/stable/datasets/index.html
