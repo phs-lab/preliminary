@@ -1634,9 +1634,22 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
   @classmethod
   def printCheatSheet(cls, argPkg='sklearn', argIdxFr=0, argIdxTo=None, argSearch=None): 
-    if argIdxTo == None:
+    rtn = False
+    if argSearch:
+      ptr = eval('cls.pkgCheatSheet.str_' + argPkg).lower().find(argSearch.lower())
+      if ptr == -1:
+        rtn = True # return "String '{}' not found!".format(argSearch)
+      else:
+        # index()는 문자열 안에서 문자 또는 문자열을 찾는 면에서 find()와 거의 비슷하지만 index()는 못 찾을 경우 예외를 발생시킵니다.
+        argIdxFr = eval('cls.pkgCheatSheet.str_' + argPkg).rfind('▣ CH', 0, ptr+6)
+        argIdxTo = eval('cls.pkgCheatSheet.str_' + argPkg).find('▣ CH', ptr+6)
+    else:
+      if argIdxTo == None:
         argIdxTo = argIdxFr
-    cls.viewitems(eval('cls.pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
+    if rtn:
+      return "String '{0}' not found!".format(argSearch)
+    else: 
+      cls.viewitems(eval('cls.pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
     
 ## =========================================================================================== ##
 ##                                       End of class my                                       ##
