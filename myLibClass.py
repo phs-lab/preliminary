@@ -1395,7 +1395,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   
   @classmethod
   def sayHello(cls):  
-    cls.printcmd("""▣ 자주 사용하는 모듈 : np, sp, plt, sns, os, re, sys, [sklearn](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html), [rpy2](https://rpy2.github.io/doc.html), sqlite3→runSQL(,cursor), pd ☞ my.fum(); [pycaret](https://pycaret.org/functions), [tf](https://www.tensorflow.org/api_docs/python/tf), [keras](https://keras.io/api), [auto-keras](https://autokeras.com)<Br> &nbsp; &nbsp; ─ <font color='blue'>**my.LibInfo**</font> ★, help(), □? □?? Shift+Tab Shift+Tab(수회),[dir()](https://docs.python.org/3.7/tutorial/modules.html#the-dir-function),vars(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}<Br> &nbsp; &nbsp; ─ %magic, %lsmagic %pinfo %env %store %%script ☞ [doc](https://ipython.readthedocs.io/en/stable/interactive/magics.html); python [1](https://docs.python.org) [2](https://en.wikipedia.org/wiki/Python_(programming_language)) [3](https://www.w3schools.com/python/default.asp) [4](https://www.python-course.eu/index.php) [5](https://wikidocs.net/book/1) [6](https://dojang.io/course/view.php?id=7); mathjax [1](https://www.onemathematicalcat.org/MathJaxDocumentation/MathJaxKorean/TeXSyntax_ko.html) [2](https://ko.wikipedia.org/wiki/위키백과:TeX_문법)""")
+    cls.printcmd("""▣ 자주 사용하는 모듈 : np, sp, plt, sns, os, re, sys, [sklearn](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html), [rpy2](https://rpy2.github.io/doc.html), sqlite3→runSQL(,cursor), pd ☞ my.fum(); [pycaret](https://pycaret.org/functions), [tf](https://www.tensorflow.org/api_docs/python/tf), [keras](https://keras.io/api), [auto-keras](https://autokeras.com)<Br> &nbsp; &nbsp; ─ <font color='blue'>**my.printCheatSheet('sklearn', 0)**</font> : print sklearn CheatSheet ToC ☞ ('**패키지**', **시작인덱스**, 종료인덱스, 검색문자열)<Br> &nbsp; &nbsp; ─ <font color='blue'>**my.LibInfo**</font> ★, help(), □? □?? Shift+Tab Shift+Tab(수회),[dir()](https://docs.python.org/3.7/tutorial/modules.html#the-dir-function),vars(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}<Br> &nbsp; &nbsp; ─ %magic, %lsmagic %pinfo %env %store %%script ☞ [doc](https://ipython.readthedocs.io/en/stable/interactive/magics.html); python [1](https://docs.python.org) [2](https://en.wikipedia.org/wiki/Python_(programming_language)) [3](https://www.w3schools.com/python/default.asp) [4](https://www.python-course.eu/index.php) [5](https://wikidocs.net/book/1) [6](https://dojang.io/course/view.php?id=7); mathjax [1](https://www.onemathematicalcat.org/MathJaxDocumentation/MathJaxKorean/TeXSyntax_ko.html) [2](https://ko.wikipedia.org/wiki/위키백과:TeX_문법)""")
 #     my.printbmd("""▣ 자주 사용하는 Python Module : np, sp, plt, sns, os, re, sys, sklearn, sqlite3→runSQL(,cursor), pd ☞ my.fum()  
 #     - myLibInfo ★, help(), □? □?? Shift+Tab Shift+Tab(수회),dir(),%whos,[List],(Tuple,),{Set},{'d':'Dict'}  
 #     - %magic, %lsmagic %pinfo %env %store %%script ☞ https://ipython.readthedocs.io/en/stable/interactive/magics.html""")
@@ -1406,10 +1406,10 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   class pkgCheatSheet:
     str_numpy   = """Under Construction : numpy"""
     str_pandas  = """Under Construction : pandas"""
-    str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
+    str_sklearn = """    scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
     ▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
         - 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
-        - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 점프 투 파이썬 : https://wikidocs.net/book/1
+        - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 파이썬 일반 : https://wikidocs.net/book/1
         - Choosing the Right Estimator : https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
         
     ▣ CH01. Handling the Data (Also see NumPy & Pandas)
@@ -1633,7 +1633,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     str_keras   = """Under Construction : keras"""
 
   @classmethod
-  def printCheatSheet(cls, argPkg='sklearn', argIdxFr=0, argIdxTo=None): 
+  def printCheatSheet(cls, argPkg='sklearn', argIdxFr=0, argIdxTo=None, argSearch=None): 
     if argIdxTo == None:
         argIdxTo = argIdxFr
     cls.viewitems(eval('cls.pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
