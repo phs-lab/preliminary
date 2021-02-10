@@ -1408,9 +1408,13 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     str_pandas  = """Under Construction : pandas"""
     str_sklearn = """    scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
     ▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
-        - 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
+        - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
         - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 파이썬 일반 : https://wikidocs.net/book/1
         - Choosing the Right Estimator : https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+        - 기타 참조 : https://medium.com/@chris_bour/an-extended-version-of-the-scikit-learn-cheat-sheet-5f46efc6cbb
+                     https://towardsdatascience.com/your-ultimate-data-mining-machine-learning-cheat-sheet-9fce3fa16
+                     ☞ https://www.kdnuggets.com/2021/01/ultimate-scikit-learn-machine-learning-cheatsheet.html
+                     https://www.kdnuggets.com/2019/09/train-sklearn-100x-faster.html 
         
     ▣ CH01. Handling the Data (Also see NumPy & Pandas)
       1.1 Loading the Data ☞ https://scikit-learn.org/stable/datasets/index.html
