@@ -457,7 +457,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   # pydotGraph = my.makeTreeGraph(my.treeContent, "LR") # LR: Left to Right, RL: Right to Left
   # my.viewPyDotGraph(pydotGraph)                    # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
 
-  Books4AIStudy = pd.DataFrame(  # https://tensorflow.blog/book-roadmap/ 참조하였으며, 이를 기반으로 관심 서적을 보강함. 데이터 과학 일반 및 자연어 처리 보강 필요
+  books4AIStudy = pd.DataFrame(  # https://tensorflow.blog/book-roadmap/ 참조하였으며, 이를 기반으로 관심 서적을 보강함. 데이터 과학 일반 및 자연어 처리 보강 필요
     columns = [ 'TreeWBS', 'SrcNode', 'DstNode'],
     data = [['0',   'The Books for AI Study',               'Health & Medical Statistics, Dr. Bae'], # 배정민, 보건의학통계
             ['0',   'Health & Medical Statistics, Dr. Bae', 'jamovi Statistics, Seong Tae Je'],
@@ -494,8 +494,64 @@ class my:  # import myLibClass; my = myLibClass.myLib()
            ] )
 
   # ▣ 예시 : 함수 활용 ②
-  # Books4AIStudyGraph = my.makeTreeGraph(my.Books4AIStudy, "TB") # LR: Left to Right, RL: Right to Left
-  # my.viewPyDotGraph(Books4AIStudyGraph)                         # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top  
+  # books4AIStudyGraph = my.makeTreeGraph(my.books4AIStudy, "TB") # LR: Left to Right, RL: Right to Left
+  # my.viewPyDotGraph(books4AIStudyGraph)                         # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top  
+
+  # https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html : 회귀 모델들을 특징에 따라 분류
+  featureRegModel = pd.DataFrame(
+      columns= [ 'TreeWBS', 'SrcNode', 'DstNode'],
+      data = [ [ '0',   'Regression Model',          'No. of Independent Var.'],
+               [ '0.1', 'No. of Independent Var.',   'Simple'],
+               [ '0.2', 'No. of Independent Var.',   'Multiple'],
+               [ '1',   'Regression Model',          'No. of Dependent Var.'],
+               [ '1.1', 'No. of Dependent Var.',     'UniVariate'],
+               [ '1.2', 'No. of Dependent Var.',     'MultiVariate'],
+               [ '2',   'Regression Model',          'Combined Form of\nthe Regression Coefficients'],
+               [ '2.1', 'Combined Form of\nthe Regression Coefficients', 'Linear'],
+               [ '2.2', 'Combined Form of\nthe Regression Coefficients', 'NonLinear'],
+               [ '3',   'Regression Model',          'Outlier Problem'],
+               [ '3.1', 'Outlier Problem',           'Robust'],
+               [ '3.2', 'Outlier Problem',           'Quantile'],
+               [ '4.1', 'Regression Model',          'Characteristics of Dependent Var.'],
+               [ '4.2', 'Characteristics of Dependent Var.', 'GLM'],
+               [ '4.3', 'Characteristics of Dependent Var.', 'Survival Regression'],
+               [ '4.4', 'Characteristics of Dependent Var.', 'Auto-Regression'],
+               [ '5',   'Regression Model',          '"Inde/De"pendent Var.\nRelationship'],
+               [ '5.1', '"Inde/De"pendent Var.\nRelationship', 'GAM'],
+               [ '5.2', '"Inde/De"pendent Var.\nRelationship', 'Polynomial'],
+               [ '6',   'Regression Model',          'MultiColLinearity Problem'],
+               [ '6.1', 'MultiColLinearity Problem', 'Lasso / Ridge'],
+               [ '6.2', 'MultiColLinearity Problem', 'PCR / PLS']
+             ] )
+  # featureRegModelGraph = my.makeTreeGraph(my.featureRegModel, "TB") # LR: Left to Right, RL: Right to Left
+  # my.viewPyDotGraph(featureRegModelGraph)                           # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
+
+  # https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html : 회귀 모델을 일반화 수준에 따라 계층적으로 정리
+  hierarchyRegModel = pd.DataFrame(
+      columns= [ 'TreeWBS', 'SrcNode', 'DstNode'],
+      data = [ [ '0',        'Regression Model','Linear' ],
+               [ '0.1',      'Linear',          'MultiVariate' ],
+               [ '0.1.1',    'MultiVariate',    'SUR, VAR, Panel, …' ],
+               [ '0.2',      'Linear',          'UniVariate' ],
+               [ '0.2.1',    'UniVariate',      'Simple' ],
+               [ '0.2.2',    'UniVariate',      'Multiple' ],
+               [ '0.2.2.1',  'Multiple',        'Quantile' ],
+               [ '0.2.2.2',  'Multiple',        'Robust' ],
+               [ '0.2.2.3',  'Multiple',        'Lasso / Ridge' ],
+               [ '0.2.2.4',  'Multiple',        'PCR / PLS' ],
+               [ '0.2.2.5',  'Multiple',        'GLM' ],
+               [ '0.2.2.5.1','GLM',             'Poisson Regression' ],
+               [ '0.2.2.5.2','GLM',             'Ordinal Regression' ],
+               [ '0.2.2.5.3','GLM',             'Logistic Regression' ],
+               [ '0.2.2.6',  'Multiple',        'GAM' ],
+               [ '0.2.2.6.1','GAM',             'Polynomial Regression' ],
+               [ '0.2.3',    'UniVariate',      'Auto-Regression' ],
+               [ '0.2.3.1',  'Auto-Regression', 'ARIMA, ARCH, …' ],
+               [ '1',        'Regression Model','Non-Linear' ],
+               [ '1.1',      'Non-Linear',      'DNN, CNN, RNN, …' ]
+             ] )
+  # hRegModelGraph = my.makeTreeGraph(my.hierarchyRegModel, "TB") # LR: Left to Right, RL: Right to Left
+  # my.viewPyDotGraph(hRegModelGraph)                             # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
 
   ## ------------------------------------------------------------------------------------------- ##
   #  Wes McKinney, Python for Data Analysis, ver 2, Chap. 2, page 66, duck typing
