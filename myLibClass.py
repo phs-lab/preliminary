@@ -1423,233 +1423,233 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   class pkgCheatSheet:
     str_numpy   = """Under Construction : numpy"""
     str_pandas  = """Under Construction : pandas"""
-    str_sklearn = """    scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
-    ▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
-        - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
-        - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 파이썬 일반 : https://wikidocs.net/book/1
-        - Choosing the Right Estimator : https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
-        - ETC : https://medium.com/@chris_bour/an-extended-version-of-the-scikit-learn-cheat-sheet-5f46efc6cbb
-                 https://towardsdatascience.com/your-ultimate-data-mining-machine-learning-cheat-sheet-9fce3fa16
-                      ☞ https://www.kdnuggets.com/2021/01/ultimate-scikit-learn-machine-learning-cheatsheet.html
-                 https://www.kdnuggets.com/2019/09/train-sklearn-100x-faster.html 
-                 https://www.quora.com/q/abcofdatascienceandml/Scikit-learn-Machine-Learning-packages-Syntax-Part-8
-                 data camp official blog : https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet, 2017-01-04
+#     str_sklearn = """    scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
+#     ▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
+#         - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
+#         - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 파이썬 일반 : https://wikidocs.net/book/1
+#         - Choosing the Right Estimator : https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+#         - ETC : https://medium.com/@chris_bour/an-extended-version-of-the-scikit-learn-cheat-sheet-5f46efc6cbb
+#                  https://towardsdatascience.com/your-ultimate-data-mining-machine-learning-cheat-sheet-9fce3fa16
+#                       ☞ https://www.kdnuggets.com/2021/01/ultimate-scikit-learn-machine-learning-cheatsheet.html
+#                  https://www.kdnuggets.com/2019/09/train-sklearn-100x-faster.html 
+#                  https://www.quora.com/q/abcofdatascienceandml/Scikit-learn-Machine-Learning-packages-Syntax-Part-8
+#                  data camp official blog : https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet, 2017-01-04
         
-    ▣ CH01. Handling the Data (Also see NumPy & Pandas)
-      1.1 Loading the Data ☞ https://scikit-learn.org/stable/datasets/index.html
-          - Your data needs to be numeric and stored as NumPy arrays or SciPy sparse matrices. 
-            Other types that are convertible to numeric arrays, such as Pandas DataFrame, are also acceptable.
-          import numpy as np
-          X = np.random.random((10,5))
-          y = np.array(['M','M','F','F','M','F','M','M','F','F','F'])
-          X[X < 0.7] = 0
+#     ▣ CH01. Handling the Data (Also see NumPy & Pandas)
+#       1.1 Loading the Data ☞ https://scikit-learn.org/stable/datasets/index.html
+#           - Your data needs to be numeric and stored as NumPy arrays or SciPy sparse matrices. 
+#             Other types that are convertible to numeric arrays, such as Pandas DataFrame, are also acceptable.
+#           import numpy as np
+#           X = np.random.random((10,5))
+#           y = np.array(['M','M','F','F','M','F','M','M','F','F','F'])
+#           X[X < 0.7] = 0
 
-      1.2 Traning and Test Data Split
-          from sklearn.model_selection import train_test_split
-          X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
+#       1.2 Traning and Test Data Split
+#           from sklearn.model_selection import train_test_split
+#           X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
 
-      1.3 Processing the Data ☞ https://scikit-learn.org/stable/data_transforms.html
-        (1) Standardization
-            from sklearn.preprocessing import StandardScaler
-            scaler = StandardScaler().fit(X_train)
-            standardized_X = scaler.transform(X_train)
-            standardized_X_test = scaler.transform(X_test)
-        (2) Normalization
-            from sklearn.preprocessing import Normalizer
-            scaler = Normalizer().fit(X_train)
-            normalized_X = scaler.transform(X_train)
-            normalized_X_test = scaler.transform(X_test)
-        (3) Binarization
-            from sklearn.preprocessing import Binarizer
-            binarizer = Binarizer(threshold=0.0).fit(X)
-            binary_X = binarizer.transform(X)
-        (4) Encoding Categorical Features
-            from sklearn.preprocessing import LabelEncoder
-            enc = LabelEncoder()
-            y = enc.fit_transform(y)
-        (5) Imputing Missing Values
-            from sklearn.preprocessing import Imputer
-            imp = Imputer(missing_values=0, strategy='mean', axis=0)
-            imp.fit_transform(X_train)
-        (6) Generating Polynomial Features
-            from sklearn.preprocessing import PolynomialFeatures
-            poly = PolynomialFeatures(5)
-            poly.fit_transform(X)
+#       1.3 Processing the Data ☞ https://scikit-learn.org/stable/data_transforms.html
+#         (1) Standardization
+#             from sklearn.preprocessing import StandardScaler
+#             scaler = StandardScaler().fit(X_train)
+#             standardized_X = scaler.transform(X_train)
+#             standardized_X_test = scaler.transform(X_test)
+#         (2) Normalization
+#             from sklearn.preprocessing import Normalizer
+#             scaler = Normalizer().fit(X_train)
+#             normalized_X = scaler.transform(X_train)
+#             normalized_X_test = scaler.transform(X_test)
+#         (3) Binarization
+#             from sklearn.preprocessing import Binarizer
+#             binarizer = Binarizer(threshold=0.0).fit(X)
+#             binary_X = binarizer.transform(X)
+#         (4) Encoding Categorical Features
+#             from sklearn.preprocessing import LabelEncoder
+#             enc = LabelEncoder()
+#             y = enc.fit_transform(y)
+#         (5) Imputing Missing Values
+#             from sklearn.preprocessing import Imputer
+#             imp = Imputer(missing_values=0, strategy='mean', axis=0)
+#             imp.fit_transform(X_train)
+#         (6) Generating Polynomial Features
+#             from sklearn.preprocessing import PolynomialFeatures
+#             poly = PolynomialFeatures(5)
+#             poly.fit_transform(X)
 
-    ▣ CH02. Create Your Model ☞ https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
-      2.1 Supervised Learning Estimators ☞ https://scikit-learn.org/stable/supervised_learning.html
-        (1) Linear Regression
-            from sklearn.linear_model import LinearRegression
-            lr = LinearRegression(normalize=True)
-        (2) Support Vector Machines (SVM)
-            from sklearn.svm import SVC
-            svc = SVC(kernel='linear')
-        (3) KNN
-            from sklearn import neighbors
-            knn = neighbors.KNeighborsClassifier(n_neighbors=5)
-        (4) Naive Bayes
-            from sklearn.naive_bayes import GaussianNB
-            gnb = GaussianNB()
+#     ▣ CH02. Create Your Model ☞ https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+#       2.1 Supervised Learning Estimators ☞ https://scikit-learn.org/stable/supervised_learning.html
+#         (1) Linear Regression
+#             from sklearn.linear_model import LinearRegression
+#             lr = LinearRegression(normalize=True)
+#         (2) Support Vector Machines (SVM)
+#             from sklearn.svm import SVC
+#             svc = SVC(kernel='linear')
+#         (3) KNN
+#             from sklearn import neighbors
+#             knn = neighbors.KNeighborsClassifier(n_neighbors=5)
+#         (4) Naive Bayes
+#             from sklearn.naive_bayes import GaussianNB
+#             gnb = GaussianNB()
 
-      2.2 Unsupervised Learning Estimators ☞ https://scikit-learn.org/stable/unsupervised_learning.html
-        (1) K Means
-            from sklearn.cluster import KMeans
-            kmeans = KMeans(n_clusters=3, random_state=0)
-        (2) Principal Component Analysis (PCA)
-            from sklearn.decomposition import PCA
-            pca = PCA(n_components=0.95)
+#       2.2 Unsupervised Learning Estimators ☞ https://scikit-learn.org/stable/unsupervised_learning.html
+#         (1) K Means
+#             from sklearn.cluster import KMeans
+#             kmeans = KMeans(n_clusters=3, random_state=0)
+#         (2) Principal Component Analysis (PCA)
+#             from sklearn.decomposition import PCA
+#             pca = PCA(n_components=0.95)
 
-    ▣ CH03. Model Fitting / Training
-      3.1 Supervised Learning
-          lr.fit(X, y)                        # Fit the model to the data
-          svc.fit(X_train, y_train)
-          knn.fit(X_train, y_train)
+#     ▣ CH03. Model Fitting / Training
+#       3.1 Supervised Learning
+#           lr.fit(X, y)                        # Fit the model to the data
+#           svc.fit(X_train, y_train)
+#           knn.fit(X_train, y_train)
 
-      3.2 Unsupervised Learning
-          kmeans.fit(X_train)                 # Fit the model to the data
-          pca = pca.fit_transform(X_train)    # Fit the model to the data, then transform it
+#       3.2 Unsupervised Learning
+#           kmeans.fit(X_train)                 # Fit the model to the data
+#           pca = pca.fit_transform(X_train)    # Fit the model to the data, then transform it
 
-    ▣ CH04. Prediction
-      4.1 Supervised Estimators
-          y_pred = lr.predict(X_test)         # predict : Predict labels
-          y_pred = svc.predict(np.random.random((2,5)))
-          y_pred = knn.predict_proba(X_test)  # predict_proba : Estimate probability of a label
+#     ▣ CH04. Prediction
+#       4.1 Supervised Estimators
+#           y_pred = lr.predict(X_test)         # predict : Predict labels
+#           y_pred = svc.predict(np.random.random((2,5)))
+#           y_pred = knn.predict_proba(X_test)  # predict_proba : Estimate probability of a label
 
-      4.2 Unsupervised Estimators
-          y_pred = k_means.predict(X_test)    # Predict labels in clustering algorithms
+#       4.2 Unsupervised Estimators
+#           y_pred = k_means.predict(X_test)    # Predict labels in clustering algorithms
 
-    ▣ CH05. Evaluate Your Model’s Performance ☞ https://scikit-learn.org/stable/model_selection.html
-      5.1 Classification Metrics
-        (1) Accuracy Score
-            knn.score(X_test, y_test)         # Estimator score method
-            from sklearn.metrics import accuracy_score
-            accuracy_score(y_test, y_pred)    # Metric scoring function
-        (2) Classification Report             # Precision, recall, f1-score and support
-            from sklearn.metrics import classification_report
-            print(classification_report(y_test, y_pred))
-        (3) Confusion Matrix
-            from sklearn.metrics import confusion_matrix
-            print(confusion_matrix(y_test, y_pred))
+#     ▣ CH05. Evaluate Your Model’s Performance ☞ https://scikit-learn.org/stable/model_selection.html
+#       5.1 Classification Metrics
+#         (1) Accuracy Score
+#             knn.score(X_test, y_test)         # Estimator score method
+#             from sklearn.metrics import accuracy_score
+#             accuracy_score(y_test, y_pred)    # Metric scoring function
+#         (2) Classification Report             # Precision, recall, f1-score and support
+#             from sklearn.metrics import classification_report
+#             print(classification_report(y_test, y_pred))
+#         (3) Confusion Matrix
+#             from sklearn.metrics import confusion_matrix
+#             print(confusion_matrix(y_test, y_pred))
 
-      5.2 Regression Metrics
-        (1) Mean Absolute Error
-            from sklearn.metrics import mean_absolute_error
-            y_true = [3, -0.5, 2]
-            mean_absolute_error(y_true, y_pred)
-        (2) Mean Squared Error
-            from sklearn.metrics import mean_squared_error
-            mean_squared_error(y_test, y_pred)
-        (3) R² Score
-            from sklearn.metrics import r2_score
-            r2_score(y_true, y_pred)
+#       5.2 Regression Metrics
+#         (1) Mean Absolute Error
+#             from sklearn.metrics import mean_absolute_error
+#             y_true = [3, -0.5, 2]
+#             mean_absolute_error(y_true, y_pred)
+#         (2) Mean Squared Error
+#             from sklearn.metrics import mean_squared_error
+#             mean_squared_error(y_test, y_pred)
+#         (3) R² Score
+#             from sklearn.metrics import r2_score
+#             r2_score(y_true, y_pred)
 
-      5.3 Clustering Metrics
-        (1) Adjusted Rand Index
-            from sklearn.metrics import adjusted_rand_score
-            adjusted_rand_score(y_true, y_pred)
-        (2) Homogeneity
-            from sklearn.metrics import homogeneity_score
-            homogeneity_score(y_true, y_pred)
-        (3) V-measure
-            from sklearn.metrics import v_measure_score
-            metrics.v_measure_score(y_true, y_pred)
+#       5.3 Clustering Metrics
+#         (1) Adjusted Rand Index
+#             from sklearn.metrics import adjusted_rand_score
+#             adjusted_rand_score(y_true, y_pred)
+#         (2) Homogeneity
+#             from sklearn.metrics import homogeneity_score
+#             homogeneity_score(y_true, y_pred)
+#         (3) V-measure
+#             from sklearn.metrics import v_measure_score
+#             metrics.v_measure_score(y_true, y_pred)
 
-      5.4 Cross-Validation
-          from sklearn.cross_validation import cross_val_score
-          print(cross_val_score(knn, X_train, y_train, cv=4))
-          print(cross_val_score(lr, X, y, cv=2))
+#       5.4 Cross-Validation
+#           from sklearn.cross_validation import cross_val_score
+#           print(cross_val_score(knn, X_train, y_train, cv=4))
+#           print(cross_val_score(lr, X, y, cv=2))
 
-    ▣ CH06. Tune Your Model
-      6.1 Grid Search
-          from sklearn.grid_search import GridSearchCV
-          params = {"n_neighbors": np.arange(1,3), "metric": ["euclidean", "cityblock"]}
-          grid = GridSearchCV(estimator=knn, param_grid=params)
-          grid.fit(X_train, y_train)
-          print(grid.best_score_)
-          print(grid.best_estimator_.n_neighbors)
+#     ▣ CH06. Tune Your Model
+#       6.1 Grid Search
+#           from sklearn.grid_search import GridSearchCV
+#           params = {"n_neighbors": np.arange(1,3), "metric": ["euclidean", "cityblock"]}
+#           grid = GridSearchCV(estimator=knn, param_grid=params)
+#           grid.fit(X_train, y_train)
+#           print(grid.best_score_)
+#           print(grid.best_estimator_.n_neighbors)
 
-      6.2 Randomized Parameter Optimization
-          from sklearn.grid_search import RandomizedSearchCV
-          params = {"n_neighbors": range(1,5), "weights": ["uniform", "distance"]}
-          rsearch = RandomizedSearchCV(estimator=knn, param_distributions=params, cv=4, n_iter=8, random_state=5)
-          rsearch.fit(X_train, y_train)
-          print(rsearch.best_score_)
+#       6.2 Randomized Parameter Optimization
+#           from sklearn.grid_search import RandomizedSearchCV
+#           params = {"n_neighbors": range(1,5), "weights": ["uniform", "distance"]}
+#           rsearch = RandomizedSearchCV(estimator=knn, param_distributions=params, cv=4, n_iter=8, random_state=5)
+#           rsearch.fit(X_train, y_train)
+#           print(rsearch.best_score_)
           
-    ▣ CH07. A Basic Example ☞ Help : import mglearn  # https://github.com/amueller/mglearn 
-      7.1 Cheat Sheet ☞ ML Process : https://volcanohong.github.com/content/images/2016/ml_process.png
-          from sklearn import neighbors, datasets, preprocessing
-          from sklearn.model_selection import train_test_split
-          from sklearn.metrics import accuracy_score
+#     ▣ CH07. A Basic Example ☞ Help : import mglearn  # https://github.com/amueller/mglearn 
+#       7.1 Cheat Sheet ☞ ML Process : https://volcanohong.github.com/content/images/2016/ml_process.png
+#           from sklearn import neighbors, datasets, preprocessing
+#           from sklearn.model_selection import train_test_split
+#           from sklearn.metrics import accuracy_score
 
-          iris = datasets.load_iris()  # load_breast_cancer, load_boston, load_iris
-          X, y = iris.data[:, :-1], iris.target
-          X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
+#           iris = datasets.load_iris()  # load_breast_cancer, load_boston, load_iris
+#           X, y = iris.data[:, :-1], iris.target
+#           X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
 
-          scaler = preprocessing.StandardScaler().fit(X_train)
-          X_train = scaler.transform(X_train)
-          X_test = scaler.transform(X_test)
+#           scaler = preprocessing.StandardScaler().fit(X_train)
+#           X_train = scaler.transform(X_train)
+#           X_test = scaler.transform(X_test)
 
-          model = neighbors.KNeighborsClassifier(n_neighbors=5)
-          model.fit(X_train, y_train)
+#           model = neighbors.KNeighborsClassifier(n_neighbors=5)
+#           model.fit(X_train, y_train)
 
-          y_pred = model.predict(X_test)
-          accuracy_score(y_test, y_pred)
+#           y_pred = model.predict(X_test)
+#           accuracy_score(y_test, y_pred)
 
-      7.2 koipa.or.kr base class 강의 내용 (위 0.1의 module import 부분은 같기때문에 생략함)
-          DataBunch = datasets.load_iris()
-             # descobj('DataBunch'); print(DataBunch.DESCR); 
-          pd_data   = pd.DataFrame(DataBunch.data,   columns=DataBunch.feature_names)
-          pd_target = pd.DataFrame(DataBunch.target, columns=['target'])
-          data = pd.concat([pd_data, pd_target], axis=1)
+#       7.2 koipa.or.kr base class 강의 내용 (위 0.1의 module import 부분은 같기때문에 생략함)
+#           DataBunch = datasets.load_iris()
+#              # descobj('DataBunch'); print(DataBunch.DESCR); 
+#           pd_data   = pd.DataFrame(DataBunch.data,   columns=DataBunch.feature_names)
+#           pd_target = pd.DataFrame(DataBunch.target, columns=['target'])
+#           data = pd.concat([pd_data, pd_target], axis=1)
 
-          # pandas function 사용한 EDA (Visualization 포함) 실행
-          np.array(data).shape; data.info(); data.sample(5); data.describe() 
-              # 정규성 검정을 위해 skewness(왜도), kurtosis(첨도) 확인
-              # Skew = pd.DataFrame(data.skew(), columns=['Skewness'])
-              # Kurt = pd.DataFrame(data.kurt(), columns=['Kurtosis'])
-              # data.describe().T.join(Skew.join(Kurt, how='left'), how='left')
-          data.boxplot(figsize=(10,8), rot=45)  # outliers 파악 및 필요 시 cleansing 처리
-          import seaborn as sns
-          sns.pairplot(data, vars=data.columns[:4], hue='target')  # regression인 경우에는 hue를 사용하지 않음
-          plt.figure(figsize=(10,8)); sns.heatmap(data.corr(), annot=True, cbar=True)
+#           # pandas function 사용한 EDA (Visualization 포함) 실행
+#           np.array(data).shape; data.info(); data.sample(5); data.describe() 
+#               # 정규성 검정을 위해 skewness(왜도), kurtosis(첨도) 확인
+#               # Skew = pd.DataFrame(data.skew(), columns=['Skewness'])
+#               # Kurt = pd.DataFrame(data.kurt(), columns=['Kurtosis'])
+#               # data.describe().T.join(Skew.join(Kurt, how='left'), how='left')
+#           data.boxplot(figsize=(10,8), rot=45)  # outliers 파악 및 필요 시 cleansing 처리
+#           import seaborn as sns
+#           sns.pairplot(data, vars=data.columns[:4], hue='target')  # regression인 경우에는 hue를 사용하지 않음
+#           plt.figure(figsize=(10,8)); sns.heatmap(data.corr(), annot=True, cbar=True)
 
-          # Hold-out
-          from sklearn.model_selection import train_test_split
-          X_train, X_test, y_train, y_test = train_test_split(data.iloc[:,:-1], data.iloc[:,-1])
-             # X_train, X_test, y_train, y_test = train_test_split(data.loc[:,:'petal width (cm)'], data.target)
+#           # Hold-out
+#           from sklearn.model_selection import train_test_split
+#           X_train, X_test, y_train, y_test = train_test_split(data.iloc[:,:-1], data.iloc[:,-1])
+#              # X_train, X_test, y_train, y_test = train_test_split(data.loc[:,:'petal width (cm)'], data.target)
 
-          from sklearn.neighbors import KNeighborsClassifier
-          knn = KNeighborsClassifier()      # model building : instance 만들 때 하이퍼파라미터 설정
-          # vars(knn); knn.fit(); vars(knn) # 설정된 하이퍼파라미터를 vars(모델명)으로 알 수 있음. fit 전ㆍ후에 실시
-          knn.fit(X_train, y_train)         # training
-          y_pred = knn.predict(X_test)      # prediction
-          knn.score(X_test, y_test)         # evaluation
-          accuracy_score(y_test, y_pred)
+#           from sklearn.neighbors import KNeighborsClassifier
+#           knn = KNeighborsClassifier()      # model building : instance 만들 때 하이퍼파라미터 설정
+#           # vars(knn); knn.fit(); vars(knn) # 설정된 하이퍼파라미터를 vars(모델명)으로 알 수 있음. fit 전ㆍ후에 실시
+#           knn.fit(X_train, y_train)         # training
+#           y_pred = knn.predict(X_test)      # prediction
+#           knn.score(X_test, y_test)         # evaluation
+#           accuracy_score(y_test, y_pred)
 
-          from sklearn.model_selection import cross_val_score, KFold, StratifiedKFold, ShuffleSplit
-          import mglearn; mglearn.plot_cross_validation.plot_stratified_cross_validation()
-          kf = KFold(Class고려 수치 지정) # StratifiedKFold(분류_좌동), ShuffleSplit()
-          cv_knn = cross_val_score(KNeighborsClassifier(), 
-                         data.loc[:,:"petal width (cm)"],  
-                         data.target, # Fancy Indexing : data[data.columns[:-1]], data.[['target']]
-                         cv=kf,       # cross validation, fold 수
-                         n_jobs = -1) # 컴퓨터 성능 최대 활용
-          cv_knn, cv_knn.mean(), cv_knn.std(), cv_knn.var(), cv_knn.std() / cv_knn.mean()
+#           from sklearn.model_selection import cross_val_score, KFold, StratifiedKFold, ShuffleSplit
+#           import mglearn; mglearn.plot_cross_validation.plot_stratified_cross_validation()
+#           kf = KFold(Class고려 수치 지정) # StratifiedKFold(분류_좌동), ShuffleSplit()
+#           cv_knn = cross_val_score(KNeighborsClassifier(), 
+#                          data.loc[:,:"petal width (cm)"],  
+#                          data.target, # Fancy Indexing : data[data.columns[:-1]], data.[['target']]
+#                          cv=kf,       # cross validation, fold 수
+#                          n_jobs = -1) # 컴퓨터 성능 최대 활용
+#           cv_knn, cv_knn.mean(), cv_knn.std(), cv_knn.var(), cv_knn.std() / cv_knn.mean()
 
-          from sklearn.model_selection import learning_curve # return : train_sizes_abs, train & test scores
-          lc = learning_curve(KNeighborsClassifier(), data[data.columns[:-1]], data[['target']], cv=kf)
-          from sklearn_evaluation import plot
-          plt.figure(figsize=(8,5)); plot.learning_curve(lc[1], lc[2], lc[0])  # over-fitting 여부 파악
-    """
-    dct_sklearn = {
-        0 : str_sklearn[                             :str_sklearn.index('▣ CH01.')],
-        1 : str_sklearn[str_sklearn.index('▣ CH01.'):str_sklearn.index('▣ CH02.')],
-        2 : str_sklearn[str_sklearn.index('▣ CH02.'):str_sklearn.index('▣ CH03.')],
-        3 : str_sklearn[str_sklearn.index('▣ CH03.'):str_sklearn.index('▣ CH04.')],
-        4 : str_sklearn[str_sklearn.index('▣ CH04.'):str_sklearn.index('▣ CH05.')],
-        5 : str_sklearn[str_sklearn.index('▣ CH05.'):str_sklearn.index('▣ CH06.')],
-        6 : str_sklearn[str_sklearn.index('▣ CH06.'):str_sklearn.index('▣ CH07.')],
-        7 : str_sklearn[str_sklearn.index('▣ CH07.'):-1] }
+#           from sklearn.model_selection import learning_curve # return : train_sizes_abs, train & test scores
+#           lc = learning_curve(KNeighborsClassifier(), data[data.columns[:-1]], data[['target']], cv=kf)
+#           from sklearn_evaluation import plot
+#           plt.figure(figsize=(8,5)); plot.learning_curve(lc[1], lc[2], lc[0])  # over-fitting 여부 파악
+#     """
+#     dct_sklearn = {
+#         0 : str_sklearn[                             :str_sklearn.index('▣ CH01.')],
+#         1 : str_sklearn[str_sklearn.index('▣ CH01.'):str_sklearn.index('▣ CH02.')],
+#         2 : str_sklearn[str_sklearn.index('▣ CH02.'):str_sklearn.index('▣ CH03.')],
+#         3 : str_sklearn[str_sklearn.index('▣ CH03.'):str_sklearn.index('▣ CH04.')],
+#         4 : str_sklearn[str_sklearn.index('▣ CH04.'):str_sklearn.index('▣ CH05.')],
+#         5 : str_sklearn[str_sklearn.index('▣ CH05.'):str_sklearn.index('▣ CH06.')],
+#         6 : str_sklearn[str_sklearn.index('▣ CH06.'):str_sklearn.index('▣ CH07.')],
+#         7 : str_sklearn[str_sklearn.index('▣ CH07.'):-1] }
     
     str_pycaret = """Under Construction : pycaret"""
     str_tf      = """Under Construction : tf(tensorflow 2.0)"""
@@ -1741,3 +1741,268 @@ if importlib.util.find_spec("rpy2"):
 
     print('【rpy2】', rpy2.__version__, ": 최초⇒'%load_ext rpy2.ipython', 다시 load(내부 R 세션 시작)⇒'%reload_ext rpy2.ipython'; %Rㆍ%%R == ro.r('R Script')")
     print(" %Rget,%R -i,%Rpush ⇔ %R -o,%Rpull ☞『df』 ①py⇒r:ro.r.assign('R.df',ro.pandas2ri.py2ri(PYdf)),②r⇒py:PYdf=ro.pandas2ri.ri2py(R.df)")
+
+## CheatSheet ========================================================================================================================================
+my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 : https://dojang.io/course/view.php?id=7
+▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
+   * 파이썬 코딩 도장 '핵심 정리' 모음
+     1. 환경 구성 : https://dojang.io/mod/page/view.php?id=2470
+     2. 자료형
+        - byte, bytearray : https://dojang.io/mod/page/view.php?id=2462
+     3. 숫자, 변수, 연산자 : https://dojang.io/mod/page/view.php?id=2189 
+        - 연산자 우선 순위 : https://dojang.io/mod/page/view.php?id=2461 # help('%')
+        - 실수 값의 오차 : https://dojang.io/mod/page/view.php?id=2466
+     4. 불과 비교ㆍ논리 연산자 : https://dojang.io/mod/page/view.php?id=2218 ☞ 비트 연산자 : https://dojang.io/mod/page/view.php?id=2460
+     5. 문자열 : https://dojang.io/mod/page/view.php?id=2218 
+        - 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
+        - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
+     6. if 조건문 : https://dojang.io/mod/page/view.php?id=2239
+     7. Loop : https://dojang.io/mod/page/view.php?id=2279
+     8. 시퀀스 자료형, 리스트, 튜플, 딕셔너리 : https://dojang.io/mod/page/view.php?id=2218
+     9. 리스트 및 문자열 메서드 : https://dojang.io/mod/page/view.php?id=2305
+     10. 딕셔너리 및 세트 메서드 : https://dojang.io/mod/page/view.php?id=2323
+     11. 파일 : https://dojang.io/mod/page/view.php?id=2335
+     12. 함수 : https://dojang.io/mod/page/view.php?id=2357
+     13. 람다 : https://dojang.io/mod/page/view.php?id=2370
+     14. 클로저 : https://dojang.io/mod/page/view.php?id=2370
+     15. 클래스 : https://dojang.io/mod/page/view.php?id=2396
+         - 프로퍼티 사용하기 : https://dojang.io/mod/page/view.php?id=2476
+         - 메타 클래스 사용하기 : https://dojang.io/mod/page/view.php?id=2468
+         - "with as"에 사용 가능한 클래스 만들기 : https://dojang.io/mod/page/view.php?id=2467
+     16. 예외 : https://dojang.io/mod/page/view.php?id=2425
+     17. 이터레이터 : https://dojang.io/mod/page/view.php?id=2425
+     18. 제너레이터 : https://dojang.io/mod/page/view.php?id=2425
+     19. 코루틴 : https://dojang.io/mod/page/view.php?id=2425
+         - asyncio : https://dojang.io/mod/page/view.php?id=2469
+     20. 데코레이터 : https://dojang.io/mod/page/view.php?id=2454
+     21. 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
+     22. 모듈, 패키지 : https://dojang.io/mod/page/view.php?id=2454
+         - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
+"""
+my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
+▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
+    - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
+    - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 파이썬 일반 : https://wikidocs.net/book/1
+    - Choosing the Right Estimator : https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+    - ETC : https://medium.com/@chris_bour/an-extended-version-of-the-scikit-learn-cheat-sheet-5f46efc6cbb
+             https://towardsdatascience.com/your-ultimate-data-mining-machine-learning-cheat-sheet-9fce3fa16
+                  ☞ https://www.kdnuggets.com/2021/01/ultimate-scikit-learn-machine-learning-cheatsheet.html
+             https://www.kdnuggets.com/2019/09/train-sklearn-100x-faster.html 
+             https://www.quora.com/q/abcofdatascienceandml/Scikit-learn-Machine-Learning-packages-Syntax-Part-8
+             data camp official blog : https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet, 2017-01-04
+
+▣ CH01. Handling the Data (Also see NumPy & Pandas)
+  1.1 Loading the Data ☞ https://scikit-learn.org/stable/datasets/index.html
+      - Your data needs to be numeric and stored as NumPy arrays or SciPy sparse matrices. 
+        Other types that are convertible to numeric arrays, such as Pandas DataFrame, are also acceptable.
+      import numpy as np
+      X = np.random.random((10,5))
+      y = np.array(['M','M','F','F','M','F','M','M','F','F','F'])
+      X[X < 0.7] = 0
+
+  1.2 Traning and Test Data Split
+      from sklearn.model_selection import train_test_split
+      X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
+
+  1.3 Processing the Data ☞ https://scikit-learn.org/stable/data_transforms.html
+    (1) Standardization
+        from sklearn.preprocessing import StandardScaler
+        scaler = StandardScaler().fit(X_train)
+        standardized_X = scaler.transform(X_train)
+        standardized_X_test = scaler.transform(X_test)
+    (2) Normalization
+        from sklearn.preprocessing import Normalizer
+        scaler = Normalizer().fit(X_train)
+        normalized_X = scaler.transform(X_train)
+        normalized_X_test = scaler.transform(X_test)
+    (3) Binarization
+        from sklearn.preprocessing import Binarizer
+        binarizer = Binarizer(threshold=0.0).fit(X)
+        binary_X = binarizer.transform(X)
+    (4) Encoding Categorical Features
+        from sklearn.preprocessing import LabelEncoder
+        enc = LabelEncoder()
+        y = enc.fit_transform(y)
+    (5) Imputing Missing Values
+        from sklearn.preprocessing import Imputer
+        imp = Imputer(missing_values=0, strategy='mean', axis=0)
+        imp.fit_transform(X_train)
+    (6) Generating Polynomial Features
+        from sklearn.preprocessing import PolynomialFeatures
+        poly = PolynomialFeatures(5)
+        poly.fit_transform(X)
+
+▣ CH02. Create Your Model ☞ https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+  2.1 Supervised Learning Estimators ☞ https://scikit-learn.org/stable/supervised_learning.html
+    (1) Linear Regression
+        from sklearn.linear_model import LinearRegression
+        lr = LinearRegression(normalize=True)
+    (2) Support Vector Machines (SVM)
+        from sklearn.svm import SVC
+        svc = SVC(kernel='linear')
+    (3) KNN
+        from sklearn import neighbors
+        knn = neighbors.KNeighborsClassifier(n_neighbors=5)
+    (4) Naive Bayes
+        from sklearn.naive_bayes import GaussianNB
+        gnb = GaussianNB()
+
+  2.2 Unsupervised Learning Estimators ☞ https://scikit-learn.org/stable/unsupervised_learning.html
+    (1) K Means
+        from sklearn.cluster import KMeans
+        kmeans = KMeans(n_clusters=3, random_state=0)
+    (2) Principal Component Analysis (PCA)
+        from sklearn.decomposition import PCA
+        pca = PCA(n_components=0.95)
+
+▣ CH03. Model Fitting / Training
+  3.1 Supervised Learning
+      lr.fit(X, y)                        # Fit the model to the data
+      svc.fit(X_train, y_train)
+      knn.fit(X_train, y_train)
+
+  3.2 Unsupervised Learning
+      kmeans.fit(X_train)                 # Fit the model to the data
+      pca = pca.fit_transform(X_train)    # Fit the model to the data, then transform it
+
+▣ CH04. Prediction
+  4.1 Supervised Estimators
+      y_pred = lr.predict(X_test)         # predict : Predict labels
+      y_pred = svc.predict(np.random.random((2,5)))
+      y_pred = knn.predict_proba(X_test)  # predict_proba : Estimate probability of a label
+
+  4.2 Unsupervised Estimators
+      y_pred = k_means.predict(X_test)    # Predict labels in clustering algorithms
+
+▣ CH05. Evaluate Your Model’s Performance ☞ https://scikit-learn.org/stable/model_selection.html
+  5.1 Classification Metrics
+    (1) Accuracy Score
+        knn.score(X_test, y_test)         # Estimator score method
+        from sklearn.metrics import accuracy_score
+        accuracy_score(y_test, y_pred)    # Metric scoring function
+    (2) Classification Report             # Precision, recall, f1-score and support
+        from sklearn.metrics import classification_report
+        print(classification_report(y_test, y_pred))
+    (3) Confusion Matrix
+        from sklearn.metrics import confusion_matrix
+        print(confusion_matrix(y_test, y_pred))
+
+  5.2 Regression Metrics
+    (1) Mean Absolute Error
+        from sklearn.metrics import mean_absolute_error
+        y_true = [3, -0.5, 2]
+        mean_absolute_error(y_true, y_pred)
+    (2) Mean Squared Error
+        from sklearn.metrics import mean_squared_error
+        mean_squared_error(y_test, y_pred)
+    (3) R² Score
+        from sklearn.metrics import r2_score
+        r2_score(y_true, y_pred)
+
+  5.3 Clustering Metrics
+    (1) Adjusted Rand Index
+        from sklearn.metrics import adjusted_rand_score
+        adjusted_rand_score(y_true, y_pred)
+    (2) Homogeneity
+        from sklearn.metrics import homogeneity_score
+        homogeneity_score(y_true, y_pred)
+    (3) V-measure
+        from sklearn.metrics import v_measure_score
+        metrics.v_measure_score(y_true, y_pred)
+
+  5.4 Cross-Validation
+      from sklearn.cross_validation import cross_val_score
+      print(cross_val_score(knn, X_train, y_train, cv=4))
+      print(cross_val_score(lr, X, y, cv=2))
+
+▣ CH06. Tune Your Model
+  6.1 Grid Search
+      from sklearn.grid_search import GridSearchCV
+      params = {"n_neighbors": np.arange(1,3), "metric": ["euclidean", "cityblock"]}
+      grid = GridSearchCV(estimator=knn, param_grid=params)
+      grid.fit(X_train, y_train)
+      print(grid.best_score_)
+      print(grid.best_estimator_.n_neighbors)
+
+  6.2 Randomized Parameter Optimization
+      from sklearn.grid_search import RandomizedSearchCV
+      params = {"n_neighbors": range(1,5), "weights": ["uniform", "distance"]}
+      rsearch = RandomizedSearchCV(estimator=knn, param_distributions=params, cv=4, n_iter=8, random_state=5)
+      rsearch.fit(X_train, y_train)
+      print(rsearch.best_score_)
+
+▣ CH07. A Basic Example ☞ Help : import mglearn  # https://github.com/amueller/mglearn 
+  7.1 Cheat Sheet ☞ ML Process : https://volcanohong.github.com/content/images/2016/ml_process.png
+      from sklearn import neighbors, datasets, preprocessing
+      from sklearn.model_selection import train_test_split
+      from sklearn.metrics import accuracy_score
+
+      iris = datasets.load_iris()  # load_breast_cancer, load_boston, load_iris
+      X, y = iris.data[:, :-1], iris.target
+      X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
+
+      scaler = preprocessing.StandardScaler().fit(X_train)
+      X_train = scaler.transform(X_train)
+      X_test = scaler.transform(X_test)
+
+      model = neighbors.KNeighborsClassifier(n_neighbors=5)
+      model.fit(X_train, y_train)
+
+      y_pred = model.predict(X_test)
+      accuracy_score(y_test, y_pred)
+
+  7.2 koipa.or.kr base class 강의 내용 (위 0.1의 module import 부분은 같기때문에 생략함)
+      DataBunch = datasets.load_iris()
+         # descobj('DataBunch'); print(DataBunch.DESCR); 
+      pd_data   = pd.DataFrame(DataBunch.data,   columns=DataBunch.feature_names)
+      pd_target = pd.DataFrame(DataBunch.target, columns=['target'])
+      data = pd.concat([pd_data, pd_target], axis=1)
+
+      # pandas function 사용한 EDA (Visualization 포함) 실행
+      np.array(data).shape; data.info(); data.sample(5); data.describe() 
+          # 정규성 검정을 위해 skewness(왜도), kurtosis(첨도) 확인
+          # Skew = pd.DataFrame(data.skew(), columns=['Skewness'])
+          # Kurt = pd.DataFrame(data.kurt(), columns=['Kurtosis'])
+          # data.describe().T.join(Skew.join(Kurt, how='left'), how='left')
+      data.boxplot(figsize=(10,8), rot=45)  # outliers 파악 및 필요 시 cleansing 처리
+      import seaborn as sns
+      sns.pairplot(data, vars=data.columns[:4], hue='target')  # regression인 경우에는 hue를 사용하지 않음
+      plt.figure(figsize=(10,8)); sns.heatmap(data.corr(), annot=True, cbar=True)
+
+      # Hold-out
+      from sklearn.model_selection import train_test_split
+      X_train, X_test, y_train, y_test = train_test_split(data.iloc[:,:-1], data.iloc[:,-1])
+         # X_train, X_test, y_train, y_test = train_test_split(data.loc[:,:'petal width (cm)'], data.target)
+
+      from sklearn.neighbors import KNeighborsClassifier
+      knn = KNeighborsClassifier()      # model building : instance 만들 때 하이퍼파라미터 설정
+      # vars(knn); knn.fit(); vars(knn) # 설정된 하이퍼파라미터를 vars(모델명)으로 알 수 있음. fit 전ㆍ후에 실시
+      knn.fit(X_train, y_train)         # training
+      y_pred = knn.predict(X_test)      # prediction
+      knn.score(X_test, y_test)         # evaluation
+      accuracy_score(y_test, y_pred)
+
+      from sklearn.model_selection import cross_val_score, KFold, StratifiedKFold, ShuffleSplit
+      import mglearn; mglearn.plot_cross_validation.plot_stratified_cross_validation()
+      kf = KFold(Class고려 수치 지정) # StratifiedKFold(분류_좌동), ShuffleSplit()
+      cv_knn = cross_val_score(KNeighborsClassifier(), 
+                     data.loc[:,:"petal width (cm)"],  
+                     data.target, # Fancy Indexing : data[data.columns[:-1]], data.[['target']]
+                     cv=kf,       # cross validation, fold 수
+                     n_jobs = -1) # 컴퓨터 성능 최대 활용
+      cv_knn, cv_knn.mean(), cv_knn.std(), cv_knn.var(), cv_knn.std() / cv_knn.mean()
+
+      from sklearn.model_selection import learning_curve # return : train_sizes_abs, train & test scores
+      lc = learning_curve(KNeighborsClassifier(), data[data.columns[:-1]], data[['target']], cv=kf)
+      from sklearn_evaluation import plot
+      plt.figure(figsize=(8,5)); plot.learning_curve(lc[1], lc[2], lc[0])  # over-fitting 여부 파악
+"""
+my.pkgCheatSheet.dct_sklearn = {
+   0 : my.pkgCheatSheet.str_sklearn[                                              :my.pkgCheatSheet.str_sklearn.index('▣ CH01.')],
+   1 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH01.'):my.pkgCheatSheet.str_sklearn.index('▣ CH02.')],
+   2 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH02.'):my.pkgCheatSheet.str_sklearn.index('▣ CH03.')],
+   3 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH03.'):my.pkgCheatSheet.str_sklearn.index('▣ CH04.')],
+   4 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH04.'):my.pkgCheatSheet.str_sklearn.index('▣ CH05.')],
+   5 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH05.'):my.pkgCheatSheet.str_sklearn.index('▣ CH06.')],
+   6 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH06.'):my.pkgCheatSheet.str_sklearn.index('▣ CH07.')],
+   7 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH07.'):-1] }
