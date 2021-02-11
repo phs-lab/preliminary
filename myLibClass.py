@@ -293,6 +293,19 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     return pd.concat([temp_df, pd.DataFrame(temp_df.apply(func, axis=1))], axis=1)
 
   ## ------------------------------------------------------------------------------------------- ##
+  @classmethod
+  def pdDescribe(df):     # pandas dataframe 합치기 : https://antilibrary.org/2483
+    if type(pd.DataFrame()) == type(df):
+      DESC = df.describe()  # 정규성 검정 https://data-newbie.tistory.com/442, https://bioinformaticsandme.tistory.com/37
+      CV = pd.DataFrame({'CV':fish.mean() / fish.std()})
+      MODE = df[df.describe().columns].mode().head(1).T; MODE.columns = ['Mode']
+      SnK = pd.concat({'Skewness':df.skew(), 'Kurtosis':df.kurtosis()}, axis=1)
+      rtn = pd.concat([pd.concat([pd.concat([DESC.T, MODE], axis=1), CV], axis=1), SnK], axis=1)
+    else:
+      rtn = pd.DataFrame({'Error': "Argument {0} != pd.DataFrame".format(type(df))}, index=[0])
+    return rtn
+    
+  ## ------------------------------------------------------------------------------------------- ##
   # from datetime import datetime                   # https://brownbears.tistory.com/432
   @classmethod
   def sPrintLog(cls, dt=None):  # Simple(간이) Print Log # https://docs.python.org/ko/3.8/library/datetime.html?highlight=datetime#module-datetime
