@@ -1743,19 +1743,20 @@ if importlib.util.find_spec("rpy2"):
     print(" %Rget,%R -i,%Rpush ⇔ %R -o,%Rpull ☞『df』 ①py⇒r:ro.r.assign('R.df',ro.pandas2ri.py2ri(PYdf)),②r⇒py:PYdf=ro.pandas2ri.ri2py(R.df)")
 
 ## CheatSheet ========================================================================================================================================
-my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 : https://dojang.io/course/view.php?id=7
+my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
 ▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
    * 파이썬 코딩 도장 '핵심 정리' 모음
      1. 환경 구성 : https://dojang.io/mod/page/view.php?id=2470
      2. 자료형
-        - byte, bytearray : https://dojang.io/mod/page/view.php?id=2462
+       - byte, bytearray : https://dojang.io/mod/page/view.php?id=2462
      3. 숫자, 변수, 연산자 : https://dojang.io/mod/page/view.php?id=2189 
-        - 연산자 우선 순위 : https://dojang.io/mod/page/view.php?id=2461 # help('%')
-        - 실수 값의 오차 : https://dojang.io/mod/page/view.php?id=2466
-     4. 불과 비교ㆍ논리 연산자 : https://dojang.io/mod/page/view.php?id=2218 ☞ 비트 연산자 : https://dojang.io/mod/page/view.php?id=2460
+       - 연산자 우선 순위 : https://dojang.io/mod/page/view.php?id=2461 # help('%')
+       - 실수 값의 오차 : https://dojang.io/mod/page/view.php?id=2466
+     4. 불과 비교ㆍ논리 연산자 : https://dojang.io/mod/page/view.php?id=2218 
+       - 비트 연산자 : https://dojang.io/mod/page/view.php?id=2460
      5. 문자열 : https://dojang.io/mod/page/view.php?id=2218 
-        - 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
-        - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
+       - 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
+       - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
      6. if 조건문 : https://dojang.io/mod/page/view.php?id=2239
      7. Loop : https://dojang.io/mod/page/view.php?id=2279
      8. 시퀀스 자료형, 리스트, 튜플, 딕셔너리 : https://dojang.io/mod/page/view.php?id=2218
@@ -1766,19 +1767,51 @@ my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 : https://dojang.io/co
      13. 람다 : https://dojang.io/mod/page/view.php?id=2370
      14. 클로저 : https://dojang.io/mod/page/view.php?id=2370
      15. 클래스 : https://dojang.io/mod/page/view.php?id=2396
-         - 프로퍼티 사용하기 : https://dojang.io/mod/page/view.php?id=2476
-         - 메타 클래스 사용하기 : https://dojang.io/mod/page/view.php?id=2468
-         - "with as"에 사용 가능한 클래스 만들기 : https://dojang.io/mod/page/view.php?id=2467
+       - 프로퍼티 사용하기 : https://dojang.io/mod/page/view.php?id=2476
+       - 메타 클래스 사용하기 : https://dojang.io/mod/page/view.php?id=2468
+       - "with as"에 사용 가능한 클래스 만들기 : https://dojang.io/mod/page/view.php?id=2467
      16. 예외 : https://dojang.io/mod/page/view.php?id=2425
      17. 이터레이터 : https://dojang.io/mod/page/view.php?id=2425
      18. 제너레이터 : https://dojang.io/mod/page/view.php?id=2425
      19. 코루틴 : https://dojang.io/mod/page/view.php?id=2425
-         - asyncio : https://dojang.io/mod/page/view.php?id=2469
+       - asyncio : https://dojang.io/mod/page/view.php?id=2469
      20. 데코레이터 : https://dojang.io/mod/page/view.php?id=2454
      21. 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
      22. 모듈, 패키지 : https://dojang.io/mod/page/view.php?id=2454
-         - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
+       - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
+
+▣ CH01. 환경 구성 ☞ 참조 : [코딩 도장](https://dojang.io/mod/page/view.php?id=2470)  
+  1.1 자주 사용하는 conda 명령어
+    - conda create --name MyEnv         # 가상환경 "MyEnv" 생성, 필요 시 "python=3.5 numpy=1.1"과 같이 패키지와 버전 지정 가능
+    - conda env list                    # conda 가상환경 확인
+    - conda info                        # 현재 환경 정보 출력
+    - conda activate 접속할_가상환경이름
+    - conda deactivate                  # 현재 conda 환경에서 이탈
+    - conda list | find /N /I "scikit"  # 윈도우에서 설치된 Module 확인
+    - conda search package_name         # 패키지 검색
+    - conda install package_name=ver    # 패키지 설치
+    - conda update conda                # 패키지 conda 갱신
+    - conda update package_name         # 패키지 업데이트
+    - conda list --export > pkg_lst.txt # 패키지 목록 및 버전 정보 저장
+    - conda install --file  pkg_lst.txt # 패키지 목록으로 설치
+    - conda env export --name MyEnv > MyEnv.yml
+    - conda env create -f MyEnv.yml     # MyEnv.yml에 저장된 정보로 환경 생성, 필요 시 사전에 yml file 내의 "환경 이름" 변경.
+    - conda remove package_name
+    - conda remove --name MyEnv --all   # 환경 "MyEnv" 전체 삭제
+    
+  1.2 환경 확인을 위한 Python 구문
+    - local device(CPU, GPU) 정보 확인
+      from tensorflow.python.client import device_lib
+      device_lib.list_local_devices()
+    
+▣ CH02. 자료형    ☞ 참조 : [코딩 도장](https://dojang.io/mod/page/view.php?id=2189) 
 """
+
+my.pkgCheatSheet.dct_python = {
+   0 : my.pkgCheatSheet.str_python[                                             :my.pkgCheatSheet.str_python.index('▣ CH01.')],
+   1 : my.pkgCheatSheet.str_python[my.pkgCheatSheet.str_python.index('▣ CH01.'):my.pkgCheatSheet.str_python.index('▣ CH02.')],
+   2 : my.pkgCheatSheet.str_python[my.pkgCheatSheet.str_python.index('▣ CH02.'):-1] }
+
 my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
 ▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
     - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
