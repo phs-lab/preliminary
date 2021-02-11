@@ -1742,7 +1742,7 @@ if importlib.util.find_spec("rpy2"):
     print('【rpy2】', rpy2.__version__, ": 최초⇒'%load_ext rpy2.ipython', 다시 load(내부 R 세션 시작)⇒'%reload_ext rpy2.ipython'; %Rㆍ%%R == ro.r('R Script')")
     print(" %Rget,%R -i,%Rpush ⇔ %R -o,%Rpull ☞『df』 ①py⇒r:ro.r.assign('R.df',ro.pandas2ri.py2ri(PYdf)),②r⇒py:PYdf=ro.pandas2ri.ri2py(R.df)")
 
-## CheatSheet ========================================================================================================================================
+## CheatSheet =================================================================================== Begin
 my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
 ▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
    * 파이썬 코딩 도장 '핵심 정리' 모음
@@ -1811,7 +1811,10 @@ my.pkgCheatSheet.dct_python = {
    0 : my.pkgCheatSheet.str_python[                                             :my.pkgCheatSheet.str_python.index('▣ CH01.')],
    1 : my.pkgCheatSheet.str_python[my.pkgCheatSheet.str_python.index('▣ CH01.'):my.pkgCheatSheet.str_python.index('▣ CH02.')],
    2 : my.pkgCheatSheet.str_python[my.pkgCheatSheet.str_python.index('▣ CH02.'):-1] }
-
+## ------------------------------------------------------------------------------------------- ## python 일반 ↑, numpy ↓
+## ------------------------------------------------------------------------------------------- ## numpy ↑, pandas ↓
+## ------------------------------------------------------------------------------------------- ## pandas ↑, matplotlib ↓
+## ------------------------------------------------------------------------------------------- ## matplotlib ↑, scikit-learn ↓
 my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
 ▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
     - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
@@ -2039,3 +2042,6 @@ my.pkgCheatSheet.dct_sklearn = {
    5 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH05.'):my.pkgCheatSheet.str_sklearn.index('▣ CH06.')],
    6 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH06.'):my.pkgCheatSheet.str_sklearn.index('▣ CH07.')],
    7 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH07.'):-1] }
+## ------------------------------------------------------------------------------------------- ## scikit-learn ↑, pycaret ↓
+## ------------------------------------------------------------------------------------------- ## pycaret ↑, TF & keras ↓
+## CheatSheet =================================================================================== End
