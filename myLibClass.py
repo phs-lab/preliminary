@@ -1527,7 +1527,7 @@ def initCheatSheetDict(csNameStr): # argStr, argDict):
   return len(argDict)
 
 ## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, python 일반 ↓
-my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
+my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
 ▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
    * 파이썬 코딩 도장 '핵심 정리' 모음
      1. 환경 구성 : https://dojang.io/mod/page/view.php?id=2470
@@ -1564,7 +1564,7 @@ my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 중심 정리 : https:
      22. 모듈, 패키지 : https://dojang.io/mod/page/view.php?id=2454
        - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
 
-▣ CH01. 환경 구성 ☞ 참조 : [코딩 도장](https://dojang.io/mod/page/view.php?id=2470)  
+▣ CH01. 환경 구성 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2470  
   1.1 자주 사용하는 conda 명령어
     - conda create --name MyEnv         # 가상환경 "MyEnv" 생성, 필요 시 "python=3.5 numpy=1.1"과 같이 패키지와 버전 지정 가능
     - conda env list                    # conda 가상환경 확인
@@ -1587,14 +1587,101 @@ my.pkgCheatSheet.str_python  = """파이썬 코딩 도장 중심 정리 : https:
     - local device(CPU, GPU) 정보 확인
       from tensorflow.python.client import device_lib
       device_lib.list_local_devices()
+    - python keyword 확인
+      import this
+      import keyword
+      keyword.kwlist.sort()
+      for cnt, item in zip(range(1,len(keyword.kwlist)+1), keyword.kwlist):
+        print(item) if cnt%9 == 0 else print(item, end='\t')
+      else:
+        print('☞ Total', cnt, 'items')
     
-▣ CH02. 자료형    ☞ 참조 : [코딩 도장](https://dojang.io/mod/page/view.php?id=2189) 
-"""
+▣ CH02. 자료형 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2189  
+  - my.printcmd(my.pkgCheatSheet.str_python_sequence)  
+  
+▣ CH03. 숫자, 변수, 연산자 : https://dojang.io/mod/page/view.php?id=2189 
+  - 연산자 우선 순위 : https://dojang.io/mod/page/view.php?id=2461 # help('%')
+  - 실수 값의 오차 : https://dojang.io/mod/page/view.php?id=2466
+  
+▣ CH04. 불과 비교ㆍ논리 연산자 : https://dojang.io/mod/page/view.php?id=2218 
+  - 비트 연산자 : https://dojang.io/mod/page/view.php?id=2460
 
-# my.pkgCheatSheet.dct_python = {
-#    0 : my.pkgCheatSheet.str_python[                                             :my.pkgCheatSheet.str_python.index('▣ CH01.')],
-#    1 : my.pkgCheatSheet.str_python[my.pkgCheatSheet.str_python.index('▣ CH01.'):my.pkgCheatSheet.str_python.index('▣ CH02.')],
-#    2 : my.pkgCheatSheet.str_python[my.pkgCheatSheet.str_python.index('▣ CH02.'):-1] }
+▣ CH05. 문자열 : https://dojang.io/mod/page/view.php?id=2218 
+  - 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
+  - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
+  
+▣ CH06. if 조건문 : https://dojang.io/mod/page/view.php?id=2239
+  - my.printcmd(my.pkgCheatSheet.str_python_control)  
+  
+▣ CH07. Loop : https://dojang.io/mod/page/view.php?id=2279
+  - my.printcmd(my.pkgCheatSheet.str_python_control)  
+
+▣ CH08. 시퀀스 자료형, 리스트, 튜플, 딕셔너리 : https://dojang.io/mod/page/view.php?id=2218
+  - my.printcmd(my.pkgCheatSheet.str_python_sequence)  
+
+▣ CH09. 리스트 및 문자열 메서드 : https://dojang.io/mod/page/view.php?id=2305
+
+▣ CH10. 딕셔너리 및 세트 메서드 : https://dojang.io/mod/page/view.php?id=2323
+
+▣ CH11. 파일 : https://dojang.io/mod/page/view.php?id=2335
+
+▣ CH12. 함수 : https://dojang.io/mod/page/view.php?id=2357
+
+▣ CH13. 람다 : https://dojang.io/mod/page/view.php?id=2370
+
+▣ CH14. 클로저 : https://dojang.io/mod/page/view.php?id=2370
+
+▣ CH15. 클래스 : https://dojang.io/mod/page/view.php?id=2396
+  - 프로퍼티 사용하기 : https://dojang.io/mod/page/view.php?id=2476
+  - 메타 클래스 사용하기 : https://dojang.io/mod/page/view.php?id=2468
+  - "with as"에 사용 가능한 클래스 만들기 : https://dojang.io/mod/page/view.php?id=2467
+  
+▣ CH16. 예외 : https://dojang.io/mod/page/view.php?id=2425
+  - my.printcmd(my.pkgCheatSheet.str_python_control)  
+
+▣ CH17. 이터레이터 : https://dojang.io/mod/page/view.php?id=2425
+
+▣ CH18. 제너레이터 : https://dojang.io/mod/page/view.php?id=2425
+
+▣ CH19. 코루틴 : https://dojang.io/mod/page/view.php?id=2425
+  - asyncio : https://dojang.io/mod/page/view.php?id=2469
+
+▣ CH20. 데코레이터 : https://dojang.io/mod/page/view.php?id=2454
+
+▣ CH21. 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
+     
+▣ CH22. 모듈, 패키지 : https://dojang.io/mod/page/view.php?id=2454
+  - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
+"""  # my.pkgCheatSheet.str_python
+
+# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력.
+my.pkgCheatSheet.str_python_sequence = """
+
+|구분1   |구분2          |자료형    |컬렉션<Br>(컨테이너)|이질/등질|가변/불변|예시|
+|:-------|:--------------|:---------|:---------:|:---:|:---:|:----------|
+|숫자형  |               |bool      | Χ | Χ |불변|    |
+|        |               |int       | Χ | Χ |불변|    |
+|        |               |float     | Χ | Χ |불변|    |
+|        |               |complex   | Χ | Χ |불변|    |
+|시퀀스형|문자형-텍스트  |str       | ○ |등질|불변|'1행', "1행", '''복수 행''', \"\"\"복수 행\"\"\"|
+|        |문자형-바이너리|bytes     | ○ |등질|불변|    |
+|        |문자형-바이너리|bytearray | ○ |등질|***가변***|    |
+|시퀀스형|               |range     | ○ |등질|불변|range(start,stop,step) `#` start $\le$ value $\lt$ stop|
+|        |               |tuple ( , ) | ○ |***이질***|불변|    |
+|        |               |list  [ ] | ○ |***이질***|***가변***|    |
+|매핑형  |               |dict {key:value}| ○ |***이질***|***가변***|    |
+|집합형  |               |set   { } | ○ |***이질***|***가변***|    |
+|        |               |frozenset | ○ |***이질***|불변|    |
+"""  # my.pkgCheatSheet.str_python_sequence
+
+my.pkgCheatSheet.str_python_control = """▣ Python control structures  
+
+|if - else|for|while|[try](https://dojang.io/mod/page/view.php?id=2398)|
+|:----|:----|:----|:----|
+|**if** condition:<Br>&nbsp; &nbsp; expression<Br>**elif** condition:<Br>&nbsp; &nbsp; expression<Br>**else**:<Br>&nbsp; &nbsp; expression<Br><Br>|**for** item **in** *collection*:<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 항상 실행<Br>&nbsp; &nbsp; expression<Br><Br><Br><Br>|**while** condition:<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 항상 실행<Br>&nbsp; &nbsp; expression<Br><Br><Br><Br>|**try:**<Br>&nbsp; &nbsp; expression<Br>**except:** `#` 예외 有, 이름 특정 가능<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 예외 無<Br>&nbsp; &nbsp; expression<Br>**finally:** `#` 항상 실행<Br>&nbsp; &nbsp; expression|
+"""  # my.pkgCheatSheet.str_python_control
+
+# my.pkgCheatSheet.dct_python 초기화
 my.pkgCheatSheet.dct_python = dict()
 _ = initCheatSheetDict('python')
 
@@ -1824,7 +1911,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
       lc = learning_curve(KNeighborsClassifier(), data[data.columns[:-1]], data[['target']], cv=kf)
       from sklearn_evaluation import plot
       plt.figure(figsize=(8,5)); plot.learning_curve(lc[1], lc[2], lc[0])  # over-fitting 여부 파악
-"""
+"""  # my.pkgCheatSheet.str_sklearn
 # my.pkgCheatSheet.dct_sklearn = {
 #    0 : my.pkgCheatSheet.str_sklearn[                                              :my.pkgCheatSheet.str_sklearn.index('▣ CH01.')],
 #    1 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH01.'):my.pkgCheatSheet.str_sklearn.index('▣ CH02.')],
@@ -1834,6 +1921,8 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
 #    5 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH05.'):my.pkgCheatSheet.str_sklearn.index('▣ CH06.')],
 #    6 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH06.'):my.pkgCheatSheet.str_sklearn.index('▣ CH07.')],
 #    7 : my.pkgCheatSheet.str_sklearn[my.pkgCheatSheet.str_sklearn.index('▣ CH07.'):-1] }
+
+# my.pkgCheatSheet.dct_sklearn 초기화
 my.pkgCheatSheet.dct_sklearn = dict()
 _ = initCheatSheetDict('sklearn')
 
