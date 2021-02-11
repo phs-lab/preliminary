@@ -1068,16 +1068,16 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
   ## ------------------------------------------------------------------------------------------- ##
   @classmethod
-  def ChooseRightSklearnEstimator(cls,
+  def chooseRightSklearnEstimator(cls,
                                   data_cnt=0,
                                   prediction_for_what=None,
                                   label_exist=None,
                                   data_scarce=None,
                                   print_sklearn_url=False):
 
-      """인자 사용 호출 예시 : print(ChooseRightEstimator(1000, 'C', True)[1])
-                               print(ChooseRightEstimator(1001, 'E', False, False, True)[1])
-                               print(ChooseRightEstimator(...))
+      """인자 사용 호출 예시 : print(chooseRightEstimator(1000, 'C', True)[1])
+                               print(chooseRightEstimator(1001, 'E', False, False, True)[1])
+                               print(chooseRightEstimator(...))
       ㆍdata_cnt = 1000
       ㆍprediction_for_what = 'C' category, 'N' number, 'E' etc
       ㆍlabel_exist = True     (when prediction_for_what == 'C')
@@ -1493,7 +1493,7 @@ my.LibInfo = pd.DataFrame( ### Class Variable LibInfo 동적으로 생성됨. 6�
            ['myLib', 'Function', 'matplotlib', 1, 'plot2d', 'y = x**2과 같은 1변수 함수의 평면 그래프'],
            ['myLib', 'Function', 'matplotlib', 1, 'plot3d', 'z = x**2 + 3*y와 같은 2변수 함수의 입체 그래프'],
            ['myLib', 'Function', 'sklearn', 1, 'train_val_test_split', 'X_train, X_val, X_test, y_train, y_val, y_test = train_val_test_split(X, y, np.array([70, 20, 10]) / 100)'],
-           ['myLib', 'Function', 'sklearn', 1, 'ChooseRightSklearnEstimator', "print(ChooseRightSklearnEstimator(1000, 'C', True)[1])"],
+           ['myLib', 'Function', 'sklearn', 1, 'chooseRightSklearnEstimator', "print(chooseRightSklearnEstimator(1000, 'C', True)[1])"],
            ['myLib', 'Function', 'pandas', 1, 'sql2pd', "sql2pd(inputSQL, True)[:10]"],
            ['myLib', 'Function', 'sqlite3', 1, 'runSQL(sqlstr, cursor)', 'DML 실행 지원, pandas DataFrame 반환']
          ],
@@ -1699,6 +1699,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
     - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
     - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 파이썬 일반 : https://wikidocs.net/book/1
     - Choosing the Right Estimator : https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+      ☞ udf 사용 사례 : print(chooseRightEstimator(1000, 'C', True)[1]); print(chooseRightEstimator(...))
     - ETC : https://medium.com/@chris_bour/an-extended-version-of-the-scikit-learn-cheat-sheet-5f46efc6cbb
              https://towardsdatascience.com/your-ultimate-data-mining-machine-learning-cheat-sheet-9fce3fa16
                   ☞ https://www.kdnuggets.com/2021/01/ultimate-scikit-learn-machine-learning-cheatsheet.html
@@ -1748,6 +1749,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
         poly.fit_transform(X)
 
 ▣ CH02. Create Your Model ☞ https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+  ☞ 참고 - udf 사용 사례 : print(chooseRightEstimator(1000, 'C', True)[1]); print(chooseRightEstimator(...))
   2.1 Supervised Learning Estimators ☞ https://scikit-learn.org/stable/supervised_learning.html
     (1) Linear Regression
         from sklearn.linear_model import LinearRegression
