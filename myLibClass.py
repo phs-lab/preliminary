@@ -294,7 +294,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
   ## ------------------------------------------------------------------------------------------- ##
   @classmethod
-  def pdDescribe(df):     # pandas dataframe 합치기 : https://antilibrary.org/2483
+  def pdDescribe(cls, df):     # pandas dataframe 합치기 : https://antilibrary.org/2483
     if type(pd.DataFrame()) == type(df):
       DESC = df.describe()  # 정규성 검정 https://data-newbie.tistory.com/442, https://bioinformaticsandme.tistory.com/37
       CV = pd.DataFrame({'CV':fish.mean() / fish.std()})
