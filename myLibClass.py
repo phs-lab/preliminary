@@ -1526,7 +1526,28 @@ def initCheatSheetDict(csNameStr): # argStr, argDict):
       break
   return len(argDict)
 
-## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, python 일반 ↓
+## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, LifePathCompass ↓
+my.pkgCheatSheet.str_lifePathCompass = """2021-02-12, 금요일, 음력 설날의 다짐 (The Resolution of the Lunar New Year)
+나는 부처님과 Stephen R. Covey 박사, 그리고 Spencer Johnson 의학박사를 인생의 멘토로 생각한다. 
+나는 그 분들의 가르침을 내 인생길의 방향을 알려주는 나침반으로 삼아 성실하게 살아 갈 것이다.
+I consider the Buddha, Dr. Stephen R. Covey, and Dr. Spencer Johnson, M.D., as mentors in my life. 
+I will live faithfully by using their teachings as a compass that guides the direction of my life path.
+
+▣ dct id : [0] ToC, [1] Buddha, [2] Dr. Stephen R. Covey, [3] Dr. Spencer Johnson, M.D.
+
+▣ CH01. Buddha
+
+▣ CH02. Dr. Stephen R. Covey
+
+▣ CH03. Dr. Spencer Johnson, M.D.
+
+"""
+
+# my.pkgCheatSheet.dct_lifePathCompass 초기화
+my.pkgCheatSheet.dct_lifePathCompass = dict()
+_ = initCheatSheetDict('lifePathCompass')
+
+## ------------------------------------------------------------------------------------------- ## LifePathCompass 초기화 함수 ↑, python 일반 ↓
 my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
 ▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
    * 파이썬 코딩 도장 '핵심 정리' 모음
@@ -1597,7 +1618,7 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
         print('☞ Total', cnt, 'items')
     
 ▣ CH02. 자료형 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2189  
-  - my.printcmd(my.pkgCheatSheet.str_python_sequence)  
+  - my.printcmd(my.pkgCheatSheet.mdStr_python_sequence)  
   
 ▣ CH03. 숫자, 변수, 연산자 : https://dojang.io/mod/page/view.php?id=2189 
   - 연산자 우선 순위 : https://dojang.io/mod/page/view.php?id=2461 # help('%')
@@ -1611,13 +1632,13 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
   - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
   
 ▣ CH06. if 조건문 : https://dojang.io/mod/page/view.php?id=2239
-  - my.printcmd(my.pkgCheatSheet.str_python_control)  
+  - my.printcmd(my.pkgCheatSheet.mdStr_python_control)  
   
 ▣ CH07. Loop : https://dojang.io/mod/page/view.php?id=2279
-  - my.printcmd(my.pkgCheatSheet.str_python_control)  
+  - my.printcmd(my.pkgCheatSheet.mdStr_python_control)  
 
 ▣ CH08. 시퀀스 자료형, 리스트, 튜플, 딕셔너리 : https://dojang.io/mod/page/view.php?id=2218
-  - my.printcmd(my.pkgCheatSheet.str_python_sequence)  
+  - my.printcmd(my.pkgCheatSheet.mdStr_python_sequence)  
 
 ▣ CH09. 리스트 및 문자열 메서드 : https://dojang.io/mod/page/view.php?id=2305
 
@@ -1637,7 +1658,7 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
   - "with as"에 사용 가능한 클래스 만들기 : https://dojang.io/mod/page/view.php?id=2467
   
 ▣ CH16. 예외 : https://dojang.io/mod/page/view.php?id=2425
-  - my.printcmd(my.pkgCheatSheet.str_python_control)  
+  - my.printcmd(my.pkgCheatSheet.mdStr_python_control)  
 
 ▣ CH17. 이터레이터 : https://dojang.io/mod/page/view.php?id=2425
 
@@ -1654,8 +1675,8 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
   - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
 """  # my.pkgCheatSheet.str_python
 
-# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력.
-my.pkgCheatSheet.str_python_sequence = """
+# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
+my.pkgCheatSheet.mdStr_python_sequence = """
 
 |구분1   |구분2          |자료형    |컬렉션<Br>(컨테이너)|이질/등질|가변/불변|예시|
 |:-------|:--------------|:---------|:---------:|:---:|:---:|:----------|
@@ -1674,7 +1695,7 @@ my.pkgCheatSheet.str_python_sequence = """
 |        |               |frozenset | ○ |***이질***|불변|    |
 """  # my.pkgCheatSheet.str_python_sequence
 
-my.pkgCheatSheet.str_python_control = """▣ Python control structures  
+my.pkgCheatSheet.mdStr_python_control = """▣ Python control structures  
 
 |if - else|for|while|[try](https://dojang.io/mod/page/view.php?id=2398)|
 |:----|:----|:----|:----|
@@ -1685,15 +1706,15 @@ my.pkgCheatSheet.str_python_control = """▣ Python control structures
 my.pkgCheatSheet.dct_python = dict()
 _ = initCheatSheetDict('python')
 
-## ------------------------------------------------------------------------------------------- ## python 일반 ↑, numpy ↓
+## ------------------------------------------------------------------------------------------- ## python 일반 ↑, python > numpy ↓
 
-## ------------------------------------------------------------------------------------------- ## numpy ↑, pandas ↓
+## ------------------------------------------------------------------------------------------- ## python > numpy ↑, python > pandas ↓
 
-## ------------------------------------------------------------------------------------------- ## pandas ↑, sqlite ↓
+## ------------------------------------------------------------------------------------------- ## python > pandas ↑, python > sqlite ↓
 
-## ------------------------------------------------------------------------------------------- ## sqlite ↑, matplotlib ↓
+## ------------------------------------------------------------------------------------------- ## python > sqlite ↑, python > matplotlib ↓
 
-## ------------------------------------------------------------------------------------------- ## matplotlib ↑, scikit-learn ↓
+## ------------------------------------------------------------------------------------------- ## python > matplotlib ↑, python > scikit-learn ↓
 my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
 ▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
     - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
@@ -1928,8 +1949,8 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
 my.pkgCheatSheet.dct_sklearn = dict()
 _ = initCheatSheetDict('sklearn')
 
-## ------------------------------------------------------------------------------------------- ## scikit-learn ↑, pycaret ↓
+## ------------------------------------------------------------------------------------------- ## python > scikit-learn ↑, python > pycaret ↓
 
-## ------------------------------------------------------------------------------------------- ## pycaret ↑, TF & keras ↓
+## ------------------------------------------------------------------------------------------- ## python > pycaret ↑, python > TF & keras ↓
 
-## CheatSheet =================================================================================== End : TF & keras ↑ 
+## CheatSheet =================================================================================== End : python > TF & keras ↑ 
