@@ -295,10 +295,10 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   ## ------------------------------------------------------------------------------------------- ##
   @classmethod
   def pdDescribe(cls, df):  # pandas dataframe 합치기 : https://antilibrary.org/2483
-        """pandas dataframe에서 수치 특성들에 대해 기술통계를 쉽게 산출하고자 describe()함수를 응용하여 만들었음.
-        참고 : 유일한 것을 추출할 때는 pd.unique()를 써도 되고, 다음과 같이 groupby를 응용해도 됨.
-        (lambda d,c:pd.DataFrame({'count':d.groupby(c).count()[eval('d.columns[-1]')]}).sort_values(by=['count'],ascending=False,na_position='first'))(fish, 'Species')
-        """
+    """pandas dataframe에서 수치 특성들에 대해 기술통계를 쉽게 산출하고자 describe()함수를 응용하여 만들었음.
+    참고 : 유일한 것을 추출할 때는 pd.unique()를 써도 되고, 다음과 같이 groupby를 응용해도 됨.
+    (lambda d,c:pd.DataFrame({'count':d.groupby(c).count()[eval('d.columns[-1]')]}).sort_values(by=['count'],ascending=False,na_position='first'))(fish, 'Species')
+    """
     if type(pd.DataFrame()) == type(df):
       DESC = df.describe()  # 정규성 검정 https://data-newbie.tistory.com/442, https://bioinformaticsandme.tistory.com/37
       CV = pd.DataFrame({'CV':fish.mean() / fish.std()})
