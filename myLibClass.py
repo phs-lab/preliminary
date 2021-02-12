@@ -54,6 +54,8 @@ from datetime import datetime
 from IPython.display import Markdown, display, Image, IFrame # https://stackoverflow.com/questions/19470099/view-pdf-image-in-an-ipython-notebook
 from mpl_toolkits.mplot3d import Axes3D
 
+boldFR = '\033[1m'; boldTO = '\033[0m'  # myLib에서는 descobj 밖으로...
+
 ## ------------------------------------------------------------------------------------------- ##
 def getSubClasses(aObj):
     aClass = aObj if type(aObj) == type(object) else aObj.__class__
@@ -1527,11 +1529,11 @@ def initCheatSheetDict(csNameStr): # argStr, argDict):
   return len(argDict)
 
 ## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, LifePathCompass ↓
-my.pkgCheatSheet.str_lifePathCompass = """2021-02-12, 금요일, 음력 설날의 다짐 (The Resolution of the Lunar New Year)
-나는 부처님과 Stephen R. Covey 박사, 그리고 Spencer Johnson 의학박사를 인생의 멘토로 생각한다. 
-나는 그 분들의 가르침을 내 인생길의 방향을 알려주는 나침반으로 삼아 성실하게 살아 갈 것이다.
-I consider the Buddha, Dr. Stephen R. Covey, and Dr. Spencer Johnson, M.D., as mentors in my life. 
-I will live faithfully by using their teachings as a compass that guides the direction of my life path.
+my.pkgCheatSheet.str_lifePathCompass = """\033[1m▣ 설날의 다짐(The Resolution of the Lunar New Year), 2021-02-12, 금요일
+  - 나는 부처님과 Stephen R. Covey 박사, 그리고 Spencer Johnson 의학박사를 인생의 멘토로 생각한다. 
+    나는 그 분들의 가르침을 내 인생길의 방향을 알려주는 나침반으로 삼아 성실하게 살아 갈 것이다.
+  - I consider the Buddha, Dr. Stephen R. Covey, and Dr. Spencer Johnson, M.D., as mentors in my life. 
+    I will live faithfully by using their teachings as a compass that guides the direction of my life path.\033[0m
 
 ▣ dct id : [0] ToC, [1] Buddha, [2] Dr. Stephen R. Covey, [3] Dr. Spencer Johnson, M.D.
 
