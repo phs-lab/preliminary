@@ -1567,6 +1567,7 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
      21. 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
      22. 모듈, 패키지 : https://dojang.io/mod/page/view.php?id=2454
        - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
+
 ▣ CH01. 환경 구성 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2470  
   1.1 자주 사용하는 conda 명령어
     - conda create --name MyEnv         # 가상환경 "MyEnv" 생성, 필요 시 "python=3.5 numpy=1.1"과 같이 패키지와 버전 지정 가능
@@ -1608,6 +1609,7 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
   
 ▣ CH04. 불과 비교ㆍ논리 연산자 : https://dojang.io/mod/page/view.php?id=2218 
   - 비트 연산자 : https://dojang.io/mod/page/view.php?id=2460
+
 ▣ CH05. 문자열 : https://dojang.io/mod/page/view.php?id=2218 
   - 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
   - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
@@ -1617,14 +1619,22 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
   
 ▣ CH07. Loop : https://dojang.io/mod/page/view.php?id=2279
   - my.printcmd(my.pkgCheatSheet.mdStr_python_control)  
+
 ▣ CH08. 시퀀스 자료형, 리스트, 튜플, 딕셔너리 : https://dojang.io/mod/page/view.php?id=2218
   - my.printcmd(my.pkgCheatSheet.mdStr_python_sequence)  
+
 ▣ CH09. 리스트 및 문자열 메서드 : https://dojang.io/mod/page/view.php?id=2305
+
 ▣ CH10. 딕셔너리 및 세트 메서드 : https://dojang.io/mod/page/view.php?id=2323
+
 ▣ CH11. 파일 : https://dojang.io/mod/page/view.php?id=2335
+
 ▣ CH12. 함수 : https://dojang.io/mod/page/view.php?id=2357
+
 ▣ CH13. 람다 : https://dojang.io/mod/page/view.php?id=2370
+
 ▣ CH14. 클로저 : https://dojang.io/mod/page/view.php?id=2370
+
 ▣ CH15. 클래스 : https://dojang.io/mod/page/view.php?id=2396
   - 프로퍼티 사용하기 : https://dojang.io/mod/page/view.php?id=2476
   - 메타 클래스 사용하기 : https://dojang.io/mod/page/view.php?id=2468
@@ -1632,11 +1642,16 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
   
 ▣ CH16. 예외 : https://dojang.io/mod/page/view.php?id=2425
   - my.printcmd(my.pkgCheatSheet.mdStr_python_control)  
+
 ▣ CH17. 이터레이터 : https://dojang.io/mod/page/view.php?id=2425
+
 ▣ CH18. 제너레이터 : https://dojang.io/mod/page/view.php?id=2425
+
 ▣ CH19. 코루틴 : https://dojang.io/mod/page/view.php?id=2425
   - asyncio : https://dojang.io/mod/page/view.php?id=2469
+
 ▣ CH20. 데코레이터 : https://dojang.io/mod/page/view.php?id=2454
+
 ▣ CH21. 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
      
 ▣ CH22. 모듈, 패키지 : https://dojang.io/mod/page/view.php?id=2454
@@ -1645,6 +1660,7 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
 
 # str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
 my.pkgCheatSheet.mdStr_python_sequence = """
+
 |구분1   |구분2          |자료형    |컬렉션<Br>(컨테이너)|이질/등질|가변/불변|예시|
 |:-------|:--------------|:---------|:---------:|:---:|:---:|:----------|
 |숫자형  |               |bool      | Χ | Χ |불변|    |
@@ -1663,6 +1679,7 @@ my.pkgCheatSheet.mdStr_python_sequence = """
 """  # my.pkgCheatSheet.str_python_sequence
 
 my.pkgCheatSheet.mdStr_python_control = """▣ Python control structures  
+
 |if - else|for|while|[try](https://dojang.io/mod/page/view.php?id=2398)|
 |:----|:----|:----|:----|
 |**if** condition:<Br>&nbsp; &nbsp; expression<Br>**elif** condition:<Br>&nbsp; &nbsp; expression<Br>**else**:<Br>&nbsp; &nbsp; expression<Br><Br>|**for** item **in** *collection*:<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 항상 실행<Br>&nbsp; &nbsp; expression<Br><Br><Br><Br>|**while** condition:<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 항상 실행<Br>&nbsp; &nbsp; expression<Br><Br><Br><Br>|**try:**<Br>&nbsp; &nbsp; expression<Br>**except:** `#` 예외 有, 이름 특정 가능<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 예외 無<Br>&nbsp; &nbsp; expression<Br>**finally:** `#` 항상 실행<Br>&nbsp; &nbsp; expression|
@@ -1693,6 +1710,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
              https://www.kdnuggets.com/2019/09/train-sklearn-100x-faster.html 
              https://www.quora.com/q/abcofdatascienceandml/Scikit-learn-Machine-Learning-packages-Syntax-Part-8
              data camp official blog : https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet, 2017-01-04
+
 ▣ CH01. Handling the Data (Also see NumPy & Pandas)
   1.1 Loading the Data ☞ https://scikit-learn.org/stable/datasets/index.html
       - Your data needs to be numeric and stored as NumPy arrays or SciPy sparse matrices. 
@@ -1701,9 +1719,11 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
       X = np.random.random((10,5))
       y = np.array(['M','M','F','F','M','F','M','M','F','F','F'])
       X[X < 0.7] = 0
+
   1.2 Traning and Test Data Split
       from sklearn.model_selection import train_test_split
       X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
+
   1.3 Processing the Data ☞ https://scikit-learn.org/stable/data_transforms.html
     (1) Standardization
         from sklearn.preprocessing import StandardScaler
@@ -1731,6 +1751,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
         from sklearn.preprocessing import PolynomialFeatures
         poly = PolynomialFeatures(5)
         poly.fit_transform(X)
+
 ▣ CH02. Create Your Model ☞ https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
   ☞ 참고 - udf 사용 사례 : print(chooseRightEstimator(1000, 'C', True)[1]); print(chooseRightEstimator(...))
   2.1 Supervised Learning Estimators ☞ https://scikit-learn.org/stable/supervised_learning.html
@@ -1746,6 +1767,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
     (4) Naive Bayes
         from sklearn.naive_bayes import GaussianNB
         gnb = GaussianNB()
+
   2.2 Unsupervised Learning Estimators ☞ https://scikit-learn.org/stable/unsupervised_learning.html
     (1) K Means
         from sklearn.cluster import KMeans
@@ -1753,21 +1775,26 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
     (2) Principal Component Analysis (PCA)
         from sklearn.decomposition import PCA
         pca = PCA(n_components=0.95)
+
 ▣ CH03. Model Fitting / Training
   3.1 Supervised Learning
       lr.fit(X, y)                        # Fit the model to the data
       svc.fit(X_train, y_train)
       knn.fit(X_train, y_train)
+
   3.2 Unsupervised Learning
       kmeans.fit(X_train)                 # Fit the model to the data
       pca = pca.fit_transform(X_train)    # Fit the model to the data, then transform it
+
 ▣ CH04. Prediction
   4.1 Supervised Estimators
       y_pred = lr.predict(X_test)         # predict : Predict labels
       y_pred = svc.predict(np.random.random((2,5)))
       y_pred = knn.predict_proba(X_test)  # predict_proba : Estimate probability of a label
+
   4.2 Unsupervised Estimators
       y_pred = k_means.predict(X_test)    # Predict labels in clustering algorithms
+
 ▣ CH05. Evaluate Your Model’s Performance ☞ https://scikit-learn.org/stable/model_selection.html
   5.1 Classification Metrics
     (1) Accuracy Score
@@ -1780,6 +1807,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
     (3) Confusion Matrix
         from sklearn.metrics import confusion_matrix
         print(confusion_matrix(y_test, y_pred))
+
   5.2 Regression Metrics
     (1) Mean Absolute Error
         from sklearn.metrics import mean_absolute_error
@@ -1791,6 +1819,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
     (3) R² Score
         from sklearn.metrics import r2_score
         r2_score(y_true, y_pred)
+
   5.3 Clustering Metrics
     (1) Adjusted Rand Index
         from sklearn.metrics import adjusted_rand_score
@@ -1801,10 +1830,12 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
     (3) V-measure
         from sklearn.metrics import v_measure_score
         metrics.v_measure_score(y_true, y_pred)
+
   5.4 Cross-Validation
       from sklearn.cross_validation import cross_val_score
       print(cross_val_score(knn, X_train, y_train, cv=4))
       print(cross_val_score(lr, X, y, cv=2))
+
 ▣ CH06. Tune Your Model
   6.1 Grid Search
       from sklearn.grid_search import GridSearchCV
@@ -1813,33 +1844,41 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
       grid.fit(X_train, y_train)
       print(grid.best_score_)
       print(grid.best_estimator_.n_neighbors)
+
   6.2 Randomized Parameter Optimization
       from sklearn.grid_search import RandomizedSearchCV
       params = {"n_neighbors": range(1,5), "weights": ["uniform", "distance"]}
       rsearch = RandomizedSearchCV(estimator=knn, param_distributions=params, cv=4, n_iter=8, random_state=5)
       rsearch.fit(X_train, y_train)
       print(rsearch.best_score_)
+
 ▣ CH07. A Basic Example ☞ Help : import mglearn  # https://github.com/amueller/mglearn 
   7.1 Cheat Sheet ☞ ML Process : https://volcanohong.github.com/content/images/2016/ml_process.png
       from sklearn import neighbors, datasets, preprocessing
       from sklearn.model_selection import train_test_split
       from sklearn.metrics import accuracy_score
+
       iris = datasets.load_iris()  # load_breast_cancer, load_boston, load_iris
       X, y = iris.data[:, :-1], iris.target
       X_train, X_test, y_train, y_test = train_test_split(X, y) #, random_state=33)
+
       scaler = preprocessing.StandardScaler().fit(X_train)
       X_train = scaler.transform(X_train)
       X_test = scaler.transform(X_test)
+
       model = neighbors.KNeighborsClassifier(n_neighbors=5)
       model.fit(X_train, y_train)
+
       y_pred = model.predict(X_test)
       accuracy_score(y_test, y_pred)
+
   7.2 koipa.or.kr base class 강의 내용 (위 0.1의 module import 부분은 같기때문에 생략함)
       DataBunch = datasets.load_iris()
          # descobj('DataBunch'); print(DataBunch.DESCR); 
       pd_data   = pd.DataFrame(DataBunch.data,   columns=DataBunch.feature_names)
       pd_target = pd.DataFrame(DataBunch.target, columns=['target'])
       data = pd.concat([pd_data, pd_target], axis=1)
+
       # pandas function 사용한 EDA (Visualization 포함) 실행
       np.array(data).shape; data.info(); data.sample(5); data.describe() 
           # 정규성 검정을 위해 skewness(왜도), kurtosis(첨도) 확인
@@ -1850,10 +1889,12 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
       import seaborn as sns
       sns.pairplot(data, vars=data.columns[:4], hue='target')  # regression인 경우에는 hue를 사용하지 않음
       plt.figure(figsize=(10,8)); sns.heatmap(data.corr(), annot=True, cbar=True)
+
       # Hold-out
       from sklearn.model_selection import train_test_split
       X_train, X_test, y_train, y_test = train_test_split(data.iloc[:,:-1], data.iloc[:,-1])
          # X_train, X_test, y_train, y_test = train_test_split(data.loc[:,:'petal width (cm)'], data.target)
+
       from sklearn.neighbors import KNeighborsClassifier
       knn = KNeighborsClassifier()      # model building : instance 만들 때 하이퍼파라미터 설정
       # vars(knn); knn.fit(); vars(knn) # 설정된 하이퍼파라미터를 vars(모델명)으로 알 수 있음. fit 전ㆍ후에 실시
@@ -1861,6 +1902,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
       y_pred = knn.predict(X_test)      # prediction
       knn.score(X_test, y_test)         # evaluation
       accuracy_score(y_test, y_pred)
+
       from sklearn.model_selection import cross_val_score, KFold, StratifiedKFold, ShuffleSplit
       import mglearn; mglearn.plot_cross_validation.plot_stratified_cross_validation()
       kf = KFold(Class고려 수치 지정) # StratifiedKFold(분류_좌동), ShuffleSplit()
@@ -1870,6 +1912,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
                      cv=kf,       # cross validation, fold 수
                      n_jobs = -1) # 컴퓨터 성능 최대 활용
       cv_knn, cv_knn.mean(), cv_knn.std(), cv_knn.var(), cv_knn.std() / cv_knn.mean()
+
       from sklearn.model_selection import learning_curve # return : train_sizes_abs, train & test scores
       lc = learning_curve(KNeighborsClassifier(), data[data.columns[:-1]], data[['target']], cv=kf)
       from sklearn_evaluation import plot
@@ -1893,4 +1936,4 @@ _ = initCheatSheetDict('sklearn')
 
 ## ------------------------------------------------------------------------------------------- ## python > pycaret ↑, python > TF & keras ↓
 
-## CheatSheet =================================================================================== End : python > TF & keras ↑
+## CheatSheet =================================================================================== End : python > TF & keras ↑ 
