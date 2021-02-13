@@ -1413,10 +1413,19 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     str_python = "" # numpy, pandas, sqlite, matplotlib, sklearn, pycaret and tfkeras(tensorflow and keras)
 
   @classmethod
-  def printCheatSheet(cls, argPkg='sklearn', argIdxFr=0, argIdxTo=None, argSearch=None): 
+  def printCheatSheet(cls, argPkg='sklearn', argIdx = [0, None], argSearchStr=[None, None]): # argIdxFr=0, argIdxTo=None
     rtn = False
-    if argSearch:
-      ptr = eval('cls.pkgCheatSheet.str_' + argPkg).lower().find(argSearch.lower())
+    if argSearchStr[0] != None and argSearchStr[1] != None:    # 문자열 ['from', 'to')로 위치 찾기
+      rtn = 'string search'
+      strIdxFr = eval('cls.pkgCheatSheet.str_' + argPkg).lower().find(argSearchStr[0].lower()) # string.find(search, start, end)
+      if strIdxFr == -1:
+        rtn = 'SE0'
+      else:
+        strIdxTo = eval('cls.pkgCheatSheet.str_' + argPkg).lower().find(argSearchStr[1].lower(), strIdxFr + 1)
+        if strIdxTo == -1:
+          rtn = 'SE1'
+    elif argSearchStr[0] != None and argSearchStr[1] == None:  # 문자열 argSearchStr[0]로 dictionary index 찾기 
+      ptr = eval('cls.pkgCheatSheet.str_' + argPkg).lower().find(argSearchStr[0].lower())
       tmpPtr = None
       if ptr == -1:
         rtn = 1 # return "String '{}' not found!".format(argSearch)
@@ -1425,26 +1434,29 @@ class my:  # import myLibClass; my = myLibClass.myLib()
         for cnt in range(len(eval('cls.pkgCheatSheet.dct_' + argPkg))):
           dct_start = eval('cls.pkgCheatSheet.str_' + argPkg).find(eval('cls.pkgCheatSheet.dct_' + argPkg)[cnt])
           dct_range = dct_start + len(eval('cls.pkgCheatSheet.dct_' + argPkg)[cnt])
-          if ptr >= dct_start and ptr < dct_range:
-            tmpPtr = cnt
+          if ptr >= dct_start and ptr < dct_range: tmpPtr = cnt
         if tmpPtr == None:
           rtn = 2 # 알 수 없는 논리 오류 발생
         else:
           argIdxTo = argIdxFr = tmpPtr
-    else:
-      if argIdxTo == None:
-        argIdxTo = argIdxFr
-      if argIdxTo < argIdxFr:
-        rtn = 3
+          rtn = 'dictionary key'
+    else:  # Dictionary key를 인자로 직접 지정하여 검색
+      rtn = 'dictionary key'
+      argIdxFr = argIdx[0]; argIdxTo = argIdx[1]
+      if argIdxTo == None:    argIdxTo = argIdxFr
+      if argIdxTo < argIdxFr: rtn = 3
         
-    if rtn == 1:
-      return "Error(1): While Searching, the string '{0}' is not found!".format(argSearch)
-    elif rtn == 2:
-      return "Error(2): While Searching, an unexplainable logic error has occurred."
-    elif rtn == 3:
-      return "Error(3): Without searching, the Dictionary to-index should be greater than or equal to the from-index."
+    if   rtn == 1: return "Error(1): While Searching, the string '{0}' is not found!".format(argSearchStr[0])
+    elif rtn == 2: return "Error(2): While Searching, an unexplainable logic error has occurred."
+    elif rtn == 3: return "Error(3): Without searching, the Dictionary to-index should be greater than or equal to the from-index."
+    elif rtn == 'SE0' or rtn == 'SE1':
+      error_str = argSearchStr[0] if rtn == 'SE0' else argSearchStr[1]
+      return "Error(String Search): While Searching, the string '{0}' is not found!".format(error_str)
     else: 
-      cls.viewitems(eval('cls.pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
+      if rtn == 'dictionary key':
+        cls.viewitems(eval('cls.pkgCheatSheet.dct_' + argPkg), argIdxFr, argIdxTo, False)
+      else:  # rtn == 'string search'
+        return eval('cls.pkgCheatSheet.str_' + argPkg)[strIdxFr:strIdxTo]
     
 ## =========================================================================================== ##
 ##                                       End of class my                                       ##
