@@ -1512,6 +1512,22 @@ if importlib.util.find_spec("rpy2"):
     print('【rpy2】', rpy2.__version__, ": 최초⇒'%load_ext rpy2.ipython', 다시 load(내부 R 세션 시작)⇒'%reload_ext rpy2.ipython'; %Rㆍ%%R == ro.r('R Script')")
     print(" %Rget,%R -i,%Rpush ⇔ %R -o,%Rpull ☞『df』 ①py⇒r:ro.r.assign('R.df',ro.pandas2ri.py2ri(PYdf)),②r⇒py:PYdf=ro.pandas2ri.ri2py(R.df)")
 
+## CheatSheet =================================================================================== Begin : Dictionary 초기화 함수 ↓
+def initCheatSheetDict(csNameStr): # argStr, argDict):
+  ptr_fr = 0; cnt=0; # argStr = my.pkgCheatSheet.str_sklearn; argDict = my.pkgCheatSheet.dct_sklearn
+  argStr = eval('my.pkgCheatSheet.str_' + csNameStr)
+  argDict= eval('my.pkgCheatSheet.dct_' + csNameStr)
+  while True:
+    ptr_to = argStr.find('▣ CH', ptr_fr + 1)
+    if ptr_to > 0:
+      argDict.setdefault(cnt, argStr[ptr_fr : ptr_to])
+      cnt += 1
+      ptr_fr = ptr_to
+    else:
+      argDict.setdefault(cnt, argStr[ptr_fr:-1])
+      break
+  return len(argDict)
+
 ## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, LifePathCompass ↓
 
 ## ------------------------------------------------------------------------------------------- ## LifePathCompass 초기화 함수 ↑, python 일반 ↓
