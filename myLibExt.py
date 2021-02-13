@@ -17,25 +17,7 @@ def initCheatSheetDict(csNameStr): # argStr, argDict):
   return len(argDict)
 
 ## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, LifePathCompass ↓
-my.pkgCheatSheet.str_lifePathCompass = """\033[1m▣ 설날의 다짐(The Resolution of the Lunar New Year), 2021-02-12, 금요일
-  - 나는 부처님과 Stephen R. Covey 박사, 그리고 Spencer Johnson 의학박사를 인생의 멘토로 생각한다. 
-    나는 그 분들의 가르침을 내 인생길의 방향을 알려주는 나침반으로 삼아 성실하게 살아 갈 것이다.
-  - I consider the Buddha, Dr. Stephen R. Covey, and Dr. Spencer Johnson, M.D., as mentors in my life. 
-    I will live faithfully by using their teachings as a compass that guides the direction of my life path.\033[0m
 
-▣ dct id : [0] ToC, [1] Buddha, [2] Dr. Stephen R. Covey, [3] Dr. Spencer Johnson, M.D.
-
-▣ CH01. Buddha
-
-▣ CH02. Dr. Stephen R. Covey
-
-▣ CH03. Dr. Spencer Johnson, M.D.
-
-"""
-
-# my.pkgCheatSheet.dct_lifePathCompass 초기화
-my.pkgCheatSheet.dct_lifePathCompass = dict()
-_ = initCheatSheetDict('lifePathCompass')
 
 ## ------------------------------------------------------------------------------------------- ## LifePathCompass 초기화 함수 ↑, python 일반 ↓
 my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
