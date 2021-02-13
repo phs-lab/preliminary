@@ -90,7 +90,19 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
         print(item) if cnt%9 == 0 else print(item, end='\t')
       else:
         print('☞ Total', cnt, 'items')
-    
+
+  1.3 (google colab에서 "!명령어" 방식으로 주로 사용하기 위한) linux 명령어
+    (1) 일반 명령어
+       - 폴더 포함 삭제 : rm -R path_n_folder_name
+    (2) 압축 및 해제 : https://bosungs2y.tistory.com/418
+      a. (설치 안되어 있다면) zip 설치
+         CMD> yum -y install zip*
+      b. zip으로 파일 압축 및 암호화 : file이 "zippedFile.zip"이고 암호가 "test1234"인 경우
+         CMD> zip -P "password" zippedFile.zip file1 file2 file3
+         CMD> zip -P "password" -r zippedFile.zip path_n_folder_name/*
+      c. 압축 해제 : file 및 암호는 위 2와 같음.
+         CMD> unzip -P test1234 zippedFile.zip
+
 ▣ CH02. 자료형 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2189  
   - my.printcmd(my.pkgCheatSheet.mdStr_python_sequence)  
   
