@@ -1,5 +1,7 @@
 #-*- coding:utf-8 -*-
 
+boldFR = '\033[1m'; boldTO = '\033[0m'  # myLib에서는 descobj 밖으로...
+
 ## CheatSheet =================================================================================== Begin : Dictionary 초기화 함수 ↓
 def initCheatSheetDict(csNameStr): # argStr, argDict):
   ptr_fr = 0; cnt=0; # argStr = my.pkgCheatSheet.str_sklearn; argDict = my.pkgCheatSheet.dct_sklearn
