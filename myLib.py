@@ -1515,9 +1515,9 @@ def initCheatSheetDict(csNameStr): # argStr, argDict):
       break
   return len(argDict)
 
-## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, LifePathCompass ↓
+## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, ??? ↓
 
-## ------------------------------------------------------------------------------------------- ## LifePathCompass 초기화 함수 ↑, python 일반 ↓
+## ------------------------------------------------------------------------------------------- ## ??? 초기화 함수 ↑, python 일반 ↓
 my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
 ▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
    * 파이썬 코딩 도장 '핵심 정리' 모음
@@ -1683,9 +1683,353 @@ _ = initCheatSheetDict('python')
 
 ## ------------------------------------------------------------------------------------------- ## python 일반 ↑, python > numpy ↓
 
-## ------------------------------------------------------------------------------------------- ## python > numpy ↑, python > pandas ↓
+## ------------------------------------------------------------------------------------------- ## python > numpy ↑, python > pandas & Wrangling ↓
+my.pkgCheatSheet.str_pandas = """pandas Cheat Sheet : https://pandas.pydata.org/
+▣ dct id : 아래 ToC 참조
 
-## ------------------------------------------------------------------------------------------- ## python > pandas ↑, python > sqlite ↓
+  * Asking for Help  
+    help(pd.Series.loc) 
+      - pandas documentation : http://pandas.pydata.org/pandas-docs/stable/index.html
+      - https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html  
+      - https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html
+      - https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html
+    
+  * ToC 
+    - 0. Help, ToC                      6. Reshaping Data
+    - 1. Data Structures                7. Advanced Indexing
+    - 2. Selection                      8. Duplicate / Missing / Grouping & Combining Data
+    - 3. Drop, Sort & Rank              9. Miscellaneous Functions
+    - 4. View Series/DataFrame Info.    10. pandas ↔ SQL 
+    - 5. Data Alignment & 산술 연산
+        
+▣ CH01. Pandas Data Structures
+  1.1 Series : A one-dimensional labeled/indexed array capable of holding any data type
+    s = pd.Series([3, -5, 7, 4], index=['a', 'b', 'c', 'd'])
+  1.2 DataFrame : A two-dimensional labeled data structure with columns of potentially different types
+    data = {'Country'   : ['Belgium', 'India', 'Brazil'],
+            'Capital'   : ['Brussels', 'New Delhi', 'Brasília'],
+            'Population': [11190846, 1303171035, 207847528]}
+    df = pd.DataFrame(data, columns=['Country', 'Capital', 'Population'])
+
+▣ CH02. Selection ☞ Also see NumPy Arrays
+  2.1 Getting subset of a Series/DataFrame
+    Get one element of Series : s['b'] 
+    Get subset of a DataFrame : df[1:] 
+
+  2.2 Selecting, Boolean Indexing & Setting
+    By Position
+      df.iloc([0],[0])           # Select single value by row & column
+      df.iat ([0],[0])
+    By Label
+      df.loc([0], ['Country'])   # Select single value by row & column labels
+      df.at ([0], ['Country']) 
+    By Label/Position
+      df.ix[2]                   # Select single row of subset of rows
+      df.ix[:,'Capital']         # Select a single column of subset of columns
+      df.ix[1,'Capital']         # Select row and column
+    Boolean Indexing
+      s[~(s > 1)]                # Series s where value is not >1
+      s[(s < -1) | (s > 2)]      # s where value is <-1 or >2
+      df[df['Population']>1200]  # Use filter to adjust DataFrame
+    Setting : s['a'] = 6         # Set index a of Series s to 6
+
+▣ CH03. Drop, Sort & Rank
+  3.1 Drop
+    s.drop(['a', 'c'])           # Drop values from rows   (axis=0)
+    df.drop('Country', axis=1)   # Drop values from columns(axis=1)
+
+  3.2 Sort & Rank
+    df.sort_index()              # Sort by labels along an axis
+    df.sort_values(by='Country') # Sort by the values along an axis
+    df.rank()                    # Assign ranks to entries
+
+▣ CH04. Retrieving Series/DataFrame Information
+  4.1 Basic Information
+    df.shape                     # (rows,columns)
+    df.index                     # Describe index
+    df.columns                   # Describe DataFrame columns
+    df.info()                    # Info on DataFrame
+    df.count()                   # Number of non-NA values
+
+  4.2 Summary (using axis)
+    df.sum()                     # Sum of values
+    df.cumsum()                  # Cummulative sum of values
+    df.min() or df.max()         # Minimum or Maximum values
+    df.idxmin() or df.idxmax()   # Minimum/Maximum index value
+    df.describe()                # Summary statistics ☞ cf) my.pdDescribe(df)
+    df.mean()                    # Mean of values
+    df.median()                  # Median of values
+    df.std()                     # Standard Deviation
+    df.var()                     # Variance
+    df.corr()                    # Correlation
+
+  4.3 Applying Functions
+    f = lambda x: x*2
+    df.apply(f)                  # Apply function
+    df.applymap(f)               # Apply function element-wise
+
+▣ CH05. Data Alignment & Arithmetic Operations
+  5.1 Internal Data Alignment
+    NA values are introduced in the indices that don't overlap:
+    s3 = pd.Series([7, -2, 3], index=['a', 'c', 'd'])
+    s + s3
+
+  5.2 Arithmetic Operations with Fill Methods
+    You can also do the internal data alignment yourself with the help of the fill methods:
+    s.add(s3, fill_value=0)
+    s.sub(s3, fill_value=2)
+    s.div(s3, fill_value=4)
+    s.mul(s3, fill_value=3)
+
+▣ CH06. Reshaping Data
+    pdata = {'Date' : ['2016-03-01', '2016-03-02', '2016-03-01', '2016-03-03', '2016-03-02', '2016-03-03'],
+             'Type' : ['a', 'b', 'c', 'a', 'a', 'c'],
+             'Value': [11.432, 13.031, 20.784, 99.906, 1.303, 20.784]}
+    df2 = pd.DataFrame(pdata, columns=['Date', 'Type', 'Value'])
+
+  6.1 Pivot
+    df3= df2.pivot(index='Date', # Spread rows into columns
+                   columns='Type',
+                   values='Value')
+
+  6.2 Pivot Table
+    df4 = pd.pivot_table(df2,    # Spread rows into columns
+                         values='Value',
+                         index='Date',
+                         columns='Type'])
+
+  6.3 Stack / Unstack
+    stacked = df5.stack()        # Pivot a level of column labels
+    stacked.unstack()            # Pivot a level of index labels
+
+  6.4 Melt
+    pd.melt(df2,                 # Gather columns into rows
+            id_vars=["Date"],
+            value_vars=["Type", "Value"],
+            value_name="Observations")
+
+▣ CH07. Advanced Indexing ☞ Also see NumPy Arrays
+  7.1 Selecting
+    df3.loc[:,(df3>1).any()]         # Select cols with any vals >1
+    df3.loc[:,(df3>1).all()]         # Select cols with vals > 1
+    df3.loc[:,df3.isnull().any()]    # Select cols with NaN
+    df3.loc[:,df3.notnull().all()]   # Select cols without NaN
+
+  7.2 Indexing With isin
+    df[df.Country.isin(df2.Type)]    # Find same elements
+    df[~df.Country.isin(df2.Type)]   # ~ : Negation
+    df3.filter(items='a', 'b'])      # Filter on values
+    df.select(lambda x: not x%5)     # Select specific elements
+
+  7.3 Subset rows : Where & Query
+    s.where(s > 0)                   # Subset the data
+    df6.query('second > first')      # Query DataFrame
+
+  7.4 Setting/Resetting Index
+    df.set_index('Country') Set the index
+    df4 = df.reset_index() Reset the index
+    df = df.rename(index=str, Rename DataFrame
+                   columns={"Country":"cntry",
+                            "Capital":"cptl",
+                            "Population":"ppltn"})
+
+  7.5 Reindexing
+    s2 = s.reindex(['a','c','d','e','b'])
+
+        Forward Filling                            Backward Filling
+    df.reindex(range(4), method='ffill')   s3 = s.reindex(range(5), method='bfill')
+        Country Capital   Population            0  3
+      0 Belgium Brussels    11190846            1  3
+      1 India   New Delhi 1303171035            2  3
+      2 Brazil  Brasilia   207847528            3  3
+      3 Brazil  Brasilia   207847528            4  3
+
+  7.6 MultiIndexing
+    arrays = [np.array([1,2,3]), np.array([5,4,3])]
+    df5 = pd.DataFrame(np.random.rand(3, 2), index=arrays)
+    tuples = list(zip(*arrays))
+    index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
+    df6 = pd.DataFrame(np.random.rand(3, 2), index=index)
+    df2.set_index(["Date", "Type"])
+
+▣ CH08. Duplicate / Missing / Grouping & Combining Data
+  8.1 Duplicate Data
+    s3.unique()                               # Return unique values
+    df2.duplicated('Type')                    # Check duplicates
+    df2.drop_duplicates('Type', keep='last')  # Drop duplicates
+    df.index.duplicated()                     # Check index duplicates
+
+  8.2 Missing Data
+    df.dropna()                               # Drop NaN values
+    df3.fillna(df3.mean())                    # Fill NaN values with a predetermined value
+    df2.replace("a", "f")                     # Replace values with others
+
+  8.3 Grouping Data
+    a. Aggregation
+      df2.groupby(by=['Date','Type']).mean()
+      df4.groupby(level=0).sum()
+      df4.groupby(level=0).agg({'a':lambda x:sum(x)/len(x),'b': np.sum}) 
+    b. Transformation
+      customSum = lambda x: (x+x%2)
+      df4.groupby(level=0).transform(customSum)
+
+  8.4 Combining Data
+      cb1 = {'X1' : ['a', 'b', 'c'], 'X2': [11.432, 1.303, 99.906], 'Source':[1,1,1]}
+      cb2 = {'X1' : ['a', 'b', 'd'], 'X3': [20.784, 'NaN', 20.784], 'Source':[2,2,2]}
+      data1 = pd.DataFrame(cb1, columns=['X1', 'X2', 'Source'])
+      data2 = pd.DataFrame(cb2, columns=['X1', 'X3', 'Source'])
+    a. Merge  # how : {'left', 'right', 'outer', 'inner'}, default 'inner'
+      # https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
+      pd.merge(data1, data2, how='left', on=['X1'])
+    b. Concatenate
+      Series : Vertical
+        s.append(s2)
+      DataFrame : Vertical → axis=0 / Horizontal → axis=1
+        pd.concat([s, s2],axis=1, keys=['One','Two'])
+        pd.concat([data1, data2], axis=1, join='inner')
+
+▣ CH09. Miscellaneous Functions
+  9.1 Iteration
+    df.iteritems() (Column-index, Series) pairs
+    df.iterrows() (Row-index, Series) pairs
+
+  9.2 Visualization ☞ Also see Matplotlib
+    s.plot();   plt.show()  # Series
+    df2.plot(); plt.show()  # DataFrame
+
+  9.3 Dates
+    df2['Date']= pd.to_datetime(df2['Date'])
+    df2['Date']= pd.date_range('2000-1-1', periods=6, freq='M')
+    dates = [datetime(2012,5,1), datetime(2012,5,2)]
+    index = pd.DatetimeIndex(dates)
+    index = pd.date_range(datetime(2012,2,1), end, freq='BM')  
+    
+▣ CH10. pandas ↔ SQL 
+  - cf: https://www.sqlite.org/ https://www.sqlitetutorial.net/
+        https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html
+        https://medium.com/jbennetcodes/how-to-rewrite-your-sql-queries-in-pandas-and-more-149d341fc53e
+  - my.printcmd(my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary)
+  - my.printcmd(my.pkgCheatSheet.mdStr_pandasSqliteComparisonTable)
+
+▣ CH11. Python & R 동시 사용(pd.DataFrame, sqlite3, rpy2 활용)
+  - my.printcmd(my.pkgCheatSheet.mdStr_pandasSqliteOnRpy2PythonR)
+"""
+
+# my.pkgCheatSheet.dct_pandas 초기화
+my.pkgCheatSheet.dct_pandas = dict()
+_ = initCheatSheetDict('pandas')
+
+# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
+my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary = """
++ **DataFrame(이하 DF) 흐름을 살려 script를 작성한다. 『ㆍ, [Boolean], [[열]]』을 넘어 DF이 흐른다. DF을 SQL의 Cursor로 생각하면 쉽다.**
++ 적용 순서 : ① DF 기본 기능(ⓐ [[열]], ⓑ [Boolean], ⓒ Slicing) <font color='blue'>**>**</font> ② .loc (ⓐ, ⓑ + 이름index + ⓒTo포함) <font color='blue'>**>**</font> ③ .iloc (정수index + ⓒTo불포함)
++ Analytic, Aggregate Function, Case문 활용, 집합 개념 연산 등 **본격적인 Data 탐색 시에는 DB(SQL)를 사용**하고, 간단하게는 pandas를 사용한다.  
+  - 중간에 학습곡선 단축을 위해 myLib의 sql2pd를 활용한다. : 복잡한 수식, 복잡한 조건, Join, Group by ... 안 됨
+  - SQL Select 대응 pandas 구문으로는 이름 인덱스를 활용한 <font color='blue'>**df.loc[WhereBoolean</font>, [열]]** 방식을 사용한다. (cf: .iloc은 Boolean Indexing 안 됨)
+"""
+
+# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
+my.pkgCheatSheet.mdStr_pandasSqliteComparisonTable = """**▣ 구조 요약** 
+- 전체 : df1.merge()<font color='blue'>**.loc[WhereBoolean</font>, [열]]**.groupby(by=['열']).agg({열:[함수]}).sort_values(by=[열], ascending=[False])[Offset:Limit + Offset]
+- Join : df1.merge(df2, left_on=['fld11', 'fld12'], right_on=['fld21', 'fld22'], how='inner/left/right/outer', suffixes=('', '_2'), indicator=True)
+
+**▣ SQL과 pandas 구문 비교**
+
+||SQL|Pandas ☞ SQL Select 대응 기본 구문: <font color='blue'>df.loc[WhereBoolean</font>, [열]]|
+|:---|:---|:---|
+|Select everything from …|SELECT `*` FROM table1|df|
+||SELECT `*` FROM table1 LIMIT 3|df[:3] 또는 df.head(3) `#` 정렬 순서에 주의|
+|Select specific columns|SELECT column1, column2<Br>FROM table1|`#` df[column_index_list] : [[ ]] 안에 열(이름 인덱스) 지정<Br>df[['column1', 'column2']]|
+|WHERE clause<Br>And &, Or │, Not ~ 또는<Br>And, Or는 그대로 사용 가능|SELECT `*`<Br>FROM table1<Br>WHERE column1 > 1 AND column2 < 25|`#` SQL Where → Boolean Index<Br>`#` df[Condition] 또는 df.loc[Condition] 사용 가능<Br>df.loc[(df['column1'] > 1) & (df['column2'] < 25)]|
+|WHERE clause, Between|SELECT `*`<Br>FROM table1<Br>WHERE column1 BETWEEN 1 and 5<Br>AND column2 IN (20,30,40,50)<Br>AND column3 LIKE '%arcelona%'|`#` 여러 건의 조건은 df[조건1][조건2][조건3] 방식으로 구현 가능<Br>df.loc[(df['column1'].between(1,5)) and <Br>&nbsp; &nbsp; &nbsp; &nbsp;(df['column2'].isin([20,30,40,50])) and <Br>&nbsp; &nbsp; &nbsp; &nbsp;(df['column3'].str.contains('arcelona'))]<Br>cf) ① % ≒ .str + .contains, .startswith, .endswith, ② Where ≒ <font color='blue'>**.query()**</font>|
+|Table Join|SELECT t1.column1, t2.column1<Br>FROM table1 t1<Br>INNER JOIN table2 t2<Br>ON t1.column_id = t2.column_id|`#` 먼저 join 처리하고 열 조정/구성, 열名 같으면 on만 사용 가능<Br>단계① Join: df_joined=df1.merge(df2,left_on=[열],right_on=[열],how='inner')<Br>단계② Select: df_joined[['column1_df1', 'column2_df2']]<Br>cf) df1.merge(df2, on=[열...], how='inner')[['column1_df1', 'column2_df2']]|
+|GROUP BY|SELECT column1, count(`*`)<Br>FROM table1<Br>GROUP BY column1|df.groupby(by=['column1'])['column1'].size( )<Br>DFGB=df.groupby(by=['column1']) ☞ DFGB[[열]].함수 또는 DFGB[열].함수<Br>또는 DFGB[[열]].agg([함수]) 또는 DFGB.agg({열:함수})|
+|GROUP BY … HAVING|SELECT store, sum(sales)<Br>FROM table1<Br>GROUP BY store<Br>HAVING sum(sales) > 1000|df.groupby('store')['sales'].sum()<Br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .loc[df_grouped > 1000]|
+|ORDER BY|SELECT `*`<Br>FROM table1<Br>ORDER BY column1 DESC|df.sort_values(by=['column1'], ascending=[False])<Br>cf) df.sort_index()|
+|계산 열 추가|SELECT *, tip/total_bill as tip_rate from tips|tips<font color='green'>**.assign**</font>(tip_rate=tips['tip'] / tips['total_bill'])|
+|UNION ALL|select ... from df1<Br>UNION ALL<Br>select ... from df2|pd.concat([df1, df2])|
+|UNION|select ... from df1<Br>UNION<Br>select ... from df2|pd.concat([df1, df2]).drop_duplicates()|
+|Window Functions<Br>☞ DB 사용 권장|SELECT *, SUM(field_name) OVER (<Br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PARTITION BY url, service<Br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ORDER BY ts ) as total<Br>&nbsp; &nbsp; &nbsp; FROM df|(df.assign(total=df.sort_values(['ts'])<Br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .groupby(['url', 'service'])<Br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .field_name<Br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .cumsum())|
+|Create Table<Br>*(cf: IF NOT EXISTS)*|create table df1 (id integer, name text)<Br>insert into df1 values (1, 'Harry Potter')<Br>insert into df1 values (2, 'Ron Weasley')|df1 = pd.DataFrame(<Br>&nbsp; &nbsp; { 'id': [1, 2], 'name': ['Harry Potter', 'Ron Weasley'] } )<Br>또는 df1.to_sql('df1', conn, if_exists='replace')|
+|Update|update airports<Br>&nbsp; set home_link = 'string url'<Br>&nbsp;where ident == 'KLAX'|airports.loc[airports['ident'] == 'KLAX', 'home_link'] = 'string url'<Br>tips.loc[tips['tip'] < 2, 'tip'] *= 2 `#` 다른 예|
+|Delete|delete from lax_freq<Br>&nbsp;where type = 'MISC'|방법① : lax_freq = lax_freq[lax_freq.type != 'MISC']<Br>방법② : lax_freq.drop(lax_freq[lax_freq.type == 'MISC'].index)|
+"""
+
+# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
+my.pkgCheatSheet.mdStr_pandasSqliteOnRpy2PythonR = '''Python & R 동시 사용(pd.DataFrame, sqlite3, rpy2 활용)
+
+|Python|Action|R in Jupyter Notebook & Python|
+|:---|:---:|:---|
+|import pandas as pd `#` myLib.py에 포함됨<Br>import sqlite3 &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;`#` myLib.py에 포함됨<Br>%run -i myLib.py|Library|import rpy2<Br>from rpy2.robjects import r `#` 아래는 충돌 방지용<Br>`#` import rpy2.robjects as ro `#` r()대신 ro.r() 사용|
+||R세션|&nbsp; &nbsp; 최초>> %load_ext rpy2.ipython<Br>재시작>> %reload_ext rpy2.ipython|
+|DB = './sqlite3.db'<Br>pycon = sqlite3.connect(DB) `#` or ':memory:'<Br>① myLib.py runSQL 활용<Br>pycursor = pycon.cursor( ) `#` pd 활용 시 불필요<Br>② pd.read_sql_query 사용: 접속(connect)으로 충분|DB 연결|r('library(DBI); require(Tidyverse)')<Br>`#` memory SQLite DB는 `python - r` 공유 안 됨<Br>r("rcon <- dbConnect(RSQLite::SQLite(), '" + DB + "')")|
+|①, ② : pycon, <font color="blue">**② : pycursor**</font>|연결 확인|r("rcon")|
+|① myLib.py runSQL 활용<Br>def pysql(sqlstr=None, c=<font color="blue">**pycursor**</font>, p=None,<Br> &nbsp; &nbsp; s=None, m=False, l=False):<Br> &nbsp; &nbsp; return runSQL(sqlstr, c, p, s, m, l)<Br>② pd.read_sql_query 사용<Br>def pysql(sqlstr=None, dbcon=**pycon**):<Br> &nbsp; &nbsp; return pd.read_sql_query(sql=sqlstr, con=dbcon)|함수 선언|def rsql(sqlstr="""DML...""", con=rcon):<Br> &nbsp; &nbsp; return r("dbGetQuery(con, '" + sqlstr + "')")<Br>`#` 참고: pysql과 달리 <font color="blue">**SELECT**</font>만 가능함|
+|iris_pydf.to_sql('iris_py', pycon) |DF→Table|r('dbWriteTable(rcon, "iris_r", iris_rdf)')|
+|pysql("select * from sqlite_master")<Br>`)`外상동+"where tbl_name='특테' and type='table'")<Br>sqlstr="""select ... from 특정테이블"""; pysql(sqlstr)|DF←Table|r('dbListTables(rcon)') `#` rsql( ) 사용 가능<Br>r('dbListFields(con, "특정테이블")') `#` 필드명 조회 <Br>sqlstr = """Select ... from 특정테이블"""; rsql(sqlstr)|
+|pycon.close( )|연결 해제|r('dbDisconnect(rcon)')|
+|py2DArray = np.array([[1, 2, 3], [4, 5, 6]])<Br>pd.DataFrame(py2DArray))|DF 예시1|R예시1(예정)|
+|pyDict = {"col1": [1,2], "col2": [3,4], "col3": [5,6]}<Br>pd.DataFrame(pyDict)|DF 예시2|R예시2(예정)|
+|pydf = pd.DataFrame(data=[[1, 'a'],[2, 'b'],[3, 'c']],<Br>index=range(1,4), columns=['c1', 'c2'])|DF 예시3|R예시3(예정)|
+||rpy2<Br>용례 ①|rcmdstr = """<Br>set.seed(100)<Br>x <- rnorm(100)<Br>y <- x + rnorm(100,sd=0.5)<Br>lmout <- lm(y~x)<Br>lmout$coefficients"""<Br>coef=r(rcmdstr)|
+||rpy2<Br>용례 ②|rcmdstr = """<Br>iris %>% head(10) **%>%**<Br> &nbsp; &nbsp; tail(3) """<Br>r(rcmdstr)|
+'''
+my.pkgCheatSheet.str_pandasWrangling = """Data Wrangling with pandas Cheat Sheet
+▣ dct id 
+   - 0. ToC
+   - 1. Tidy Data                    8. Group Data
+   - 2. Syntax                       9. Windows
+   - 3. Method Chaining              10. Handling Missing Data
+   - 4. Reshaping Data               11. Make New Columns
+   - 5. Subset Observations (Rows)   12. Combine Data Sets
+   - 6. Subset Variables (Columns)   13. Plotting
+   - 7. Summarize Data               99. Remark
+
+▣ CH01. Tidy Data – A foundation for wrangling in pandas
+
+▣ CH02. Syntax – Creating DataFrames
+
+▣ CH03. Method Chaining
+Most pandas methods return a DataFrame so that another pandas method can be applied to the result. 
+This improves readability of code as follows:
+df = (pd.melt(df)
+        .rename(columns={
+                'variable' : 'var',
+                'value' : 'val'})
+        .query('val >= 200')
+     )
+
+▣ CH04. Reshaping Data – Change the layout of a data set
+
+▣ CH05. Subset Observations (Rows)
+
+▣ CH06. Subset Variables (Columns)
+
+▣ CH07. Summarize Data
+
+▣ CH08. Group Data
+
+▣ CH09. Windows
+
+▣ CH10. Handling Missing Data
+
+▣ CH11. Make New Columns
+
+▣ CH12. Combine Data Sets
+   - https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
+
+▣ CH13. Plotting
+
+▣ CH99. Remark : http://pandas.pydata.org/ This cheat sheet inspired by Rstudio Data Wrangling Cheatsheet 
+(https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) Written by Irv Lustig, Princeton Consultants
+
+"""
+
+# my.pkgCheatSheet.dct_pandasWrangling 초기화
+my.pkgCheatSheet.dct_pandasWrangling = dict()
+_ = initCheatSheetDict('pandasWrangling')
+
+## ------------------------------------------------------------------------------------------- ## python > pandas & Wrangling ↑, python > sqlite ↓
 
 ## ------------------------------------------------------------------------------------------- ## python > sqlite ↑, python > matplotlib ↓
 
