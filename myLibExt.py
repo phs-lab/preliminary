@@ -1,3 +1,5 @@
+#-*- coding:utf-8 -*-
+
 ## CheatSheet =================================================================================== Begin : Dictionary 초기화 함수 ↓
 def initCheatSheetDict(csNameStr): # argStr, argDict):
   ptr_fr = 0; cnt=0; # argStr = my.pkgCheatSheet.str_sklearn; argDict = my.pkgCheatSheet.dct_sklearn
