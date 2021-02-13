@@ -5,19 +5,6 @@
 # - 본인이 만들어서 직접 사용하는 것으로, 오류 가능성 항상 있음에 유의.
 # - 향후 『import ./myLib』으로 사용할 수 있도록 변경해야 하는 과제가 있음.
 
-# ▣ 자주 사용하는 jupyter notebook cell 명령어
-#   %run -i ./myLib.py
-
-# ▣ 자주 사용하는 conda 명령어
-# conda env list                    # conda 가상환경 확인
-# conda activate r-reticulate
-# conda list | find /N /I "scikit"  # 설치된 Module 확인
-# 윈도우> start /b jupyter notebook
-# conda update conda   
-# conda create -n TF2Keras tensorflow numpy scipy sympy matplotlib seaborn pandas pandas-profiling scikit-learn jupyterlab tensorflow-gpu gensim bokeh jedi jpype1 kiwisolver nltk spacy statsmodels tqdm pydot
-# python> from tensorflow.python.client import device_lib
-# python> device_lib.list_local_devices()
-
 import numpy as np
 import scipy as sp
 import pandas as pd
@@ -1571,14 +1558,15 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
 ▣ CH01. 환경 구성 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2470  
   1.1 자주 사용하는 conda 명령어
     - conda create --name MyEnv         # 가상환경 "MyEnv" 생성, 필요 시 "python=3.5 numpy=1.1"과 같이 패키지와 버전 지정 가능
+      # 예시 : conda create -n TF2Keras tensorflow numpy scipy sympy matplotlib seaborn pandas pandas-profiling scikit-learn jupyterlab tensorflow-gpu gensim bokeh jedi jpype1 kiwisolver nltk spacy statsmodels tqdm pydot
     - conda env list                    # conda 가상환경 확인
     - conda info                        # 현재 환경 정보 출력
-    - conda activate 접속할_가상환경이름
+    - conda activate 접속할_가상환경이름 
     - conda deactivate                  # 현재 conda 환경에서 이탈
     - conda list | find /N /I "scikit"  # 윈도우에서 설치된 Module 확인
     - conda search package_name         # 패키지 검색
     - conda install package_name=ver    # 패키지 설치
-    - conda update conda                # 패키지 conda 갱신
+    - conda update conda                # 패키지 conda 갱신 (Base 환경에서 실행, 아니면 "conda update -n base conda" 실행)
     - conda update package_name         # 패키지 업데이트
     - conda list --export > pkg_lst.txt # 패키지 목록 및 버전 정보 저장
     - conda install --file  pkg_lst.txt # 패키지 목록으로 설치
@@ -1586,6 +1574,7 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
     - conda env create -f MyEnv.yml     # MyEnv.yml에 저장된 정보로 환경 생성, 필요 시 사전에 yml file 내의 "환경 이름" 변경.
     - conda remove package_name
     - conda remove --name MyEnv --all   # 환경 "MyEnv" 전체 삭제
+    - start /b jupyter notebook
     
   1.2 환경 확인을 위한 Python 구문
     - local device(CPU, GPU) 정보 확인
@@ -1599,7 +1588,10 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
         print(item) if cnt%9 == 0 else print(item, end='\t')
       else:
         print('☞ Total', cnt, 'items')
-    
+
+  1.3 자주 사용하는 jupyter notebook magic command
+    - %run -i ./preliminary/myLib.py
+  
 ▣ CH02. 자료형 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2189  
   - my.printcmd(my.pkgCheatSheet.mdStr_python_sequence)  
   
