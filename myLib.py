@@ -1924,6 +1924,7 @@ my.pkgCheatSheet.str_pandas = """pandas Cheat Sheet : https://pandas.pydata.org/
         https://medium.com/jbennetcodes/how-to-rewrite-your-sql-queries-in-pandas-and-more-149d341fc53e
   - my.printcmd(my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary)
   - my.printcmd(my.pkgCheatSheet.mdStr_pandasSqliteComparisonTable)
+  - my.printcmd(my.pkgCheatSheet.mdStr_pandasSqliteComparisonExample)
 
 ▣ CH11. Python & R 동시 사용(pd.DataFrame, sqlite3, rpy2 활용)
   - my.printcmd(my.pkgCheatSheet.mdStr_pandasSqliteOnRpy2PythonR)
@@ -2013,6 +2014,30 @@ my.pkgCheatSheet.mdStr_pandasSqliteComparisonTable = """**▣ 구조 요약**
 |Update|update airports<Br>&nbsp; set home_link = 'string url'<Br>&nbsp;where ident == 'KLAX'|airports.loc[airports['ident'] == 'KLAX', 'home_link'] = 'string url'<Br>tips.loc[tips['tip'] < 2, 'tip'] *= 2 `#` 다른 예|
 |Delete|delete from lax_freq<Br>&nbsp;where type = 'MISC'|방법① : lax_freq = lax_freq[lax_freq.type != 'MISC']<Br>방법② : lax_freq.drop(lax_freq[lax_freq.type == 'MISC'].index)|
 """
+
+# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
+my.pkgCheatSheet.mdStr_pandasSqliteComparisonExample = """**▣ SQL → pandas 예시**  
+- 참조 URL : [SQL Syntax](https://en.wikipedia.org/wiki/SQL_syntax), [Comparison with SQL](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html), [SQL → pandas](https://medium.com/jbennetcodes/how-to-rewrite-your-sql-queries-in-pandas-and-more-149d341fc53e), [my Private Github](https://github.com/phs-lab/Packages/blob/master/Python/sqlite3/pandas_vs_sqlite3.ipynb)
+<pre>
+(5)  Select distinct                 (df1[['col1k', 'col2']]
+            col1k, col2, col3
+          , col2 / col3 as calc_col
+(1)    from df1                                      
+      inner join df2                     .merge(df2[['col2k', 'col3']],
+         on df1.col1 = df2.col1                 on=[열...], (또는 left_on=['col1k'],right_on=['col2k'])
+                                             how='inner/left/right/outer 중 택일' # , suffixes=('', '_2'), indicator=True
+                                            )[['col1k', 'col2', 'col3']] # SQL (5) : SELECT col1k, col2, col3 
+                                         .unique()            # SQL (5) : Select distinct 
+                                         .assign(calc_col = col2 / col3)  # SQL (5) : AS 열 추가
+(2)   where                              .query('condition')  # 또는 .loc['condition'] ☞ 같은 "기본 기능" 참고 : "df['condition']"
+(3)   group by                           .groupby(by=['열'])   # 집계함수가 사용된 경우 : .groupby(by=['열']).agg({열:[함수]})
+(4)  having                              .filter()
+(6)   order by                           .sort_values(by=['col1k', 'col2'], ascending=[True, Flase])
+(7)   Limit n offset m                   .nlargest(m + n)[Offset:Limit + Offset]  # offset, list은 아래와 같이 할 수도 있음
+                                       # .head(n)             : offset 없이 Limit만 사용된 경우
+                                       # .tail(n)             : offset + "order by 내림차순"
+                                       # .head(m + n).tail(n) : offset + "order by 오름차순 또는 order by 없는 경우"
+                                     ) </pre>"""
 
 # str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
 my.pkgCheatSheet.mdStr_pandasSqliteOnRpy2PythonR = '''Python & R 동시 사용(pd.DataFrame, sqlite3, rpy2 활용)
