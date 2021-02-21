@@ -1938,6 +1938,9 @@ my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary = """
 + Analytic, Aggregate Function, Case문 활용, 집합 개념 연산 등 **본격적인 Data 탐색 시에는 DB(SQL)를 사용**하고, 간단하게는 pandas를 사용한다.  
   - 중간에 학습곡선 단축을 위해 myLib의 sql2pd를 활용한다. : 복잡한 수식, 복잡한 조건, Join, Group by ... 안 됨
   - SQL Select 대응 pandas 구문으로는 이름 인덱스를 활용한 <font color='blue'>**df.loc[WhereBoolean</font>, [열]]** 방식을 사용한다. (cf: .iloc은 Boolean Indexing 안 됨)
++ Useful Links
+  - pandas official doc. : [10 minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html), [Cookbook](https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html), [Essential basic functionality](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html), [Comparison with SQL](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html)
+  - Web Links : [Method Chaining in Pandas](https://towardsdatascience.com/the-unreasonable-effectiveness-of-method-chaining-in-pandas-15c2109e3c69), [Stackoverflow example](https://stackoverflow.com/questions/37155800/r-with-function-in-python), Wiki [SQL](https://en.wikipedia.org/wiki/SQL) & [SQL Syntax](https://en.wikipedia.org/wiki/SQL_syntax), [SQL → pandas](https://medium.com/jbennetcodes/how-to-rewrite-your-sql-queries-in-pandas-and-more-149d341fc53e)
 """
 
 # str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
