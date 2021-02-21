@@ -1724,6 +1724,7 @@ my.pkgCheatSheet.str_pandas = """pandas Cheat Sheet : https://pandas.pydata.org/
     df = pd.DataFrame(data, columns=['Country', 'Capital', 'Population'])
 
 ▣ CH02. Selection ☞ Also see NumPy Arrays
+  2.0 Summary of Indexing & Slicing : my.printcmd(my.pkgCheatSheet.mdStr_pandasIndexingSlicing)
   2.1 Getting subset of a Series/DataFrame
     Get one element of Series : s['b'] 
     Get subset of a DataFrame : df[1:] 
@@ -1821,6 +1822,7 @@ my.pkgCheatSheet.str_pandas = """pandas Cheat Sheet : https://pandas.pydata.org/
             value_name="Observations")
 
 ▣ CH07. Advanced Indexing ☞ Also see NumPy Arrays
+  7.0 Summary of Indexing & Slicing : my.printcmd(my.pkgCheatSheet.mdStr_pandasIndexingSlicing)
   7.1 Selecting
     df3.loc[:,(df3>1).any()]         # Select cols with any vals >1
     df3.loc[:,(df3>1).all()]         # Select cols with vals > 1
@@ -1930,6 +1932,47 @@ my.pkgCheatSheet.str_pandas = """pandas Cheat Sheet : https://pandas.pydata.org/
 # my.pkgCheatSheet.dct_pandas 초기화
 my.pkgCheatSheet.dct_pandas = dict()
 _ = initCheatSheetDict('pandas')
+
+# str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
+my.pkgCheatSheet.mdStr_pandasIndexingSlicing = """**▣ Indexing(지정) & Slicing(범위 자르기) 요약** 
++ <font color='red'>**i**</font>loc, loc은 모두 **인덱스**를 사용하는데, <font color='red'>**i**</font>loc은 위치를 가리키는 정수(<font color='red'>**i**</font>nteger) **Index**를, loc은 이름 **Index**를 사용한다.
++ dataframe은 위치 정수 인덱스나 이름 인덱스 모두를 사용하지만 적용 대상이 다르다.
+  - Indexing(지정) : 열에 적용 - df[[열이름]] 방식으로 이름 인덱스를 사용하여 열을 지정하여 추출.
+  - Slicing(범위 자르기) : 행에 적용 - df[인덱스:인덱스] 방식으로 위치 정수 또는 이름 인덱스 모두를 사용하여 자르기를 함.  
+    Slicing 적용 범위 : From ≤ 위치 < To, From ≤ 이름 < To
++ 여러 건 지정 시 **[ ]**로 묶어 준다.
+||||① dataframe (df=data_df)|||② df.iloc (위치 정수 인덱스)|||③ df.loc (이름 인덱스) ☞ '행=<font color="blue">숫자</font>'가 <font color="blue">일반</font>적|||
+|:---|:---|:---|:---|:---:|:---:|:---|:---:|:---:|:---|:---:|:---:|
+|<font color="blue">**Indexing**</font>|||<font color="blue">**df[ [ 열이름 ] ]**</font>|||<font color="blue">**df.iloc[행수치Index, 열수치Index]**</font>|||<font color="blue">**df.loc[행이름Index, 열이름]**</font>|||
+||행(▤) [ ]|L|df[0]||<font color="red">Χ</font>|df.iloc[0] 또는 df.iloc[[0,2]]||<font color="blue">O</font>|df.loc[0]||<font color="red">Χ</font>|
+|||N|df['one']||<font color="red">Χ</font>|df.iloc['one']||<font color="red">Χ</font>|df.loc['one'] ☞ 행 Series 반환||<font color="blue">O</font>|
+||열(▥) [[ ]]|L|df[[0]]||<font color="red">Χ</font>|df.iloc[[0]] ☞ 행 추출됨||<font color="black">△</font>|df.loc[[0]]||<font color="red">Χ</font>|
+|||N|df[['Name', 'Gender']]||<font color="blue">O</font>|df.iloc[['Name', 'Gender']]||<font color="red">Χ</font>|df.loc[['Name', 'Gender']]||<font color="red">Χ</font>|
+||[행, 열] numpy|L|df[0, 0]||<font color="red">Χ</font>|df.iloc[0, 0]<Br>또는 df.iloc[[0,2], [0,2]]||<font color="blue">O</font>|df.loc[0, 0]||<font color="red">Χ</font>|
+|||N|df['one', 'Name']||<font color="red">Χ</font>|df.iloc['one', 'Name']||<font color="red">Χ</font>|df.loc['one', 'Name']<Br>또는 df.loc[['one', 'three'], ['Name', 'Gender']]||<font color="blue">O</font>|
+||[행][열] numpy|L|df[0][0]||<font color="red">Χ</font>|df.iloc[0][0] ☞ df.iloc[[0,2]][0] : 오류||<font color="blue">O</font>|df.loc[0][0]||<font color="red">Χ</font>|
+|||N|df['one']['Name', 'Gender']||<font color="red">Χ</font>|df.iloc['one']['Name', 'Gender']||<font color="red">Χ</font>|df.loc['one']['Name', 'Gender']||<font color="red">Χ</font>|
+||[행][[열]]|L|df[0][[0]]||<font color="red">Χ</font>|df.iloc[0][[0, 2]]||<font color="blue">O</font>|df.loc[0][[0]]||<font color="red">Χ</font>|
+|||N|df['one'][['Name', 'Gender']]||<font color="red">Χ</font>|df.iloc['one'][['Name', 'Gender']]||<font color="red">Χ</font>|df.loc['one'][['Name', 'Gender']]<Br>또는 df.loc[['one','three']][['Name', 'Gender']]||<font color="blue">O</font>|
+||[행, [열]]|L|df[0, [0,2]]||<font color="red">Χ</font>|df.iloc[0, [0,2]] ☞ 행 Series 추출됨||<font color="blue">O</font>|df.loc[0, [0,2]]||<font color="red">Χ</font>|
+|||N|df['one', ['Name', 'Gender']]||<font color="red">Χ</font>|df.iloc['one', ['Name', 'Gender']]||<font color="red">Χ</font>|df.loc['one', ['Name', 'Gender']]<Br>또는 df.loc[['one','three'], ['Name', 'Gender']]||<font color="blue">O</font>|
+||[L, [N]]|C|df[0, ['Name', 'Gender']]||<font color="red">Χ</font>|df.iloc[0, ['Name', 'Gender']]||<font color="red">Χ</font>|df.loc[0, ['Name', 'Gender']]||<font color="red">Χ</font>|
+|<font color="blue">**Slicing**</font>|||<font color="blue">**df[행인덱스:행인덱스]**</font>|||<font color="blue">**df.iloc[수치:수치 ,수치:수치]**</font>|||<font color="blue">**df.loc[행이름:행이름, 열이름:열이름]**</font>|||
+||행(▤) [ ]|L|df[:3]|O|<font color="blue">O</font>|df.iloc[:3]|O|<font color="blue">O</font>|df.loc[:3]||<font color="red">Χ</font>|
+|||N|df[:'three']|●|<font color="blue">O</font>|df.iloc[:'three']||<font color="red">Χ</font>|df.loc[:'three']|●|<font color="blue">O</font>|
+||열(▥) [[ ]]|L|df[[0:2]]||<font color="red">Χ</font>|df.iloc[[0:2]]||<font color="red">Χ</font>|df.loc[[0:2]]||<font color="red">Χ</font>|
+|||N|df[['Name':'Gender']]||<font color="red">Χ</font>|df.iloc[['Name':'Gender']]||<font color="red">Χ</font>|df.loc[['Name':'Gender']]||<font color="red">Χ</font>|
+||[행, 열] numpy|L|df[0:2, 0:2]||<font color="red">Χ</font>|df.iloc[0:2, 0:2]|O|<font color="blue">O</font>|df.loc[0:2, 0:2]||<font color="red">Χ</font>|
+|||N|df['one':'three', 'Name':'Gender']||<font color="red">Χ</font>|df.iloc['one':'three', 'Name':'Gender']||<font color="red">Χ</font>|df.loc['one':'three', 'Name':'Gender']|●|<font color="blue">O</font>|
+||[행][열] numpy|L|df[0:2][0:2] ☞ 행 Slicing 2회|O|<font color="black">△</font>|df.iloc[0:2][0:2] ☞ 행 Slicing 2회|O|<font color="black">△</font>|df.loc[0:2][0:2]||<font color="red">Χ</font>|
+|||N|df['one':'three']['Name':'Gender']||<font color="red">Χ</font>|df.iloc['one':'three']['Name':'Gender']||<font color="red">Χ</font>|df.loc['one':'three']['Name':'Gender']||<font color="red">Χ</font>|
+||[행][[열]]|L|df[0:2][[0:2]]||<font color="red">Χ</font>|df.iloc[0:2][[0:2]]||<font color="red">Χ</font>|df.loc[0:2][[0:2]]||<font color="red">Χ</font>|
+|||N|df['one':'three'][['Name':'Gender']]||<font color="red">Χ</font>|df.iloc['one':'three'][['Name':'Gender']]||<font color="red">Χ</font>|df.loc['one':'three'][['Name':'Gender']]||<font color="red">Χ</font>|
+||[행, [열]]|L|df[0:2, [0:2]]||<font color="red">Χ</font>|df.iloc[0:2, [0:2]]||<font color="red">Χ</font>|df.loc[0:2, [0:2]]||<font color="red">Χ</font>|
+|||N|df['one':'three', ['Name':'Gender']]||<font color="red">Χ</font>|df.iloc['one':'three', ['Name':'Gender']]||<font color="red">Χ</font>|df.loc['one':'three', ['Name':'Gender']]||<font color="red">Χ</font>|
+||[L, [N]]|C|df[0:2, ['Name':'Gender']]||<font color="red">Χ</font>|df.iloc[0:2, ['Name':'Gender']]||<font color="red">Χ</font>|df.loc[0:2, ['Name':'Gender']]||<font color="red">Χ</font>|
+|||E|||||||df.loc['one':'three'][1:2] ☞ 행 slicing 2회||<font color="black">△</font>|
+|주석|||L 위치, N 이름, C 혼합, E 기타||||||slicing to 포함: ● 포함, O 불포함|||"""
 
 # str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
 my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary = """
