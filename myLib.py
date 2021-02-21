@@ -1941,6 +1941,7 @@ my.pkgCheatSheet.mdStr_pandasIndexingSlicing = """**▣ Indexing(지정) & Slici
   - Slicing(범위 자르기) : 행에 적용 - df[인덱스:인덱스] 방식으로 위치 정수 또는 이름 인덱스 모두를 사용하여 자르기를 함.  
     Slicing 적용 범위 : From ≤ 위치 < To, From ≤ 이름 < To
 + 여러 건 지정 시 **[ ]**로 묶어 준다.
+
 ||||① dataframe (df=data_df)|||② df.iloc (위치 정수 인덱스)|||③ df.loc (이름 인덱스) ☞ '행=<font color="blue">숫자</font>'가 <font color="blue">일반</font>적|||
 |:---|:---|:---|:---|:---:|:---:|:---|:---:|:---:|:---|:---:|:---:|
 |<font color="blue">**Indexing**</font>|||<font color="blue">**df[ [ 열이름 ] ]**</font>|||<font color="blue">**df.iloc[행수치Index, 열수치Index]**</font>|||<font color="blue">**df.loc[행이름Index, 열이름]**</font>|||
