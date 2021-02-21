@@ -1977,8 +1977,7 @@ my.pkgCheatSheet.mdStr_pandasIndexingSlicing = """**▣ Indexing(지정) & Slici
 |주석|||L 위치, N 이름, C 혼합, E 기타||||||slicing to 포함: ● 포함, O 불포함|||"""
 
 # str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
-my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary = """
-+ **DataFrame(이하 DF) 흐름을 살려 script를 작성한다. 『ㆍ, [Boolean], [[열]]』을 넘어 DF이 흐른다. DF을 SQL의 Cursor로 생각하면 쉽다.**
+my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary = """+ **DataFrame(이하 DF) 흐름을 살려 script를 작성한다. 『ㆍ, [Boolean], [[열]]』을 넘어 DF이 흐른다. DF을 SQL의 Cursor로 생각하면 쉽다.**
 + 적용 순서 : ① DF 기본 기능(ⓐ [[열]], ⓑ [Boolean], ⓒ Slicing) <font color='blue'>**>**</font> ② .loc (ⓐ, ⓑ + 이름index + ⓒTo포함) <font color='blue'>**>**</font> ③ .iloc (정수index + ⓒTo불포함)
 + Analytic, Aggregate Function, Case문 활용, 집합 개념 연산 등 **본격적인 Data 탐색 시에는 DB(SQL)를 사용**하고, 간단하게는 pandas를 사용한다.  
   - 중간에 학습곡선 단축을 위해 myLib의 sql2pd를 활용한다. : 복잡한 수식, 복잡한 조건, Join, Group by ... 안 됨
