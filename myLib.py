@@ -1943,7 +1943,7 @@ my.pkgCheatSheet.mdStr_pandasIndexingSlicing = """**▣ Indexing(지정) & Slici
     Slicing 적용 범위 : From ≤ 위치 < To, From ≤ 이름 < To
 + 여러 건 지정 시 **[ ]**로 묶어 준다.
 
-||||① dataframe (df=data_df)|||② df.iloc (위치 정수 인덱스)|||③ df.loc (이름 인덱스) ☞ '행=<font color="blue">숫자</font>'가 <font color="blue">일반</font>적|||
+||||① dataframe (df=data_df)|||② df.iloc (위치 정수Index)|||③ df.loc (이름Index) ☞ '행=<font color="blue">숫자</font>'가 <font color="blue">일반</font>적|||
 |:---|:---|:---|:---|:---:|:---:|:---|:---:|:---:|:---|:---:|:---:|
 |<font color="blue">**Indexing**</font>|||<font color="blue">**df[ [ 열이름 ] ]**</font>|||<font color="blue">**df.iloc[행수치Index, 열수치Index]**</font>|||<font color="blue">**df.loc[행이름Index, 열이름]**</font>|||
 ||행(▤) [ ]|L|df[0]||<font color="red">Χ</font>|df.iloc[0] 또는 df.iloc[[0,2]]||<font color="blue">O</font>|df.loc[0]||<font color="red">Χ</font>|
@@ -1977,7 +1977,8 @@ my.pkgCheatSheet.mdStr_pandasIndexingSlicing = """**▣ Indexing(지정) & Slici
 |주석|||L 위치, N 이름, C 혼합, E 기타||||||slicing to 포함: ● 포함, O 불포함|||"""
 
 # str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
-my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary = """+ **DataFrame(이하 DF) 흐름을 살려 script를 작성한다. 『ㆍ, [Boolean], [[열]]』을 넘어 DF이 흐른다. DF을 SQL의 Cursor로 생각하면 쉽다.**
+my.pkgCheatSheet.mdStr_pandasSqliteComparisonSummary = """**▣ SQL과 pandas 구문 비교** 요약  
++ **DataFrame(이하 DF) 흐름을 살려 script를 작성한다. 『ㆍ, [Boolean], [[열]]』을 넘어 DF이 흐른다. DF을 SQL의 Cursor로 생각하면 쉽다.**
 + 적용 순서 : ① DF 기본 기능(ⓐ [[열]], ⓑ [Boolean], ⓒ Slicing) <font color='blue'>**>**</font> ② .loc (ⓐ, ⓑ + 이름index + ⓒTo포함) <font color='blue'>**>**</font> ③ .iloc (정수index + ⓒTo불포함)
 + Analytic, Aggregate Function, Case문 활용, 집합 개념 연산 등 **본격적인 Data 탐색 시에는 DB(SQL)를 사용**하고, 간단하게는 pandas를 사용한다.  
   - 중간에 학습곡선 단축을 위해 myLib의 sql2pd를 활용한다. : 복잡한 수식, 복잡한 조건, Join, Group by ... 안 됨
