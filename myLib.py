@@ -2119,7 +2119,7 @@ _ = initCheatSheetDict('pandasWrangling')
 
 ## ------------------------------------------------------------------------------------------- ## python > matplotlib ↑, python > scikit-learn ↓
 my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacamp.com/community/data-science-cheatsheets?tag=python
-▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Example
+▣ dct id : [0] ToC, [1] Data, [2] Model, [3] Training, [4] Prediction, [5] Evaluation, [6] Tuning, [7] Basic Examples
     - (class pkgCheatSheet에서) 구분 조회 : print(str_sklearn[str_sklearn.index('구분1'):str_sklearn.index('구분2')])
     - User Guide : https://scikit-learn.org/stable/user_guide.html ☞ 파이썬 일반 : https://wikidocs.net/book/1
     - Choosing the Right Estimator : https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
@@ -2272,7 +2272,7 @@ my.pkgCheatSheet.str_sklearn = """scikit-learn Cheat Sheet @ https://www.datacam
       rsearch.fit(X_train, y_train)
       print(rsearch.best_score_)
 
-▣ CH07. A Basic Example ☞ Help : import mglearn  # https://github.com/amueller/mglearn 
+▣ CH07. Basic Examples ☞ Help : import mglearn  # https://github.com/amueller/mglearn 
   7.1 Cheat Sheet ☞ ML Process : https://volcanohong.github.com/content/images/2016/ml_process.png
       from sklearn import neighbors, datasets, preprocessing
       from sklearn.model_selection import train_test_split
