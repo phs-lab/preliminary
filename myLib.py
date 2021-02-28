@@ -355,7 +355,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
                   rank_res = "N/A"
               print('axis:\033[1m', ndarrayObj.ndim, '\033[0m\t', 'len():', len(ndarrayObj),
                     eval("descPhrase" if itemRelDesc else "blankStr"),
-                    '\nrank', rank_res, '\tsize:', ndarrayObj.size, '\t', 'no of bytes(nbytes):', ndarrayObj.nbytes)
+                    '\nrank:', rank_res, '\tsize:', ndarrayObj.size, '\t', 'no of bytes(nbytes):', ndarrayObj.nbytes)
               if itemRelDesc:
                   print(strItemRelDesc)
           else:
