@@ -1,7 +1,7 @@
 # 독습을 위한 데이터 과학 길잡이
 ## Useful Resources
 * 책갈피
-<details><summary>★★★책갈피★★★</summary><div markdown="3">
+  <details><summary>★★★책갈피★★★</summary><div markdown="3">
   
 <font size=4>**소제목**</font>  
 
@@ -36,7 +36,8 @@
   - https://en.wikibooks.org/wiki/LaTeX/Mathematics  
   - [MathJax basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)  
   - [MathJax 연습 가능한 곳](http://jsbin.com/zimuxulawu/edit?html,output), [MathJax 코드 제안](http://detexify.kirelabs.org/classify.html)
-</div></details>
+ 
+  </div></details>
 
 ## 현재 
 + 아즈마 유키나가(我妻幸長), 2021, 처음 만나는 AI 수학 with 파이썬 한 권으로 배우는 인공지능 수학 첫걸음  
