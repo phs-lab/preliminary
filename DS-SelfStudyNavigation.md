@@ -1,8 +1,6 @@
 # 독습을 위한 데이터 과학 길잡이
 ## Useful Resources
-* <details><summary>★★★책갈피★★★</summary><div markdown="3">
-  
-<font size=4>**소제목**</font>  
+* <details><summary>★★★책갈피★★★</summary><div markdown="3"><font size=4>**소제목**</font>  
 
 ⏰ **여기서 잠깐** : 경고(Warning)가 나타납니다. 정상인가요?  
 
