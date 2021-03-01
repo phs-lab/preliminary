@@ -1,7 +1,7 @@
 # 독습을 위한 데이터 과학 길잡이
 ## Useful Resources
-* 책갈피
-  <details><summary>★★★책갈피★★★</summary><div markdown="3">
+
+<details><summary>★★★책갈피★★★</summary><div markdown="3">
   
 <font size=4>**소제목**</font>  
 
