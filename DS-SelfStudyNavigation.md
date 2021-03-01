@@ -1,7 +1,8 @@
 # 독습을 위한 데이터 과학 길잡이
 ## Useful Resources
 * ★★★책갈피★★★  
-
+<details><summary>세부 내역</summary><div markdown="3">
+  
 <font size=4>**소제목**</font>  
 
 ⏰ **여기서 잠깐** : 경고(Warning)가 나타납니다. 정상인가요?  
@@ -24,6 +25,18 @@
 |(API)Ref.|[Lib](https://docs.python.org/3/library), [Lang](https://docs.python.org/3.9/reference)|[○](https://numpy.org/doc/stable/reference/)|[○](https://docs.scipy.org/doc/scipy/reference/)|[○](https://docs.sympy.org/latest/index.html)|[○](https://matplotlib.org/stable/contents.html)|[○](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)|[○](https://www.sklearn.org/modules/classes.html)|[○](https://pycaret.readthedocs.io/en/latest/api/classification.html)||[○](https://www.statsmodels.org/stable/api.html)|[○](https://rpy2.github.io/doc/latest/html/index.html)||||[○](https://spacy.io/api)|
 |CheatSheet||[1](https://github.com/rougier/numpy-100), [2](https://www.kaggle.com/utsav15/100-numpy-exercises), [3](http://taewan.kim/post/numpy_cheat_sheet)||||[1](https://towardsdatascience.com/pandas-cheat-sheet-7e2ea6526be9), [2](https://www.dataquest.io/blog/pandas-cheat-sheet/), [3](https://www.educative.io/blog/python-pandas-tutorial), [4](https://github.com/corazzon/cracking-the-pandas-cheat-sheet)|[○](https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet)|[Guide](https://pycaret.org/guide/)|||||||[①](https://www.datacamp.com/community/blog/spacy-cheatsheet)|
 |Web Ref.|[①](https://www.tutorialspoint.com/python)|[①](https://www.tutorialspoint.com/numpy)|[①](https://www.tutorialspoint.com/scipy)|[①](https://www.tutorialspoint.com/sympy)|[①](https://www.tutorialspoint.com/matplotlib), [seaborn](https://www.tutorialspoint.com/seaborn)|[①](https://www.tutorialspoint.com/python_pandas)|[①](https://www.tutorialspoint.com/scikit_learn), [②](https://www.datacamp.com/community/tutorials/machine-learning-python)||[ⓣ](https://www.tutorialspoint.com/tensorflow), [ⓚ](https://www.tutorialspoint.com/keras), [ⓚ2](https://www.tutorialspoint.com/deep_learning_with_keras)|[통계](https://www.tutorialspoint.com/statistics), [patsy](https://github.com/pydata/patsy)||[①](https://www.sqlitetutorial.net/), [②](https://www.tutorialspoint.com/sqlite), [③](https://www.tutorialspoint.com/python_sqlite)|[①](https://www.postgresqltutorial.com/), [②](https://www.tutorialspoint.com/postgresql), [③](https://www.tutorialspoint.com/python_postgresql)|[①](https://regexone.com/)|[nltk](https://www.nltk.org), [nlp](https://www.tutorialspoint.com/natural_language_processing)|
+ 
+ㅇ 마크다운 일반 사항   
+  - https://ko.wikipedia.org/wiki/마크다운 및 [마크다운 문법](https://simhyejin.github.io/2016/06/30/Markdown-syntax/) 참조 
+  - https://www.tablesgenerator.com/markdown_tables  
+  - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
+  
+ㅇ 마크다운 수식 입력에 대한 참고 URL, [Local PC Daum Equation Editor](http://s1.daumcdn.net/editor/fp/service_nc/pencil/Pencil_chromestore.html)로 Chrome에서 입력함  
+  - https://www.mathjax.org/  
+  - https://en.wikibooks.org/wiki/LaTeX/Mathematics  
+  - [MathJax basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)  
+  - [MathJax 연습 가능한 곳](http://jsbin.com/zimuxulawu/edit?html,output), [MathJax 코드 제안](http://detexify.kirelabs.org/classify.html)
+</div></details>
 
 ## 현재 
 + 아즈마 유키나가(我妻幸長), 2021, 처음 만나는 AI 수학 with 파이썬 한 권으로 배우는 인공지능 수학 첫걸음  
