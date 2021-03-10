@@ -1568,7 +1568,7 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
        - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
 
 ▣ CH01. 환경 구성 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2470  
-  1.1 자주 사용하는 conda 명령어
+  1.1 자주 사용하는 conda 명령어 ☞ https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/index.html
     - conda create --name MyEnv         # 가상환경 "MyEnv" 생성, 필요 시 "python=3.5 numpy=1.1"과 같이 패키지와 버전 지정 가능
       # 예시 : conda create -n TF2Keras tensorflow numpy scipy sympy matplotlib seaborn pandas pandas-profiling scikit-learn jupyterlab tensorflow-gpu gensim bokeh jedi jpype1 kiwisolver nltk spacy statsmodels tqdm pydot
     - conda env list                    # conda 가상환경 확인
