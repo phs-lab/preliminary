@@ -1530,42 +1530,8 @@ def initCheatSheetDict(csNameStr): # argStr, argDict):
 ## ------------------------------------------------------------------------------------------- ## Dictionary 초기화 함수 ↑, ??? ↓
 
 ## ------------------------------------------------------------------------------------------- ## ??? 초기화 함수 ↑, python 일반 ↓
-my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https://dojang.io/course/view.php?id=7
-▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
-   * 파이썬 코딩 도장 '핵심 정리' 모음
-     1. 환경 구성 : https://dojang.io/mod/page/view.php?id=2470
-     2. 자료형
-       - byte, bytearray : https://dojang.io/mod/page/view.php?id=2462
-     3. 숫자, 변수, 연산자 : https://dojang.io/mod/page/view.php?id=2189 
-       - 연산자 우선 순위 : https://dojang.io/mod/page/view.php?id=2461 # help('%')
-       - 실수 값의 오차 : https://dojang.io/mod/page/view.php?id=2466
-     4. 불과 비교ㆍ논리 연산자 : https://dojang.io/mod/page/view.php?id=2218 # help('is')
-       - 비트 연산자 : https://dojang.io/mod/page/view.php?id=2460
-     5. 문자열 : https://dojang.io/mod/page/view.php?id=2218 # help(':')
-       - 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
-       - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
-     6. if 조건문 : https://dojang.io/mod/page/view.php?id=2239
-     7. Loop : https://dojang.io/mod/page/view.php?id=2279
-     8. 시퀀스 자료형, 리스트, 튜플, 딕셔너리 : https://dojang.io/mod/page/view.php?id=2218
-     9. 리스트 및 문자열 메서드 : https://dojang.io/mod/page/view.php?id=2305
-     10. 딕셔너리 및 세트 메서드 : https://dojang.io/mod/page/view.php?id=2323
-     11. 파일 : https://dojang.io/mod/page/view.php?id=2335
-     12. 함수 : https://dojang.io/mod/page/view.php?id=2357 # help('FUNCTIONS'); help('@')
-     13. 람다 : https://dojang.io/mod/page/view.php?id=2370 # help('lambda')
-     14. 클로저 : https://dojang.io/mod/page/view.php?id=2370
-     15. 클래스 : https://dojang.io/mod/page/view.php?id=2396 # help('class'); help('.')
-       - 프로퍼티 사용하기 : https://dojang.io/mod/page/view.php?id=2476
-       - 메타 클래스 사용하기 : https://dojang.io/mod/page/view.php?id=2468
-       - "with as"에 사용 가능한 클래스 만들기 : https://dojang.io/mod/page/view.php?id=2467
-     16. 예외 : https://dojang.io/mod/page/view.php?id=2425
-     17. 이터레이터 : https://dojang.io/mod/page/view.php?id=2425
-     18. 제너레이터 : https://dojang.io/mod/page/view.php?id=2425
-     19. 코루틴 : https://dojang.io/mod/page/view.php?id=2425
-       - asyncio : https://dojang.io/mod/page/view.php?id=2469
-     20. 데코레이터 : https://dojang.io/mod/page/view.php?id=2454
-     21. 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
-     22. 모듈, 패키지 : https://dojang.io/mod/page/view.php?id=2454
-       - 내장 함수 : https://dojang.io/mod/page/view.php?id=2464
+my.pkgCheatSheet.str_python = """▣ dct id : [0] ToC, [n] 이하는 주제별로 아래 정수 참조
+  - my.printcmd(my.pkgCheatSheet.mdStr_python_toc)
 
 ▣ CH01. 환경 구성 ☞ 참조 : 코딩 도장 https://dojang.io/mod/page/view.php?id=2470  
   1.1 자주 사용하는 conda 명령어 ☞ https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/index.html
@@ -1663,6 +1629,44 @@ my.pkgCheatSheet.str_python = """파이썬 코딩 도장 중심 정리 : https:/
 """  # my.pkgCheatSheet.str_python
 
 # str_python의 추가 정보. my.printcmd()를 통해 markdown으로 출력. ☞ mdStr = markdown string
+my.pkgCheatSheet.mdStr_python_toc = """[파이썬 코딩 도장](https://dojang.io/course/view.php?id=7) 핵심정리 중심 요약  
+
+|주제|URL|관련 사항|
+|:--|:--:|:---|
+|1. 환경 구성|[○](https://dojang.io/mod/page/view.php?id=2470)|conda [User Guide](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html), rpy2 [Homepage](https://rpy2.github.io)|
+|2. 자료형<Br>&nbsp; &nbsp; - byte, bytearray|[○](https://dojang.io/mod/page/view.php?id=2462)|my.printcmd(my.pkgCheatSheet.mdStr_python_sequence)|
+|3. 숫자, 변수, 연산자|[○](https://dojang.io/mod/page/view.php?id=2189)||
+|&nbsp; &nbsp; - 연산자 우선 순위|[○](https://dojang.io/mod/page/view.php?id=2461)|help('%')|
+|&nbsp; &nbsp; - 실수 값의 오차|[○](https://dojang.io/mod/page/view.php?id=2466)||
+|4. 불과 비교ㆍ논리 연산자|[○](https://dojang.io/mod/page/view.php?id=2218)|help('is')|
+|&nbsp; &nbsp; - 비트 연산자|[○](https://dojang.io/mod/page/view.php?id=2460)||
+|5. 문자열|[○](https://dojang.io/mod/page/view.php?id=2218)|help(':')|
+|&nbsp; &nbsp; - 정규표현식|[○](https://dojang.io/mod/page/view.php?id=2454)||
+|&nbsp; &nbsp; - 이스케이프 시퀀스|[○](https://dojang.io/mod/page/view.php?id=2465)||
+|6. if 조건문|[○](https://dojang.io/mod/page/view.php?id=2239)|my.printcmd(my.pkgCheatSheet.mdStr_python_control)|
+|7. Loop|[○](https://dojang.io/mod/page/view.php?id=2279)|my.printcmd(my.pkgCheatSheet.mdStr_python_control)|
+|8. 시퀀스 자료형, 리스트, 튜플, 딕셔너리|[○](https://dojang.io/mod/page/view.php?id=2218)|my.printcmd(my.pkgCheatSheet.mdStr_python_sequence)|
+|9. 리스트 및 문자열 메서드|[○](https://dojang.io/mod/page/view.php?id=2305)||
+|10. 딕셔너리 및 세트 메서드|[○](https://dojang.io/mod/page/view.php?id=2323)||
+|11. 파일|[○](https://dojang.io/mod/page/view.php?id=2335)||
+|12. 함수|[○](https://dojang.io/mod/page/view.php?id=2357)|help('FUNCTIONS'); help('@')|
+|13. 람다|[○](https://dojang.io/mod/page/view.php?id=2370)|help('lambda')|
+|14. 클로저|[○](https://dojang.io/mod/page/view.php?id=2370)||
+|15. 클래스|[○](https://dojang.io/mod/page/view.php?id=2396)|help('class'); help('.')|
+|&nbsp; &nbsp; - 프로퍼티 사용하기|[○](https://dojang.io/mod/page/view.php?id=2476)||
+|&nbsp; &nbsp; - 메타 클래스 사용하기|[○](https://dojang.io/mod/page/view.php?id=2468)||
+|&nbsp; &nbsp; - "with as"에 사용 가능한 클래스 만들기|[○](https://dojang.io/mod/page/view.php?id=2467)||
+|16. 예외|[○](https://dojang.io/mod/page/view.php?id=2425)|my.printcmd(my.pkgCheatSheet.mdStr_python_control)|
+|17. 이터레이터|[○](https://dojang.io/mod/page/view.php?id=2425)||
+|18. 제너레이터|[○](https://dojang.io/mod/page/view.php?id=2425)||
+|19. 코루틴|[○](https://dojang.io/mod/page/view.php?id=2425)||
+|&nbsp; &nbsp; - asyncio|[○](https://dojang.io/mod/page/view.php?id=2469)||
+|20. 데코레이터|[○](https://dojang.io/mod/page/view.php?id=2454)||
+|21. 정규표현식|[○](https://dojang.io/mod/page/view.php?id=2454)||
+|22. 모듈, 패키지|[○](https://dojang.io/mod/page/view.php?id=2454)||
+|&nbsp; &nbsp; - 내장 함수|[○](https://dojang.io/mod/page/view.php?id=2464)||
+"""
+
 my.pkgCheatSheet.mdStr_python_sequence = """
 
 |구분1   |구분2          |자료형    |컬렉션<Br>(컨테이너)|이질/등질|가변/불변|예시|
