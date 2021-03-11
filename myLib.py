@@ -1581,7 +1581,6 @@ my.pkgCheatSheet.str_python = """▣ dct id : [0] ToC, [n] 이하는 주제별�
   - 비트 연산자 : https://dojang.io/mod/page/view.php?id=2460
 
 ▣ CH05. 문자열 : https://dojang.io/mod/page/view.php?id=2218 
-  - 정규표현식 : https://dojang.io/mod/page/view.php?id=2454
   - 이스케이프 시퀀스 : https://dojang.io/mod/page/view.php?id=2465
   
 ▣ CH06. if 조건문 : https://dojang.io/mod/page/view.php?id=2239
@@ -1641,7 +1640,6 @@ my.pkgCheatSheet.mdStr_python_toc = """[파이썬 코딩 도장](https://dojang.
 |4. 불과 비교ㆍ논리 연산자|[○](https://dojang.io/mod/page/view.php?id=2218)|help('is')|
 |&nbsp; &nbsp; - 비트 연산자|[○](https://dojang.io/mod/page/view.php?id=2460)||
 |5. 문자열|[○](https://dojang.io/mod/page/view.php?id=2218)|help(':')|
-|&nbsp; &nbsp; - 정규표현식|[○](https://dojang.io/mod/page/view.php?id=2454)||
 |&nbsp; &nbsp; - 이스케이프 시퀀스|[○](https://dojang.io/mod/page/view.php?id=2465)||
 |6. if 조건문|[○](https://dojang.io/mod/page/view.php?id=2239)|my.printcmd(my.pkgCheatSheet.mdStr_python_control)|
 |7. Loop|[○](https://dojang.io/mod/page/view.php?id=2279)|my.printcmd(my.pkgCheatSheet.mdStr_python_control)|
