@@ -1664,7 +1664,7 @@ my.pkgCheatSheet.mdStr_python_toc = """[파이썬 코딩 도장](https://dojang.
 |20. 데코레이터|[○](https://dojang.io/mod/page/view.php?id=2454)||
 |21. 정규표현식|[○](https://dojang.io/mod/page/view.php?id=2454)||
 |22. 모듈, 패키지|[○](https://dojang.io/mod/page/view.php?id=2454)||
-|&nbsp; &nbsp; - 내장 함수|[○](https://dojang.io/mod/page/view.php?id=2464)||
+|&nbsp; &nbsp; - 내장 함수|[○](https://dojang.io/mod/page/view.php?id=2464)|[Library Reference > Built-in Functions](https://docs.python.org/3/library/functions.html)|
 """
 
 my.pkgCheatSheet.mdStr_python_sequence = """
