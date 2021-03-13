@@ -3,4 +3,12 @@
   + 주석 : `<!-- 주석 문구 -->`
   + 요약 : `<details><summary>제목</summary><div markdown="3"> 한 행 띄고 내용 </div></details>`
   + hyper link ① 마크다운 일반 `[연결 설명](URL)` ② 별도 탭 `<a href="URL" target="_blank">연결 설명</a>`
+* 구글 코랩에서 구글 드라이브 연결
+  1. (연결을 원하는 구글 드라이브가 있는) 구글 계정에 로긴
+  2. 아래의 코드를 복사해서 붙여 넣고, 실행
+    from google.colab import drive  
+    drive.mount('/content/gdrive') #, force_remount=True)  
+  3. 위 2의 코드 실행 결과 나타나는 URL 클릭
+  4. (허용 버튼이 나타나면 허용 클릭하고) 나타나는 'authorization code' 복사
+  5. 위 4에서 복사된 문자열을 위 2 실행 결과 나타나는 입력란에 붙여 넣기
 * 책갈피
