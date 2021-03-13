@@ -6,8 +6,8 @@
 * 구글 코랩에서 구글 드라이브 연결  
   ① (연결을 원하는 구글 드라이브가 있는) 구글 계정에 로긴  
   ② 아래의 코드를 복사해서 붙여 넣고, 실행  
-    from google.colab import drive  
-    drive.mount('/content/gdrive') #, force_remount=True)  
+  &nbsp; &nbsp; from google.colab import drive  
+  &nbsp; &nbsp; drive.mount('/content/gdrive') #, force_remount=True)  
   ③ 위 2의 코드 실행 결과 나타나는 URL 클릭  
   ④ (허용 버튼이 나타나면 허용 클릭하고) 나타나는 'authorization code' 복사  
   ⑤ 위 4에서 복사된 문자열을 위 2 실행 결과 나타나는 입력란에 붙여 넣기  
