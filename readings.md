@@ -1,6 +1,6 @@
 글쓴이, 발행 시기 순으로 용약 정리. 기울임꼴은 의견임.  
 <details><summary>김유진</summary><div markdown="3">
-<details><summary>나의 하루는 4시 30분에 시작된다</summary><div markdown="3">
+<details><summary>나의 하루는 4시 30분에 시작된다</summary>
 
 * 책 소개 
   + 교보문고 구분 : 자기계발 > 자기능력계발 > 시간관리
@@ -43,6 +43,6 @@
   + CHAPTER 15. 나의 하루는 4시 30분에 시작된다
   + CHAPTER 16. 하루를 주도하는 플래너 작성법
 * 에필로그. 새벽, 변화의 씨앗을 심는 시간
-</div></details>
+</details>
 </div></details>
 
