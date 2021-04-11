@@ -1,3 +1,4 @@
+글쓴이, 발행 시기 순으로 용약 정리. 기울임꼴은 의견임.  
 <details><summary>김유진</summary><div markdown="3">
 <details><summary>나의 하루는 4시 30분에 시작된다</summary><div markdown="3">
 
