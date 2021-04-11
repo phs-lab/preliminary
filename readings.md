@@ -5,27 +5,13 @@
     <p>내용</p> 또는 <div>내용</div>
 </details>
      주석 닫음 -->
-<details class="menu1">
-    <summary>메뉴1</summary>
-    <details>
-        <summary>소메뉴1</summary>
-        <p>소메뉴 1에 대한 설명</p>
-    </details>
-    <details class="menu1-2">
-        <summary>소메뉴2</summary>
-        <details class="menu1-1-1">
-            <summary>소소메뉴1</summary>
-            <p>소소메뉴 1에 대한 설명</p>
-        </details>
-        <details>
-            <summary>소소메뉴2</summary>
-            <p>소소메뉴 2에 대한 설명</p>
-        </details>
-        <details>
-            <summary>소소메뉴3</summary>
-            <p>소소메뉴 3에 대한 설명</p>
-        </details>
-    </details>
+<details>
+    <summary>오늘의 환율</summary>
+    <ul>
+        <li>달러($) : 1,135.90</li>
+        <li>유로(€) : 1,284.08</li>
+        <li>엔(￥) : 1,014.88</li>
+    </ul>
 </details>
 <details><summary>김유진</summary>
 <details><summary>나의 하루는 4시 30분에 시작된다</summary>
