@@ -1,5 +1,33 @@
 글쓴이, 발행 시기 순으로 용약 정리. 기울임꼴은 의견임.  
-<details><summary>김유진</summary><div markdown="3">
+<!-- 주석 열기                         <details> 태그가 부모 요소이고, 1대 자식요소로 <summary>가 위치해 있음을 확인할 수 있습니다.
+<details>                             <details> 요소는 더보기/접기 기능의 모든 영역을 감싸주는 태그라고 보시면 되고,
+    <summary>제목</summary>           <summary>가 바로 더보기/접기에서 보여지게되는 일종의 제목과 같은 역할을 하는 태그라고 이해하시면 될 것 같습니다.
+    <p>내용</p> 또는 <div>내용</div>
+</details>
+     주석 닫음 -->
+<details class="menu1">
+    <summary>메뉴1</summary>
+    <details>
+        <summary>소메뉴1</summary>
+        <p>소메뉴 1에 대한 설명</p>
+    </details>
+    <details class="menu1-2">
+        <summary>소메뉴2</summary>
+        <details class="menu1-1-1">
+            <summary>소소메뉴1</summary>
+            <p>소소메뉴 1에 대한 설명</p>
+        </details>
+        <details>
+            <summary>소소메뉴2</summary>
+            <p>소소메뉴 2에 대한 설명</p>
+        </details>
+        <details>
+            <summary>소소메뉴3</summary>
+            <p>소소메뉴 3에 대한 설명</p>
+        </details>
+    </details>
+</details>
+<details><summary>김유진</summary>
 <details><summary>나의 하루는 4시 30분에 시작된다</summary>
 
 * 책 소개 
@@ -44,5 +72,5 @@
   + CHAPTER 16. 하루를 주도하는 플래너 작성법
 * 에필로그. 새벽, 변화의 씨앗을 심는 시간
 </details>
-</div></details>
+</details>
 
