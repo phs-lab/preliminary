@@ -1,4 +1,4 @@
-<details><summary>김유진</summary><div> 
+<details><summary>김유진</summary><div markdown="3"> 
  
 프롤로그. 일찍 일어나는 것만으로 더 나은 삶을 살 수 있다면
 
