@@ -1,4 +1,5 @@
-<details><summary>김유진</summary><div markdown="3"> 
+<details><summary>김유진</summary><div markdown="3">
+
 * 책 소개 
   + 교보문고 구분 : 자기계발 > 자기능력계발 > 시간관리
   + 책 제목 : **나의 하루는 4시 30분에 시작된다** 하루를 두 배로 사는 단 하나의 습관
