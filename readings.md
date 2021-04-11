@@ -58,7 +58,7 @@
   + CHAPTER 12. 여기는 목적지가 아닌 관문이다
     - *이 또한 지나가리라*
     - 꿈은 달라질 수 있다  
-      꿈은 우리를 성장하게(*나아가게*) 만드는 원동력이지 한계점이 아니다. ☞ 꿈의 연장(Dream Extension → Extension to Dream)
+      꿈은 우리를 성장하게(*나아가게*) 만드는 원동력이지 한계점이 아니다. *☞ 꿈의 연장(Dream Extension → Extension to Dream)*
   + CHAPTER 13. 지금 작은 행복을 찾아 나설 때
 * PART 4. 인생을 바꾸는 모닝 플래너
   + CHAPTER 14. 내가 변호사 시험에 합격한 비결
