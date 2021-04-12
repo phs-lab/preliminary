@@ -34,7 +34,7 @@
 
 + 자주 사용되는 기능
   - my.printCheatSheet('sklearn', [0,None]) # 0:차례, 1:Data, 2:Model, 3:훈련, 4:예측, 5:평가, 6:개량, 7:기본 예시
-  - Tex [MathJax](https://www.onemathematicalcat.org/MathJaxDocumentation/MathJaxKorean/TeXSyntax_ko.html), [koWiki](https://ko.wikipedia.org/wiki/위키백과:TeX_문법)
+  - Tex [MathJax](https://www.onemathematicalcat.org/MathJaxDocumentation/MathJaxKorean/TeXSyntax_ko.html), [koWiki](https://ko.wikipedia.org/wiki/위키백과:TeX_문법) ☞ MathJax에서 유용한 TEX 명령어 <a href="https://www.onemathematicalcat.org/MathJaxDocumentation/MathJaxKorean/TeXSyntax_ko.html" target="_blank">KO</a>, <a href="https://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm" target="_blank">EN</a> ; <a href="https://ko.wikipedia.org/wiki/위키백과:TeX_문법" target="_blank">위키백과:TeX_문법</a>
 + CheatSheet, Usefule Blog, ... (cf: tensorflow privacy https://github.com/tensorflow/privacy )
 
 |ⓟypi,ⓦiki|Python|numpy|scipy|sympy|matplotlib|pandas|sklearn|pycaret|Tensorflow|statsmodels|rpy2|sqlite|postgresql|re(gexp)|spacy|
