@@ -55,5 +55,14 @@
   - https://en.wikibooks.org/wiki/LaTeX/Mathematics  
   - [MathJax basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)  
   - [MathJax 연습 가능한 곳](http://jsbin.com/zimuxulawu/edit?html,output), [MathJax 코드 제안](http://detexify.kirelabs.org/classify.html)
+
+ㅇ 키보드 특수문자
+  - ㉮ ㉯ ㉰ ㉱ ㉲ ㉳ ㉴ ㉵ ㉶ ㉷ ㉸ ㉹ ㉺ ㉻ ㉠ ㉡ ㉢ ㉣ ㉤ ㉥ ㉦ ㉧ ㉨ ㉩ ㉪ ㉫ ㉬ ㉭ ─ ㆍ  
+  - α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ    σ τ υ φ    χ ψ ω  
+  - Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ    Σ Τ Υ Φ    Χ Ψ Ω  
+  - ⓐlpha ⓑeta ⓖamma ⓓelta ⓔpsilon ⓩeta eta(≒i) THeta ⓘota ⓚappa ⓛambda ⓜu   
+  - ⓝu ⓧi ⓞmicron ⓟi ⓡho ⓢigma ⓣau ⓤpsilon phi(≒f) CHi PSi ⓞmega  
+  - ⓐ ⓑ ⓒ ⓓ ⓔ ⓕ ⓖ ⓗ ⓘ ⓙ ⓚ ⓛ ⓜ ⓝ ⓞ ⓟ ⓠ ⓡ ⓢ ⓣ ⓤ ⓥ ⓦ ⓧ ⓨ ⓩ   
+  - ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⅰ ⅱ ⅲ ⅳ ⅴ ⅵ ⅶ ⅷ ⅸ ⅹ Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ Ⅶ Ⅷ Ⅸ Ⅹ   
  
   </div></details>
