@@ -18,7 +18,8 @@
   ③ 위 2의 코드 실행 결과 나타나는 URL 클릭  
   ④ (허용 버튼이 나타나면 허용 클릭하고) 나타나는 'authorization code' 복사  
   ⑤ 위 4에서 복사된 문자열을 위 2 실행 결과 나타나는 입력란에 붙여 넣기  
-* 책갈피 : <details><summary>★★★책갈피★★★</summary><div markdown="3">
+* 책갈피
+<details><summary>★★★책갈피★★★</summary><div markdown="3">
   
 <font size=4>**소제목**</font>  
 
