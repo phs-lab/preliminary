@@ -34,7 +34,7 @@
       - ⑨ prompt>pip install -U plaidml-keras plaidbench # https://github.com/plaidml/plaidml 참조, Visual C++ 2015 설치 필요
       - ⑩ prompt>Scripts\plaidml-setup # 이후 설정 사항 : ① Device Support : Y , ② 2 , ③ (저장) Y
       - ⑪ prompt>python -m pip install keras-tuner autokeras # https://github.com/keras-team/keras-tuner ; https://autokeras.com/install/
-      - ⑫ prompt>python -m pip install Orange-Spectroscopy Orange3-`모듈명` # Associate Bioinformatics Educational Explain Geo ImageAnalytics Network Prototypes Survival-Analysis Text Textable Timeseries
+      - ⑫ prompt>python -m pip install Orange-Spectroscopy Orange3-**모듈명** # 모듈명 = Associate Bioinformatics Educational Explain Geo ImageAnalytics Network Prototypes Survival-Analysis Text Textable Timeseries
 
 <details><summary>★★★책갈피★★★</summary><div markdown="3">
   
