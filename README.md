@@ -19,12 +19,12 @@
   ④ (허용 버튼이 나타나면 허용 클릭하고) 나타나는 'authorization code' 복사  
   ⑤ 위 4에서 복사된 문자열을 위 2 실행 결과 나타나는 입력란에 붙여 넣기  
 * Orange3 중심으로 Python 환경 구축
-  + R 설치
-    - jamovi를 활용하거나, R을 설치, 이후 %R_HOME% "C:\Program Files\R\R-4.0.4" 설정함
-  + openjdk 설치 [github](https://github.com/ojdkbuild/ojdkbuild) ( ☜ 참조 [Blog](https://blog.naver.com/vixlee/222285976728) ) 
+  + ⑴ openjdk 설치 [github](https://github.com/ojdkbuild/ojdkbuild) ( ☜ 참조 [Blog](https://blog.naver.com/vixlee/222285976728) ) 
     - JRE Zip file 내려받아 압축 풀고, %JAVA_HOME% "C:\Program Files\Java\jre-1.8.0.292" 설정함
     - %JAVA_HOME% 이하에 bin, legal, lib 폴더 위치함
-  + [오렌지3](https://orangedatamining.com/) 3.28.0 Portable 내려받고 설치 및 실행 "C:\DS\Orange3-3.28.0>Scripts\orange-canvas"
+  + ⑵ R 설치
+    - jamovi를 활용하거나, R을 설치, 이후 %R_HOME% "C:\Program Files\R\R-4.0.4" 설정함
+  + ⑶ [오렌지3](https://orangedatamining.com/) 3.28.0 Portable 내려받고 설치 및 실행 "C:\DS\Orange3-3.28.0>Scripts\orange-canvas"
     - 참고
       - Orange3 [Homepage](https://orangedatamining.com/), [docs](https://orangedatamining.com/docs/), [pip](https://pypi.org/project/Orange3/), [YouTube Tutorial](https://www.youtube.com/watch?v=HXjnDIgGDuI&list=PLmNPvQr9Tf-ZSDLwOzxpvY-HrE0yv-8Fy)
       - Blog [AI오디세이](http://www.aio.world/news/articleView.html?idxno=258)
