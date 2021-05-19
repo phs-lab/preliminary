@@ -16,7 +16,7 @@
     - %JAVA_HOME% 이하에 bin, legal, lib 폴더 위치함
   + ⑵ R 설치
     - jamovi를 활용하거나, R을 설치, 이후 %R_HOME% "C:\Program Files\R\R-4.0.4" 설정함
-  + ⑶ [오렌지3](https://orangedatamining.com/) 3.28.0 Portable 내려받고 설치 및 실행 "C:\DS\Orange3-3.28.0>Scripts\<B>orange-canvas</B>"
+  + ⑶ [오렌지3](https://orangedatamining.com/) 3.28.0 Portable 내려받고 설치 및 실행 "C:\DS\Orange3-3.28.0>Scripts\\<B>orange-canvas</B>"
     - 참고
       - Orange3 [Homepage](https://orangedatamining.com/), [docs](https://orangedatamining.com/docs/), [pip](https://pypi.org/project/Orange3/), [YouTube Tutorial](https://www.youtube.com/watch?v=HXjnDIgGDuI&list=PLmNPvQr9Tf-ZSDLwOzxpvY-HrE0yv-8Fy)
       - Blog [AI오디세이](http://www.aio.world/news/articleView.html?idxno=258)
