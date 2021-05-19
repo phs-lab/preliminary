@@ -18,7 +18,31 @@
   ③ 위 2의 코드 실행 결과 나타나는 URL 클릭  
   ④ (허용 버튼이 나타나면 허용 클릭하고) 나타나는 'authorization code' 복사  
   ⑤ 위 4에서 복사된 문자열을 위 2 실행 결과 나타나는 입력란에 붙여 넣기  
-
+* Orange3 중심으로 Python 환경 구축
+  + R 설치
+    - jamovi를 활용하거나, R을 설치, 이후 %R_HOME% "C:\Program Files\R\R-4.0.4" 설정함
+  + openjdk 설치 [github](https://github.com/ojdkbuild/ojdkbuild) ( ☜ 참조 [Blog](https://blog.naver.com/vixlee/222285976728) ) 
+    - JRE Zip file 내려받아 압축 풀고, %JAVA_HOME% "C:\Program Files\Java\jre-1.8.0.292" 설정함
+    - %JAVA_HOME% 이하에 bin, legal, lib 폴더 위치함
+  + [오렌지3](https://orangedatamining.com/) 3.28.0 Portable 내려받고 설치 및 실행 "C:\DS\Orange3-3.28.0>Scripts\orange-canvas"
+    - 참고
+      - Orange3 [Homepage](https://orangedatamining.com/), [docs](https://orangedatamining.com/docs/), [pip](https://pypi.org/project/Orange3/), [YouTube Tutorial](https://www.youtube.com/watch?v=HXjnDIgGDuI&list=PLmNPvQr9Tf-ZSDLwOzxpvY-HrE0yv-8Fy)
+      - Blog [AI오디세이](http://www.aio.world/news/articleView.html?idxno=258)
+    - 권장 설치 : Oragne3를 설치하면서 miniconda를 설치하고 env 생성 후 아래처럼 ③ pycaret[full],⑤ tensorflow 위주로 설치
+    - Portable Orange3 설치 세부 사항(cf: Data 파일 위치 = C:\DS\Orange3-3.28.0\Lib\site-packages\Orange\datasets)
+      - ① C:\DS\Orange3-3.28.0>python --version # Python 3.8.8 ; 이하 prompt "C:\DS\Orange3-3.28.0" 생략
+      - ② prompt>python -m pip install --upgrade pip
+      - ③ prompt>python -m pip install graphviz statsmodels sympy pycaret # https://pycaret.org/
+        - prompt>python -m pip install catboost # pycaret 설치 시 graphviz 없다고 설치 안 됨
+      - ④ prompt>python -m pip install rpy2
+      - ⑤ prompt>python -m pip install tensorflow tensorflow-datasets tensorflow-lattice
+      - ⑥ prompt>python -m pip install pydot pydotplus beautifulsoup4 db-sqlite3 sqlite-utils JPype1 mglearn bokeh plotnine tpot
+      - ⑦ prompt>python -m pip install opencv-python opencv-contrib-python opencv-python-headless scikit-mdr scikit-image scikit-fuzzy tzlocal vpython
+      - ⑧ prompt>python -m pip install hdbcli hana_ml
+      - ⑨ prompt>pip install -U plaidml-keras plaidbench # https://github.com/plaidml/plaidml 참조, Visual C++ 2015 설치 필요
+      - ⑩ prompt>Scripts\plaidml-setup # 이후 설정 사항 : ① Device Support : Y , ② 2 , ③ (저장) Y
+      - ⑪ prompt>python -m pip install keras-tuner autokeras # https://github.com/keras-team/keras-tuner ; https://autokeras.com/install/
+      - ⑫ prompt>python -m pip install Orange-Spectroscopy Orange3-`모듈명` # Associate Bioinformatics Educational Explain Geo ImageAnalytics Network Prototypes Survival-Analysis Text Textable Timeseries
 
 <details><summary>★★★책갈피★★★</summary><div markdown="3">
   
