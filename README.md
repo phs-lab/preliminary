@@ -3,15 +3,7 @@
   + html ☞ https://blog.naver.com/lenj1/221854809536
     - 주석 : `<!-- 주석 문구 -->`
     - 요약 : `<details><summary>제목</summary><div markdown="3"> 한 행 띄고 내용 </div></details>`
-    - hyper link ① 마크다운 일반 `[연결 설명](URL)` ② 별도 탭 `<a href="URL" target="_blank">연결 설명</a>`
-  + 키보드 특수문자
-    ㉮ ㉯ ㉰ ㉱ ㉲ ㉳ ㉴ ㉵ ㉶ ㉷ ㉸ ㉹ ㉺ ㉻ ㉠ ㉡ ㉢ ㉣ ㉤ ㉥ ㉦ ㉧ ㉨ ㉩ ㉪ ㉫ ㉬ ㉭ ─ ㆍ  
-    α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ    σ τ υ φ    χ ψ ω  
-    Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ    Σ Τ Υ Φ    Χ Ψ Ω  
-    ⓐlpha ⓑeta ⓖamma ⓓelta ⓔpsilon ⓩeta eta(≒i) THeta ⓘota ⓚappa ⓛambda ⓜu   
-    ⓝu ⓧi ⓞmicron ⓟi ⓡho ⓢigma ⓣau ⓤpsilon phi(≒f) CHi PSi ⓞmega  
-    ⓐ ⓑ ⓒ ⓓ ⓔ ⓕ ⓖ ⓗ ⓘ ⓙ ⓚ ⓛ ⓜ ⓝ ⓞ ⓟ ⓠ ⓡ ⓢ ⓣ ⓤ ⓥ ⓦ ⓧ ⓨ ⓩ   
-    ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⅰ ⅱ ⅲ ⅳ ⅴ ⅵ ⅶ ⅷ ⅸ ⅹ Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ Ⅶ Ⅷ Ⅸ Ⅹ   
+    - hyper link ① 마크다운 일반 `[연결 설명](URL)` ② 별도 탭 `<a href="URL" target="_blank">연결 설명</a>`  
 * 구글 코랩에서 구글 드라이브 연결  
   ① (연결을 원하는 구글 드라이브가 있는) 구글 계정에 로긴  
   ② Python code 실행 : <B>from google.colab import drive; drive.mount('/content/gdrive')</B> #, force_remount=True)  
