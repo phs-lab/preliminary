@@ -559,12 +559,12 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   # hRegModelGraph = my.makeTreeGraph(my.hierarchyRegModel, "TB") # LR: Left to Right, RL: Right to Left
   # my.viewPyDotGraph(hRegModelGraph)                             # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
 
-  ## ------------------------------------------------------------------------------------------- ##
+  ## ------------------------------------------------------------------------------------------- ## 2021-06-16 (수) Orange3의 workflow 요약ㆍ정리에 사용하기 위해 작성
   @classmethod 
   def view_graphviz(cls, gvSourceCode):           # 설치 : https://pypi.org/project/graphviz ; Attribute : https://graphviz.org/doc/info/attrs.html
       graph = graphviz.Source(gvSourceCode)       # User guide : https://graphviz.readthedocs.io/en/stable/manual.html
-      # display(Image(graph.pipe(format='png')))  # 내용 복사가 안되므로 좋지 않음
-      display(SVG(graph.pipe(format='svg')))      # 내용 복사가 되므로 좋음 
+      # display(Image(graph.pipe(format='png')))  # node 안의 내용 복사가 안되므로 좋지 않음
+      display(SVG(graph.pipe(format='svg')))      # node 안의 내용 복사가 되므로 좋음 
 
   # 사례 : graphviz pocket reference - https://graphs.grevian.org/example
   # src = """
