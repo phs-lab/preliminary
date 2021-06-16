@@ -35,10 +35,10 @@ import sklearn, warnings, glob, patsy, textwrap
 # plt.rcParams['font.family'] = 'Gulim'
 ## ---------- matplotlib 한글 폰트 검색 및 반영 ---------- ##
 
-import os, re, sys, io, importlib, sqlite3, sympy, matplotlib, time, inspect, math, pydot
+import os, re, sys, io, importlib, sqlite3, sympy, matplotlib, time, inspect, math, pydot, graphviz
 # https://stackoverflow.com/questions/14050281/how-to-check-if-a-python-module-exists-without-importing-it
 from datetime import datetime
-from IPython.display import Markdown, display, Image, IFrame # https://stackoverflow.com/questions/19470099/view-pdf-image-in-an-ipython-notebook
+from IPython.display import Markdown, display, SVG, Image, IFrame # https://stackoverflow.com/questions/19470099/view-pdf-image-in-an-ipython-notebook
 from mpl_toolkits.mplot3d import Axes3D
 
 boldFR = '\033[1m'; boldTO = '\033[0m'  # myLib에서는 descobj 밖으로...
@@ -558,6 +558,25 @@ class my:  # import myLibClass; my = myLibClass.myLib()
              ] )
   # hRegModelGraph = my.makeTreeGraph(my.hierarchyRegModel, "TB") # LR: Left to Right, RL: Right to Left
   # my.viewPyDotGraph(hRegModelGraph)                             # TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top 
+
+  ## ------------------------------------------------------------------------------------------- ##
+  @classmethod 
+  def view_graphviz(cls, gvSourceCode):           # 설치 : https://pypi.org/project/graphviz ; Attribute : https://graphviz.org/doc/info/attrs.html
+      graph = graphviz.Source(gvSourceCode)       # User guide : https://graphviz.readthedocs.io/en/stable/manual.html
+      # display(Image(graph.pipe(format='png')))  # 내용 복사가 안되므로 좋지 않음
+      display(SVG(graph.pipe(format='svg')))      # 내용 복사가 되므로 좋음 
+
+  # 사례 : graphviz pocket reference - https://graphs.grevian.org/example
+  # src = """
+  # graph simple_graph { // graph가 아닌 digraph인 경우 `--` 대신 `->` 사용
+  #     label = "Pocket Reference - Example 1: Simple Graph";
+  #     labelloc = t;   // t: top, b: bottom
+  #     rankdir = LR;   // LR: Left to Right, RL: Right to Left
+  #     a -- b; b -- c; // TB: Top to Bottom ( = UD: Up Down), BT: Bottom to Top
+  #     a -- c; c -- d;
+  #     a -- e; e -- c;
+  # }"""
+  # my.view_graphviz(src)
 
   ## ------------------------------------------------------------------------------------------- ##
   #  Wes McKinney, Python for Data Analysis, ver 2, Chap. 2, page 66, duck typing
