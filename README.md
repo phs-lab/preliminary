@@ -2,8 +2,8 @@
   + MathJax : MathJax에서 유용한 TEX 명령어 <a href="https://www.onemathematicalcat.org/MathJaxDocumentation/MathJaxKorean/TeXSyntax_ko.html" target="_blank">KO</a>, <a href="https://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm" target="_blank">EN</a> ; <a href="https://ko.wikipedia.org/wiki/위키백과:TeX_문법" target="_blank">위키백과:TeX_문법</a>
   + html ☞ https://blog.naver.com/lenj1/221854809536
     - 주석 : `<!-- 주석 문구 -->`
-    - 요약 : `<details><summary>제목</summary><div markdown="3"> 한 행 띄고 내용 </div></details>` ☞ 참고 [1](https://blog.kalkin7.com/2014/02/05/wordpress-markdown-quick-reference-for-koreans/) [2](https://css-tricks.com/little-stuff-markdown-always-forget-google/) : `div는 안 써도 될 듯`  
-      &nbsp; &nbsp; &nbsp; &nbsp; → 간략형 : `<details><summary>제목</summary>내용</details>`
+    - 요약 : `<details><summary>제목</summary><div markdown="3"> 한 행 띄고 내용 </div></details>`  
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp ☞ 참고 [1](https://blog.kalkin7.com/2014/02/05/wordpress-markdown-quick-reference-for-koreans/) [2](https://css-tricks.com/little-stuff-markdown-always-forget-google/) : `div는 안 써도 될 듯` → 간략형 : `<details><summary>제목</summary>내용</details>`
     - hyper link ① 마크다운 일반 `[연결 설명](URL)` ② 별도 탭 `<a href="URL" target="_blank">연결 설명</a>`  
 * 구글 코랩에서 구글 드라이브 연결  
   ① (연결을 원하는 구글 드라이브가 있는) 구글 계정에 로긴  
