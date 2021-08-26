@@ -1076,7 +1076,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
   ## ------------------------------------------------------------------------------------------- ##
   @classmethod
-  def make_confusion_matrix(matrix, cols, np_dec=2):  # cols : 음성(Negative, 0), 양성(Positive, 1) 순서로 지정
+  def make_confusion_matrix(cls, matrix, cols, np_dec=2):  # cols : 음성(Negative, 0), 양성(Positive, 1) 순서로 지정
       """사용법(2021-08-26) ① Library 임포트, ② 혼동행렬 작성, ③ 함수 호출
       from sklearn.metrics import confusion_matrix, classification_report, precision_recall_fscore_support
       cmat = confusion_matrix(y_test, y_pred)
