@@ -364,7 +364,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
           print("NameError : name not defined!")
       else:
           if orgObjClass in [type(pd.DataFrame()), type(pd.Series(dtype='int'))]:
-              print('\n', orgObjClass.index, "\n ♣ If (or After converted to) pd.DataFrame, run \033[1m.info()\033[0m or \033[1m.describe()\033[0m for detail info.!")
+              print('\n', orgObjClass.index, "\n ♣ If (or After converted to) df=pd.DataFrame, run \033[1mdf.info()\033[0m or \033[1mdf.describe() my.pdDescribe(df)\033[0m for detail info.!")
 
   ## ------------------------------------------------------------------------------------------- ##
   @classmethod
