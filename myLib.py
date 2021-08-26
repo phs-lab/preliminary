@@ -1076,6 +1076,64 @@ class my:  # import myLibClass; my = myLibClass.myLib()
 
   ## ------------------------------------------------------------------------------------------- ##
   @classmethod
+  def make_confusion_matrix(matrix, cols, np_dec=2):  # cols : 음성(Negative, 0), 양성(Positive, 1) 순서로 지정
+      """사용법(2021-08-26) ① Library 임포트, ② 혼동행렬 작성, ③ 함수 호출
+      from sklearn.metrics import confusion_matrix, classification_report, precision_recall_fscore_support
+      cmat = confusion_matrix(y_test, y_pred)
+      cm = my.make_confusion_matrix(matrix=cmat, cols=['음성', '양성'], np_dec=6)  # cols : 음성(Negative, 0), 양성(Positive, 1) 순서로 지정
+      cm
+      
+      # 참고1 - 정밀도, 재현율, F-점수 계산
+      precision, recall, fscore, _ = precision_recall_fscore_support(y_test, predicted, average='binary')
+      print(f'정밀도: {precision:.4f}\t\t', f'재현율: {recall:.4f}\t\t', f'F1-점수: {fscore:.4f}') # 계산 결과 확인
+      
+      # 참고2 - classification_report 확인
+      print(classification_report(y_test, predicted))
+      """
+      total_population = matrix.sum()
+      TN = matrix[0,0]; TP = matrix[1,1]; FP = matrix[0,1]; FN = matrix[1,0]
+      accuracy = np.round(100 * (TP + TN) / total_population, np_dec); accuracy_str = '정확도(%) ' + str(accuracy)
+      tmp1 = np.concatenate((matrix, matrix.sum(axis=0).reshape((1,-1))), axis=0)
+      matrix2 = np.concatenate((tmp1, tmp1.sum(axis=1).reshape((-1,1))), axis=1)
+    
+      rows = cols.copy()
+      cnt = 0
+      for item in cols:
+          cols[cnt] = ('★' if cnt else '') + item + '(' + str(cnt) +')'
+          rows[cnt] = item + '(' + str(cnt) +')' + ( ' - FN TP' if cnt else ' - TN FP' )
+          cnt += 1
+    
+      cols.extend(['합계']); rows.extend(['합계'])
+      n = len(cols)
+
+      # '정답 데이터'가 n번 반복되는 리스트를 생성
+      act = ['① 정답 데이터 (F/T)'] * n
+      pred = ['② 예측 결과 (Negative, Positive) - 건수'] * n
+    
+      # 데이터프레임을 생성
+      cm1 = pd.DataFrame(matrix2, columns=[pred, cols], index=[act, rows])
+    
+      # %값을 갖는 DataFrame 생성을 위해 위에서 한 것을 반복 실행
+      matrix3 = np.round(100 * matrix2 / total_population, np_dec)
+      pred = ['② 예측 결과 (Negative, Positive) - %'] * n
+      cm2 = pd.DataFrame(matrix3, columns=[pred, cols], index=[act, rows])
+      cm3 = pd.concat((cm1, cm2), axis=1)
+    
+      # 평가지표 계산 : 정밀도, 재현율, F-점수 계산
+      # precision, recall, fscore, _ = precision_recall_fscore_support(y_test, y_pred, average='binary')
+      # precision, recall, fscore = np.round((precision * 100, recall * 100, fscore * 100), np_dec)
+      precision = np.round(100 * TP / (TP + FP), np_dec)
+      recall    = np.round(100 * TP / (TP + FN), np_dec)
+      fscore    = np.round(2 / (1/recall + 1/precision), np_dec)
+      cm4 = pd.DataFrame([precision, recall, fscore], columns=[[accuracy_str], ['정밀도/재현율/F1-점수']], index=[act, rows])
+    
+      cm = pd.concat((cm3, cm4), axis=1)
+    
+      # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.formats.style.Styler.set_properties.html
+      return cm.style.set_properties(**{'text-align': 'right'}) 
+    
+  ## ------------------------------------------------------------------------------------------- ##
+  @classmethod
   def chooseRightSklearnEstimator(cls,
                                   data_cnt=0,
                                   prediction_for_what=None,
