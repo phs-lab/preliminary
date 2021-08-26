@@ -1092,7 +1092,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
       """
       total_population = matrix.sum()
       TN = matrix[0,0]; TP = matrix[1,1]; FP = matrix[0,1]; FN = matrix[1,0]
-      accuracy = np.round(100 * (TP + TN) / total_population, np_dec); accuracy_str = '정확도(%) ' + str(accuracy)
+      accuracy = np.round(100 * (TP + TN) / total_population, np_dec); accuracy_str = '정분류율(%) ' + str(accuracy)
       tmp1 = np.concatenate((matrix, matrix.sum(axis=0).reshape((1,-1))), axis=0)
       matrix2 = np.concatenate((tmp1, tmp1.sum(axis=1).reshape((-1,1))), axis=1)
     
