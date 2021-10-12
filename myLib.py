@@ -1624,7 +1624,7 @@ if importlib.util.find_spec("rpy2"):
 #           df_unseen = dataset.drop(data.index)
 #           df.reset_index(drop=True, inplace=True)
 #           df_unseen.reset_index(drop=True, inplace=True)
-#           print('Data for Modeling: ' + str(data.shape), '\tUnseen Data For Predictions: ' + str(df_unseen.shape))
+#           print('Data for Modeling: ' + str(df.shape), '\tUnseen Data For Predictions: ' + str(df_unseen.shape))
 #
 #           ctebsaf_results = pycaret_rough_ml_flow(PyCO=pyc_cls, DataSet=df, Target='Purchase', Sort='AUC', nSelect=5) 
 #           pred_results = pyc_cls.predict_model(estimator=ctebsaf_results[-1], data=df_unseen) 
