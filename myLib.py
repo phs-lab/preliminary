@@ -1580,13 +1580,113 @@ my.LibInfo = pd.DataFrame( ### Class Variable LibInfo 동적으로 생성됨. 6�
 # https://stackoverflow.com/questions/17232013/how-to-set-the-pandas-dataframe-data-left-right-alignment
 my.LibInfo = my.LibInfo.style.set_properties(**{'text-align': 'left'}).set_table_styles([ dict(selector='th', props=[('text-align', 'left')] ) ])
 
-## rpy2 사용 설정
+## =========================================================================================== ##
+##                                        rpy2 사용 설정                                        ##
+## =========================================================================================== ##
 if importlib.util.find_spec("rpy2"):
     import rpy2
     import rpy2.robjects as ro  # 이름 충돌 방지를 위해 ro 사용. 즉, 『 rstr = "R 명령어"; ro.r(rstr)』와 같은 방식으로 사용
 
     print('【rpy2】', rpy2.__version__, ": 최초⇒'%load_ext rpy2.ipython', 다시 load(내부 R 세션 시작)⇒'%reload_ext rpy2.ipython'; %Rㆍ%%R == ro.r('R Script')")
     print(" %Rget,%R -i,%Rpush ⇔ %R -o,%Rpull ☞『df』 ①py⇒r:ro.r.assign('R.df',ro.pandas2ri.py2ri(PYdf)),②r⇒py:PYdf=ro.pandas2ri.ri2py(R.df)")
+
+## =========================================================================================== ##
+##                                        pycaret usage                                        ##
+## =========================================================================================== ##
+# import pycaret  # utils 모듈만 포함되어 있음.
+# from pycaret import datasets
+# print(pycaret.__version__)
+
+# from pycaret import classification as pyc_cls, regression  as pyc_reg, clustering as pyc_clstr
+# from pycaret import nlp as pyc_nlp, anomaly as pyc_anom, arules as pyc_arules
+
+# def pycaret_rough_ml_flow(PyCO=None, DataSet=None, Target=None, TrainSize=0.7, 
+#                           CreModel=None, Sort=None, nSelect=5, automlOptimize=None,
+#                           Normalize=False, IgnoreFeatures=None,
+#                           NumClusters=4,                                          # pycaret.clustering
+#                           Fraction=0.05,                                          # pycaret.anomaly > svm
+#                           TransactionID=None, ItemID=None, IgnoreItems=None,    # pycaret.arules: Association Rule Mining
+#                           CustomStopWords=None, MultiCore=True, NumTopics=None, # pycaret.nlp
+#                           UseGPU=True, LogExperiment=False, ExpName=None):
+#     """분류나 회귀의 "모델 성능 분석(Analyze model performance)" 부분을 제외하고 전체를 거의 한 번에 실행하도록 함수화한 것이며,
+#     간단하게 실행해 보는데 좋으며, 개괄을 파악하고 pycaret이나 sklearn에서 매개변수 미세조정하면서 trial and error로 진행해야 할 듯하다.  
+#       ㅇ 지원 algorithm : classification, regression, clustering, anomaly detection, association rule mining, nlp
+#       ㅇ 확인 : Tutorial( https://pycaret.readthedocs.io/en/latest/tutorials.html ) 위주로 확인함
+#       ㅇ ★순서★  
+#          ㆍ『환경 설정 → 훈련ㆍ앙상블 → 성능 분석 → 자동 수행:predict(& check_metric) → "환경 설정ㆍFinalize" 분기』수회 진행 가능
+#             ☞ 환경→훈련→분석→예측(& 평가)→분기→Finalize Model for Deployment→predict on unseen data(& check_metric)→Save the Model
+#          ㆍfinalize( ) : 최종 예측 전에 train/valid로 나뉘어 사용된 "Data 전부를 이용하여 학습" 진행
+#       ㅇ 분류 활용 예시 
+#           pycaret.classification.models() # 사용 가능한 모델(Algorithm) 확인
+#         
+#           dataset = pycaret.datasets.get_data('juice')
+#           df = dataset.sample(frac=0.9) # 0.95도 좋을 듯...
+#           df_unseen = dataset.drop(data.index)
+#           df.reset_index(drop=True, inplace=True)
+#           df_unseen.reset_index(drop=True, inplace=True)
+#           print('Data for Modeling: ' + str(data.shape), '\tUnseen Data For Predictions: ' + str(df_unseen.shape))
+#
+#           ctebsaf_results = pycaret_rough_ml_flow(PyCO=pyc_cls, DataSet=df, Target='Purchase', Sort='AUC', nSelect=5) 
+#           pred_results = pyc_cls.predict_model(estimator=ctebsaf_results[-1], data=df_unseen) 
+#           pycaret.utils.check_metric(pred_results['Purchase'], pred_results['Label'], metric = 'AUC') # 'Purchase': Target
+#       ㅇ get_config() # setup으로 설정된 환경 확인.
+#          예시 : get_config('X_train')[:3] # X: Transformed dataset (X), y: Transformed dataset (y), X_train, X_test, y_train, y_test
+#     """
+#     b1 = '\033[1m'; b2 = '\033[0m' # print 함수에서 "굵은 글씨" 출력
+#     strExpName = ExpName if ExpName else "Exp_" + datetime.now().strftime("%Y%m%d%H%M%S")
+#     if PyCO in [pycaret.classification, pycaret.regression]:
+#         if Sort:
+#             strSort = Sort
+#         else:  # https://pycaret.org/compare-models/
+#             if PyCO == pycaret.classification:
+#                 strSort = 'Accuracy' # Classification: Accuracy, AUC, Recall, Precision, F1, Kappa, MCC
+#             elif PyCO == pycaret.regression:
+#                 strSort = 'R2'       # Regression: MAE, MSE, RMSE, R2, RMSLE, MAPE
+#         strOptimize = automlOptimize if automlOptimize else strSort
+#         step1 = "【 1 / 5 】 Setup Env." ; print(b1 + strExpName + b2 + ",", "▼" * 20, b1 + step1 + b2)
+#         setup_env = PyCO.setup(data = DataSet, target = Target, train_size = TrainSize,
+#                                normalize = Normalize, ignore_features = IgnoreFeatures,
+#                                use_gpu = UseGPU, log_experiment = LogExperiment, experiment_name = strExpName)
+#         step2 = "【 2 / 5 】 Train: Create & Compare Models" ; print(b1 + strExpName + b2 + ",", step1, "△" * 3, "▼" * 3, b1 + step2 + b2)
+#         if CreModel:
+#             cc_M = PyCO.create_model(model = CreModel)
+#         else: # top_n_compared_M
+#             cc_M = PyCO.compare_models(sort = strSort, n_select = nSelect) # default 'n_select=1' 사용 시 create_model과 같음
+#         step3 = "【 3 / 5 】 Train: Tune every Models" ; print(b1 + strExpName + b2 + ",", step2, "△" * 3, "▼" * 3, b1 + step3 + b2)
+#         tuned_M = [PyCO.tune_model(estimator = i) for i in cc_M]
+#         step4 = "【 4 / 5 】 Ensemble/Blend/Stack/automl tuned Models" ; print(b1 + strExpName + b2 + ",", step3, "△" * 3, "▼" * 3, b1 + step4 + b2)
+#         ensembled_M = [PyCO.ensemble_model(estimator = i) for i in tuned_M]
+#         blended_M = PyCO.blend_models(estimator_list = tuned_M)
+#         stacked_M = PyCO.stack_models(estimator_list = tuned_M)
+#         automlBest_M = PyCO.automl(optimize = strOptimize) # This function returns the best model out of all trained models in current session
+#         print("※ 모델 성능 분석 생략: PyCO.evaluate_model(blended_M); PyCO.interpret_model(TreeBasedModel,plot='reason',observation=0)")
+#         step5 = "【 5 / 5 】 Finalize Model - DataSet 전체 재학습";print(b1 + strExpName + b2 + ",", step4, "△"*3, "▼"*3, b1 + step5 + b2)
+#         finalized_M = PyCO.finalize_model(estimator = automlBest_M) # blended_M)
+#         print("※ F/up: pred_res = PyCO.predict_model(final_M, df_unseen); pycaret.utils.check_metric(pred_res['?'], pred_res['Label'], metric='AUC')")
+#         return setup_env, cc_M, tuned_M, ensembled_M, blended_M, stacked_M, automlBest_M, finalized_M
+#     elif PyCO in [pycaret.clustering, pycaret.anomaly]: 
+#         setup_env = PyCO.setup(data = DataSet, normalize = Normalize, ignore_features = IgnoreFeatures, 
+#                                use_gpu = UseGPU, log_experiment = LogExperiment, experiment_name = strExpName)
+#         if PyCO == pycaret.clustering:
+#             cc_M = PyCO.create_model(model = CreModel, num_clusters = NumClusters)  # tuned_M = PyCO.tune_model(CreModel)
+#         if PyCO == pycaret.anomaly:
+#             cc_M = PyCO.create_model(CreModel, fraction=Fraction)
+#         df_assigned_result = PyCO.assign_model(cc_M)
+#         return setup_env, cc_M, df_assigned_result
+#     elif PyCO == pycaret.arules:
+#         setup_env = PyCO.setup(data = DataSet, transaction_id = TransactionID, item_id = ItemID, ignore_items = IgnoreItems)
+#         df_result = PyCO.create_model()
+#         return setup_env, df_result
+#     elif PyCO == pycaret.nlp:
+#         setup_env = PyCO.setup(data = DataSet, target = Target, 
+#                                custom_stopwords=CustomStopWords, log_experiment = LogExperiment, experiment_name = strExpName)
+#         cc_M = PyCO.create_model(model = CreModel, multi_core = MultiCore, num_topics = NumTopics)
+#         df_assigned_result = PyCO.assign_model(cc_M)
+#         return setup_env, cc_M, df_assigned_result
+#     else:  # 여기까지 올 일은 거의 없으며, NameError 발생하기가 더 쉽다.
+#         print("N/A, no suitable pycaret module exists!", 
+#               'Please, run "' + b1 + PyCO.__name__ + b2 + '.models( )"', "and verify you input.")
+## ====================================================================================================== ## End of Pycaret Usage
 
 ## CheatSheet =================================================================================== Begin : Dictionary 초기화 함수 ↓
 def initCheatSheetDict(csNameStr): # argStr, argDict):
