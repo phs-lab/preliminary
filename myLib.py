@@ -1034,12 +1034,18 @@ class my:  # import myLibClass; my = myLibClass.myLib()
         # plt.ylim([0, plt_ylim * hist['acc'].quantile(0.75)])  # plt.ylim([0,20])
         tMin1 = hist['acc'].quantile(0);     tMax1 = hist['acc'].quantile(1)
         tMin2 = hist['val_acc'].quantile(0); tMax2 = hist['val_acc'].quantile(1)
-      else:
+      elif 'accuracy' in hist.columns:
         plt.plot(hist['epoch'], hist['accuracy'],     label='Trn Accuracy')
         plt.plot(hist['epoch'], hist['val_accuracy'], label='Val Accuracy')
         # plt.ylim([0, plt_ylim * hist['accuracy'].quantile(0.75)])  # plt.ylim([0,20])
         tMin1 = hist['accuracy'].quantile(0);          tMax1 = hist['accuracy'].quantile(1)
         tMin2 = hist['val_accuracy'].quantile(0);      tMax2 = hist['val_accuracy'].quantile(1)
+      else:
+        plt.plot(hist['epoch'], hist['sparse_categorical_accuracy'],     label='Trn Accuracy')
+        plt.plot(hist['epoch'], hist['val_sparse_categorical_accuracy'], label='Val Accuracy')
+        # plt.ylim([0, plt_ylim * hist['accuracy'].quantile(0.75)])  # plt.ylim([0,20])
+        tMin1 = hist['sparse_categorical_accuracy'].quantile(0);          tMax1 = hist['sparse_categorical_accuracy'].quantile(1)
+        tMin2 = hist['val_sparse_categorical_accuracy'].quantile(0);      tMax2 = hist['val_sparse_categorical_accuracy'].quantile(1)
       tMin = compareTwoNumber(tMin1, tMin2,'min');     tMax = compareTwoNumber(tMax1, tMax2, 'max')
       tMin = tMin - (tMin + tMax) / offsetDenominator; tMax = tMax + (tMin + tMax) / offsetDenominator
       plt.ylim([tMin, tMax])
@@ -1586,7 +1592,7 @@ my.LibInfo = my.LibInfo.style.set_properties(**{'text-align': 'left'}).set_table
 ## =========================================================================================== ##
 if importlib.util.find_spec("rpy2"):
     import rpy2
-    import rpy2.robjects as ro  # 이름 충돌 방지를 위해 ro 사용. 즉, 『 rstr = "R 명령어"; ro.r(rstr)』와 같은 방식으로 사용
+#   import rpy2.robjects as ro  # 이름 충돌 방지를 위해 ro 사용. 즉, 『 rstr = "R 명령어"; ro.r(rstr)』와 같은 방식으로 사용 # 2022-04-03 Comment 처리
 
     print('【rpy2】', rpy2.__version__, ": 최초⇒'%load_ext rpy2.ipython', 다시 load(내부 R 세션 시작)⇒'%reload_ext rpy2.ipython'; %Rㆍ%%R == ro.r('R Script')")
     print(" %Rget,%R -i,%Rpush ⇔ %R -o,%Rpull ☞『df』 ①py⇒r:ro.r.assign('R.df',ro.pandas2ri.py2ri(PYdf)),②r⇒py:PYdf=ro.pandas2ri.ri2py(R.df)")
