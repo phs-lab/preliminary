@@ -290,9 +290,10 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     """
     if type(pd.DataFrame()) == type(df):
       DESC = df.describe()  # 정규성 검정 https://data-newbie.tistory.com/442, https://bioinformaticsandme.tistory.com/37
-      CV = pd.DataFrame({'CV': df.mean() / df.std()})
-      MODE = df[df.describe().columns].mode().head(1).T; MODE.columns = ['mode']
-      SnK = pd.concat({'skewness':df.skew(), 'kurtosis':df.kurtosis()}, axis=1)
+      tcols = DESC.columns
+      CV = pd.DataFrame({'CV': df[tcols].mean() / df[tcols].std()})
+      MODE = df[tcols].mode().head(1).T; MODE.columns = ['mode']
+      SnK = pd.concat({'skewness':df[tcols].skew(), 'kurtosis':df[tcols].kurtosis()}, axis=1)
       rtn = pd.concat([pd.concat([pd.concat([DESC.T, MODE], axis=1), CV], axis=1), SnK], axis=1)
     else:
       rtn = pd.DataFrame({'Error': "Argument {0} != pd.DataFrame".format(type(df))}, index=[0])
