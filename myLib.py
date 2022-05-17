@@ -297,6 +297,25 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     else:
       rtn = pd.DataFrame({'Error': "Argument {0} != pd.DataFrame".format(type(df))}, index=[0])
     return rtn
+
+  ## ------------------------------------------------------------------------------------------- ##
+  @classmethod
+  def pdInfo(cls, df, show_additional=True): # df.info() 개선
+    if type(pd.DataFrame()) == type(df):
+      buf = io.StringIO()
+      df.info(buf=buf)
+      s = buf.getvalue()
+      lines = [line.split() for line in s.splitlines()[5:-2]]
+      if show_additional: 
+        print(s.splitlines()[1], '\t', s.splitlines()[-1], '\n', s.splitlines()[-2]) # display(s.splitlines()[1], s.splitlines()[-2:])
+      df_info = pd.DataFrame(lines, columns=['#', 'Column', 'Non-Null', 'garbage', 'DataType'])
+      df_info['isNullSum'] = df.isnull().sum().values
+      # df_info.set_index('Column', inplace=True)
+      # df_info.iloc[:,1:] # pd.concat([ df_info.iloc[:,1:], df.describe(include='all').T.iloc[:,1:] ], axis=1)
+      rtn = df_info.loc[:,['Column', 'Non-Null', 'isNullSum', 'DataType']]
+    else:
+      rtn = pd.DataFrame({'Error': "Argument {0} != pd.DataFrame".format(type(df))}, index=[0])
+    return rtn
     
   ## ------------------------------------------------------------------------------------------- ##
   # from datetime import datetime                   # https://brownbears.tistory.com/432
