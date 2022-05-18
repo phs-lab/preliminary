@@ -303,6 +303,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
   @classmethod
   def pdInfo(cls, df, show_additional=True): # df.info() 개선
     if type(pd.DataFrame()) == type(df):
+      t_columns  = df.columns; df.columns = [cn.replace(" ", "") for cn in df.columns] # 열 이름에 공란이 있는 경우에 대한 처리 (1)
       buf = io.StringIO()
       df.info(buf=buf)
       s = buf.getvalue()
@@ -314,6 +315,7 @@ class my:  # import myLibClass; my = myLibClass.myLib()
       # df_info.set_index('Column', inplace=True)
       # df_info.iloc[:,1:] # pd.concat([ df_info.iloc[:,1:], df.describe(include='all').T.iloc[:,1:] ], axis=1)
       rtn = df_info.loc[:,['Column', 'Non-Null', 'isNullSum', 'DataType']]
+      rtn['Column'] = t_columns; df.columns = t_columns # 열 이름에 공란이 있는 경우에 대한 처리 (2)
     else:
       rtn = pd.DataFrame({'Error': "Argument {0} != pd.DataFrame".format(type(df))}, index=[0])
     return rtn
