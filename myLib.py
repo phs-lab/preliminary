@@ -291,10 +291,14 @@ class my:  # import myLibClass; my = myLibClass.myLib()
     if type(pd.DataFrame()) == type(df):
       DESC = df.describe()  # 정규성 검정 https://data-newbie.tistory.com/442, https://bioinformaticsandme.tistory.com/37
       tcols = DESC.columns
+      DESC = pd.concat([DESC, pd.DataFrame({'IQR': DESC.loc['75%'] - DESC.loc['25%'] }).T], axis=0) # IQR (Interquartile Range) 반영 : https://hungryap.tistory.com/69
+      DESC = pd.concat([DESC, pd.DataFrame({'LOLcnt':pd.DataFrame([ df[c] < DESC[c].loc['25%'] - DESC[c].loc['IQR'] * 1.5 for c in tcols ]).T.sum()}).T], axis=0) # Outlier, Lower Bound
+      DESC = pd.concat([DESC, pd.DataFrame({'UOLcnt':pd.DataFrame([ df[c] > DESC[c].loc['75%'] + DESC[c].loc['IQR'] * 1.5 for c in tcols ]).T.sum()}).T], axis=0) # Outlier, Upper Bound
       CV = pd.DataFrame({'CV': df[tcols].mean() / df[tcols].std()})
       MODE = df[tcols].mode().head(1).T; MODE.columns = ['mode']
       SnK = pd.concat({'skewness':df[tcols].skew(), 'kurtosis':df[tcols].kurtosis()}, axis=1)
       rtn = pd.concat([pd.concat([pd.concat([DESC.T, MODE], axis=1), CV], axis=1), SnK], axis=1)
+      rtn = rtn.astype({'count': 'int'}).astype({'LOLcnt': 'int'}).astype({'UOLcnt': 'int'})
     else:
       rtn = pd.DataFrame({'Error': "Argument {0} != pd.DataFrame".format(type(df))}, index=[0])
     return rtn
