@@ -1896,7 +1896,7 @@ my.pkgCheatSheet.mdStr_python_sequence = """
 
 my.pkgCheatSheet.mdStr_python_control = """▣ Python control structures  
 
-|if - else|for|while|[try](https://dojang.io/mod/page/view.php?id=2398)|
+|if - else|for|while|<a href="https://dojang.io/mod/page/view.php?id=2398" target="_blank" title="코딩도장 38.1 try except로 사용하기">try</a>|
 |:----|:----|:----|:----|
 |**if** condition:<Br>&nbsp; &nbsp; expression<Br>**elif** condition:<Br>&nbsp; &nbsp; expression<Br>**else**:<Br>&nbsp; &nbsp; expression<Br><Br>|**for** item **in** *collection*:<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 항상 실행<Br>&nbsp; &nbsp; expression<Br><Br><Br><Br>|**while** condition:<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 항상 실행<Br>&nbsp; &nbsp; expression<Br><Br><Br><Br>|**try:**<Br>&nbsp; &nbsp; expression<Br>**except:** `#` 예외 有, 이름 특정 가능<Br>&nbsp; &nbsp; expression<Br>**else:** `#` 예외 無<Br>&nbsp; &nbsp; expression<Br>**finally:** `#` 항상 실행<Br>&nbsp; &nbsp; expression|
 """  # my.pkgCheatSheet.str_python_control
