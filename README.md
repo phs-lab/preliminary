@@ -1,5 +1,5 @@
 * CheatSheets
-  + Python <!--  <sup><a href="" target="_blank">URL</a></sup>                       <a href="" target="_blank">URL</a> -->
+  + Python 일반 <!--  <sup><a href="" target="_blank">URL</a></sup>                       <a href="" target="_blank">URL</a> -->
     - DataCamp : CheatSheets<sup><a href="https://www.datacamp.com/cheat-sheet/category/python" target="_blank">URL</a></sup>, Tutorials<sup><a href="https://www.datacamp.com/tutorial/category/python" target="_blank">URL</a></sup> 
       - for Beginners<sup><a href="https://www.datacamp.com/cheat-sheet/getting-started-with-python-cheat-sheet" target="_blank">URL</a></sup>, for Beginners in Data Science<sup><a href="https://www.datacamp.com/cheat-sheet/python-for-data-science-a-cheat-sheet-for-beginners" target="_blank">URL</a></sup>, Dates & Times<sup><a href="https://www.datacamp.com/cheat-sheet/working-with-dates-and-times-in-python-cheat-sheet" target="_blank">URL</a></sup>
       - Jupyter Notebook<sup><a href="https://www.datacamp.com/cheat-sheet/jupyter-notebook-cheat-sheet" target="_blank">URL</a></sup> 
