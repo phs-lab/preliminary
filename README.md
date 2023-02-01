@@ -1,23 +1,23 @@
-+ SAP AG
-  - TechEd
-  - Developers<sup><a href="https://www.youtube.com/@sapdevs" target="_blank">YouTube Home</a></sup>
-    - 2022.05.13, Back to basics: <a href="https://www.youtube.com/watch?v=O3OU2rSUqs0&list=PL6RpkC85SLQDYLiN1BobWXvvnhaGErkwj" target="_blank">OData</a><SUP><a href="https://github.com/SAP-samples/odata-basics-handsonsapdev" target="_blank">Github</a>, <a href="https://www.youtube.com/watch?v=O3OU2rSUqs0" target="_blank">1. Intro</a>, <a href="https://www.youtube.com/watch?v=f9w61GxMztY" target="_blank">2. Basic Operations</a>, <a href="https://www.youtube.com/watch?v=Bln2A0_OauY" target="_blank">3. System Query Options</a>, <a href="https://www.youtube.com/watch?v=R9JyaPYtWKs" target="_blank">4. $filter</a>, <a href="https://www.youtube.com/watch?v=tmwglig2mbw" target="_blank">5. Actions & Functions</a>, <a href="https://www.youtube.com/watch?v=PhA_VS4-lUw" target="_blank">6. Wrap-up</a></SUP>
-    - 2019.01, SAP HANA Basics For Developers<sup><a href="https://www.youtube.com/watch?v=ljdvqRtSHd4&list=PL6RpkC85SLQAPHYG1x6IEu_exE5pa0UK_" target="_blank">URL</a></sup>
-    - 2019, ABAP Object Oriented Concepts<sup><a href="https://www.youtube.com/watch?v=GUh7QyCwxGk&list=PL6RpkC85SLQCGjMBsoQYlMrLmbZaEWM6U" target="_blank">URL</a>, <a href="https://github.com/SAP-samples/abap-oo-basics" target="_blank">Github</a></sup>
-+ SAP ABAP COMPLETE TUTORIAL by Alpha Tutorials - Finance
-  - SAP ABBP TRAINING COURSE - Part 1<sup><a href="https://www.youtube.com/watch?v=SmVcwjLtM0s&t=21s" target="_blank">URL</a></sup>, Part 2<sup><a href="https://www.youtube.com/watch?v=-_7rZKGdxwQ" target="_blank">URL</a></sup>
-  - SAP Debugging Tutorial for Functional Consultants<sup><a href="https://www.youtube.com/watch?v=lNHOKNgmGiw" target="_blank">URL</a></sup>
-  - SAP MM Training PART 1<sup><a href="https://www.youtube.com/watch?v=zqgL9v6rCy4" target="_blank">URL</a></sup>, Part 2<sup><a href="https://www.youtube.com/watch?v=8W2_noRSs2E" target="_blank">URL</a></sup>, Part 3<sup><a href="https://www.youtube.com/watch?v=MyGLdRB-uMw" target="_blank">URL</a></sup>
-  - SAP SD Interview Question & Answers<sup><a href="https://www.youtube.com/watch?v=8Ap76UsHbow" target="_blank">URL</a></sup>
-+ SAP Yard (or ZAP Yard)
-  - SAP ABAP 7.40<sup>URL <a href="https://www.youtube.com/watch?v=FvbBpxufBjU&list=PLQHTTlL0gF_cf47ovXvoXC114ImJkLfH5" target="_blank">Ver 1</a>, <a href="https://www.youtube.com/watch?v=hAVNAFtf6rQ&list=PLQHTTlL0gF_dz94aMvENrgj5uqCBEYKeZ" target="_blank">Ver 2</a>, <a href="https://www.youtube.com/watch?v=PkOdOd6t54w&list=PLQHTTlL0gF_f33SIxVwEt9qn9gOR9N8eN" target="_blank">Ver 3</a></sup>, Debugging<sup><a href="https://www.youtube.com/watch?v=9ViRrBSz9gA&list=PLQHTTlL0gF_ed1FdjApXmf7d1v5hCp4_b" target="_blank">URL</a></sup>, 7.4 Inline Declaration<sup><a href="https://www.youtube.com/watch?v=o2-TTx_YWN0&list=PLQHTTlL0gF_cLJpedzhRFVjSShPZSLalg" target="_blank">URL</a></sup>, ADBC<sup><a href="https://www.youtube.com/watch?v=dnr-Dj1rLEw&list=PLQHTTlL0gF_fOBe6vpOSoRsiVCGSyr73k" target="_blank">URL</a></sup>, ABAP for Fiori<sup><a href="https://www.youtube.com/watch?v=M3BAgWyGkUY&list=PLQHTTlL0gF_ceG4UKxb0FXUfIKZuWDqaQ" target="_blank">URL</a></sup>
-  - SAP HANA DB<sup><a href="https://www.youtube.com/watch?v=hO26ZgQQxhc&list=PLQHTTlL0gF_cIWPw77I4nZ7mPWzZjU9Cr" target="_blank">URL</a></sup>
-, Netweaver Gateway & OData<sup><a href="https://www.youtube.com/watch?v=vpRYQV1sZR4&list=PLQHTTlL0gF_d86LX5xbGj4jqUAIT7nsPr" target="_blank">URL</a></sup>
-, HANA Models<sup><a href="https://www.youtube.com/watch?v=-QXYMgbtJEg&list=PLQHTTlL0gF_eJQfIuYp1pYAXgIVbOElh8" target="_blank">URL</a></sup>
-, HANA View Proxy<sup><a href="https://www.youtube.com/watch?v=w0APQ5xlk28&list=PLQHTTlL0gF_dBtZohIeUx0_BpcIRgbOxY" target="_blank">URL</a></sup>
-  - ABAP CDS<sup><a href="https://www.youtube.com/watch?v=OnItCMTPpMw&list=PLQHTTlL0gF_dqEDJ3wjDDik-WyaTOpCTo" target="_blank">Access Control</a>, <a href="https://www.youtube.com/watch?v=q7bep8j6pCM&list=PLQHTTlL0gF_eGsBAWidhKIzf4Tw6MhBJQ" target="_blank">with Parameters</a>, <a href="https://www.youtube.com/watch?v=wpZ-DFf2MJw&list=PLQHTTlL0gF_fOJTY78a-TDeAGEgqQpx_O" target="_blank">Associations</a>, <a href="https://www.youtube.com/watch?v=714gRY-ktT0&list=PLQHTTlL0gF_e8knLSv3jDfotxHj26zhVu" target="_blank">Fiori Elements</a></sup>
-+ 캘거리 SAP 아저씨 : SAP FICO Overview <a href="https://www.youtube.com/watch?v=l3V7wsgOX_A" target="_blank">Part 1</a>, <a href="https://www.youtube.com/watch?v=BOhr--BquAc" target="_blank">Part 2</a>, <a href="https://www.youtube.com/watch?v=V-hic8mZxS8" target="_blank">Part 3</a>, <a href="https://www.youtube.com/watch?v=1wg2prl-_kI" target="_blank">Part 3 Demo</a>, <a href="https://www.youtube.com/watch?v=F2N-2tIQ_Tw" target="_blank">Part 4</a>
-
+* Temporary Memo
+  + SAP AG
+    - TechEd
+    - Developers<sup><a href="https://www.youtube.com/@sapdevs" target="_blank">YouTube Home</a></sup>
+      - 2022.05.13, Back to basics: <a href="https://www.youtube.com/watch?v=O3OU2rSUqs0&list=PL6RpkC85SLQDYLiN1BobWXvvnhaGErkwj" target="_blank">OData</a><SUP><a href="https://github.com/SAP-samples/odata-basics-handsonsapdev" target="_blank">Github</a>, <a href="https://www.youtube.com/watch?v=O3OU2rSUqs0" target="_blank">1. Intro</a>, <a href="https://www.youtube.com/watch?v=f9w61GxMztY" target="_blank">2. Basic Operations</a>, <a href="https://www.youtube.com/watch?v=Bln2A0_OauY" target="_blank">3. System Query Options</a>, <a href="https://www.youtube.com/watch?v=R9JyaPYtWKs" target="_blank">4. $filter</a>, <a href="https://www.youtube.com/watch?v=tmwglig2mbw" target="_blank">5. Actions & Functions</a>, <a href="https://www.youtube.com/watch?v=PhA_VS4-lUw" target="_blank">6. Wrap-up</a></SUP>
+      - 2019.01, SAP HANA Basics For Developers<sup><a href="https://www.youtube.com/watch?v=ljdvqRtSHd4&list=PL6RpkC85SLQAPHYG1x6IEu_exE5pa0UK_" target="_blank">URL</a></sup>
+      - 2019, ABAP Object Oriented Concepts<sup><a href="https://www.youtube.com/watch?v=GUh7QyCwxGk&list=PL6RpkC85SLQCGjMBsoQYlMrLmbZaEWM6U" target="_blank">URL</a>, <a href="https://github.com/SAP-samples/abap-oo-basics" target="_blank">Github</a></sup>
+  + SAP ABAP COMPLETE TUTORIAL by Alpha Tutorials - Finance
+    - SAP ABBP TRAINING COURSE - Part 1<sup><a href="https://www.youtube.com/watch?v=SmVcwjLtM0s&t=21s" target="_blank">URL</a></sup>, Part 2<sup><a href="https://www.youtube.com/watch?v=-_7rZKGdxwQ" target="_blank">URL</a></sup>
+    - SAP Debugging Tutorial for Functional Consultants<sup><a href="https://www.youtube.com/watch?v=lNHOKNgmGiw" target="_blank">URL</a></sup>
+    - SAP MM Training PART 1<sup><a href="https://www.youtube.com/watch?v=zqgL9v6rCy4" target="_blank">URL</a></sup>, Part 2<sup><a href="https://www.youtube.com/watch?v=8W2_noRSs2E" target="_blank">URL</a></sup>, Part 3<sup><a href="https://www.youtube.com/watch?v=MyGLdRB-uMw" target="_blank">URL</a></sup>
+    - SAP SD Interview Question & Answers<sup><a href="https://www.youtube.com/watch?v=8Ap76UsHbow" target="_blank">URL</a></sup>
+  + SAP Yard (or ZAP Yard)
+    - SAP ABAP 7.40<sup>URL <a href="https://www.youtube.com/watch?v=FvbBpxufBjU&list=PLQHTTlL0gF_cf47ovXvoXC114ImJkLfH5" target="_blank">Ver 1</a>, <a href="https://www.youtube.com/watch?v=hAVNAFtf6rQ&list=PLQHTTlL0gF_dz94aMvENrgj5uqCBEYKeZ" target="_blank">Ver 2</a>, <a href="https://www.youtube.com/watch?v=PkOdOd6t54w&list=PLQHTTlL0gF_f33SIxVwEt9qn9gOR9N8eN" target="_blank">Ver 3</a></sup>, Debugging<sup><a href="https://www.youtube.com/watch?v=9ViRrBSz9gA&list=PLQHTTlL0gF_ed1FdjApXmf7d1v5hCp4_b" target="_blank">URL</a></sup>, 7.4 Inline Declaration<sup><a href="https://www.youtube.com/watch?v=o2-TTx_YWN0&list=PLQHTTlL0gF_cLJpedzhRFVjSShPZSLalg" target="_blank">URL</a></sup>, ADBC<sup><a href="https://www.youtube.com/watch?v=dnr-Dj1rLEw&list=PLQHTTlL0gF_fOBe6vpOSoRsiVCGSyr73k" target="_blank">URL</a></sup>, ABAP for Fiori<sup><a href="https://www.youtube.com/watch?v=M3BAgWyGkUY&list=PLQHTTlL0gF_ceG4UKxb0FXUfIKZuWDqaQ" target="_blank">URL</a></sup>
+    - SAP HANA DB<sup><a href="https://www.youtube.com/watch?v=hO26ZgQQxhc&list=PLQHTTlL0gF_cIWPw77I4nZ7mPWzZjU9Cr" target="_blank">URL</a></sup>
+  , Netweaver Gateway & OData<sup><a href="https://www.youtube.com/watch?v=vpRYQV1sZR4&list=PLQHTTlL0gF_d86LX5xbGj4jqUAIT7nsPr" target="_blank">URL</a></sup>
+  , HANA Models<sup><a href="https://www.youtube.com/watch?v=-QXYMgbtJEg&list=PLQHTTlL0gF_eJQfIuYp1pYAXgIVbOElh8" target="_blank">URL</a></sup>
+  , HANA View Proxy<sup><a href="https://www.youtube.com/watch?v=w0APQ5xlk28&list=PLQHTTlL0gF_dBtZohIeUx0_BpcIRgbOxY" target="_blank">URL</a></sup>
+    - ABAP CDS<sup><a href="https://www.youtube.com/watch?v=OnItCMTPpMw&list=PLQHTTlL0gF_dqEDJ3wjDDik-WyaTOpCTo" target="_blank">Access Control</a>, <a href="https://www.youtube.com/watch?v=q7bep8j6pCM&list=PLQHTTlL0gF_eGsBAWidhKIzf4Tw6MhBJQ" target="_blank">with Parameters</a>, <a href="https://www.youtube.com/watch?v=wpZ-DFf2MJw&list=PLQHTTlL0gF_fOJTY78a-TDeAGEgqQpx_O" target="_blank">Associations</a>, <a href="https://www.youtube.com/watch?v=714gRY-ktT0&list=PLQHTTlL0gF_e8knLSv3jDfotxHj26zhVu" target="_blank">Fiori Elements</a></sup>
+  + 캘거리 SAP 아저씨 : SAP FICO Overview <a href="https://www.youtube.com/watch?v=l3V7wsgOX_A" target="_blank">Part 1</a>, <a href="https://www.youtube.com/watch?v=BOhr--BquAc" target="_blank">Part 2</a>, <a href="https://www.youtube.com/watch?v=V-hic8mZxS8" target="_blank">Part 3</a>, <a href="https://www.youtube.com/watch?v=1wg2prl-_kI" target="_blank">Part 3 Demo</a>, <a href="https://www.youtube.com/watch?v=F2N-2tIQ_Tw" target="_blank">Part 4</a>
 * CheatSheets
   + Python 일반 <!--  <sup><a href="" target="_blank">URL</a></sup>                       <a href="" target="_blank">URL</a> -->
     - DataCamp : CheatSheets<sup><a href="https://www.datacamp.com/cheat-sheet/category/python" target="_blank">URL</a></sup>, Tutorials<sup><a href="https://www.datacamp.com/tutorial/category/python" target="_blank">URL</a></sup> 
@@ -44,6 +44,18 @@
   ③ 위 2의 코드 실행 결과 나타나는 URL 클릭  
   ④ (허용 버튼이 나타나면 허용 클릭하고) 나타나는 'authorization code' 복사  
   ⑤ 위 4에서 복사된 문자열을 위 2 실행 결과 나타나는 입력란에 붙여 넣기  
+* 코랩 연동  
+  + https://colab.research.google.com/github/ +  phs-lab/이하_주소  
+  + colab 사용법, github 연동 조사  
+    - colab 사용법 일반  
+      https://theorydb.github.io/dev/2019/08/23/dev-ml-colab/  
+      https://zzsza.github.io/data/2018/08/30/google-colab/  
+    - Google Colab 초기 세팅 : 구글드라이브와 연동하는 법, 깃 클론하는 법  
+      https://mylifemystudy.tistory.com/70  
+      https://tykimos.github.io/2019/01/22/colab_getting_started/  
+    - colab 사용법 ★  
+      사용법1 : https://blog.naver.com/beyondlegend/221612116017  
+      사용법2 : https://blog.naver.com/beyondlegend/221633263276  
 * Orange3 중심으로 Python 환경 구축
   + ⑴ openjdk 설치 [github](https://github.com/ojdkbuild/ojdkbuild) ( ☜ 참조 [Blog](https://blog.naver.com/vixlee/222285976728) ) 
     - JRE Zip file 내려받아 압축 풀고, %JAVA_HOME% "C:\Program Files\Java\jre-1.8.0.292" 설정함
