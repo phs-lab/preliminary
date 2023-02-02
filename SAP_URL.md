@@ -21,6 +21,8 @@
   - openSAP<sup><a href="https://open.sap.com" target="_blank" title="Open Online Courses by SAP">URL</a></sup>
   - YouTube
 - References
-  - Book
-    - 유균, 2022, SAP Fiori & OData Full Stack Guide, ISBN 9791168363274, <a href="http://www.book.co.kr/@VEeZA" target="_blank">북랩</a> 2022-06-07 출간
+  - 책
+    - SAP Press
+    - 기타
+      - 유균, 2022, SAP Fiori & OData Full Stack Guide, ISBN 9791168363274, <a href="http://www.book.co.kr/@VEeZA" target="_blank">북랩</a> 2022-06-07 출간
   - Web Resources 
