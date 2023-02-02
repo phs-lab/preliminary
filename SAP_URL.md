@@ -3,7 +3,7 @@
 <a href="" target="_blank" title="">Text</a>
 <sup><a href="" target="_blank">URL</a></sup>          <sup><a href="" target="_blank" title="">URL</a></sup>
 <details><summary>제목</summary><div markdown="3"> 한 행 띄고 내용 </div></details>
-   ☞ 참고 1 2 : div는 안 써도 될 듯 → 간략형 : <details><summary>제목</summary> 한 행 띄고 내용 </details>
+   ☞ 참고 1 2 : div는 안 써도 될 듯 → 간략형 : <details><summary>제목</summary> 한 행 띄고 내용 </details> → 제일 간략한 형태 : <details open> 또는 <details>
 -->
 - SAP Ag.<sup><a href="https://www.sap.com" target="_blank" title="모든 제품, 알파벳 순서">알파벳순</a></sup><details open>
   - 제품(Products)<sup><a href="https://www.sap.com/korea/products/a-z.html" target="_blank">URL</a></sup> 
