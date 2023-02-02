@@ -10,5 +10,11 @@
     - ERP : <a href="https://help.sap.com/doc/saphelp_46c/4.6C/en-US/e1/8e51341a06084de10000009b38f83b/frameset.htm" target="_blank">4.6C</a>, <a href="https://help.sap.com/doc/saphelp_470/4.7/en-US/e1/8e51341a06084de10000009b38f83b/frameset.htm" target="_blank">4.7</a>, <a href="https://help.sap.com/viewer/9cba3865dd7248f5abd4330b4e7cfc84/6.17.17/en-US" target="_blank">ECC 6.0</a>
     - S/4HANA : <a href="https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE" target="_blank">On-Premise</a>
   - Developer Center<SUP><a href="https://developers.sap.com" target="_blank" title="A different view on the SAP Community, customized for developers.">URL</a></SUP>
+    - Products
+    - Tutorials
+      - ABAP
+        - Get Started with ABAP Development on-Premise<sup><a href="https://developers.sap.com/mission.abap-dev-get-started.html" target="_blank">URL</a></sup> 
+    - Trials & Downloads
+    - Resources
   - openSAP<sup><a href="https://open.sap.com" target="_blank" title="Open Online Courses by SAP">URL</a></sup>
   - YouTube
