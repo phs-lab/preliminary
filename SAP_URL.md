@@ -14,6 +14,7 @@
     - Tutorials
       - ABAP
         - Get Started with ABAP Development on-Premise<sup><a href="https://developers.sap.com/mission.abap-dev-get-started.html" target="_blank">URL</a></sup> 
+      - Screen Personas<sup><a href="https://developers.sap.com/mission.screen-personas.html" target="_blank" title="Mission : Get Started with SAP Screen Personas">URL</a></sup>
     - Trials & Downloads
     - Resources
   - openSAP<sup><a href="https://open.sap.com" target="_blank" title="Open Online Courses by SAP">URL</a></sup>
