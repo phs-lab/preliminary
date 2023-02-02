@@ -2,8 +2,10 @@
 <a href="" target="_blank">Text</a>
 <a href="" target="_blank" title="">Text</a>
 <sup><a href="" target="_blank">URL</a></sup>          <sup><a href="" target="_blank" title="">URL</a></sup>
+<details><summary>제목</summary><div markdown="3"> 한 행 띄고 내용 </div></details>
+   ☞ 참고 1 2 : div는 안 써도 될 듯 → 간략형 : <details><summary>제목</summary> 한 행 띄고 내용 </details>
 -->
-- SAP Ag.<sup><a href="https://www.sap.com" target="_blank" title="모든 제품, 알파벳 순서">알파벳순</a></sup>
+- SAP Ag.<sup><a href="https://www.sap.com" target="_blank" title="모든 제품, 알파벳 순서">알파벳순</a></sup><details><summary>SAP 회사 자료</summary>
   - 제품(Products)<sup><a href="https://www.sap.com/korea/products/a-z.html" target="_blank">URL</a></sup> 
     - Fiori : 사용자 경험(User Experience)<sup><a href="https://www.sap.com/korea/products/technology-platform/fiori.html" target="_blank">URL</a></sup>
   - Help Portal<sup><a href="https://help.sap.com" target="_blank">URL</a></sup> : <a href="https://help.sap.com/learning-journeys/overview" target="_blank" title="Learning Journeys are structured visual guides designed to help you navigate the path to becoming fully competent with high-priority SAP solutions. Take a look!">Learning Journey</a>, <a href="https://help.sap.com/glossary" target="_blank">Glossary</a>, Get Support<sup><a href="https://store.sap.com" target="_blank" title="Discover, try, and buy SAP and partner solutions online.">Store</a>, SCN: <a href="https://community.sap.com" target="_blank" title="Post questions and share your knowledge with other users and experts.">Community</a> <a href="https://community.sap.com/topics" target="_blank">(Browse Topics)</a>, <a href="https://support.sap.com" target="_blank" title="Find solutions and get answers from SAP.">Support</a>, <a href="https://developers.sap.com" target="_blank" title="A different view on the SAP Community, customized for developers.">Developer Center</a>, <a href="http://www.sap.com/training-certification.html" target="_blank" title="Research all training and certification programs at SAP.">Training & Certification</a></sup>
