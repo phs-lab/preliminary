@@ -22,4 +22,5 @@
   - YouTube
 - References
   - Book
+    - 유균, 2022, SAP Fiori & OData Full Stack Guide, ISBN 9791168363274, <a href="https://www.book.co.kr/essay_ver2/bshop/prd_view.php?prdcode=2205300001" target="_blank">북랩</a> 2022-06-07 출간
   - Web Resources 
