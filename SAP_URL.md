@@ -20,3 +20,6 @@
     - Resources
   - openSAP<sup><a href="https://open.sap.com" target="_blank" title="Open Online Courses by SAP">URL</a></sup>
   - YouTube
+- References
+  - Book
+  - Web Resources 
