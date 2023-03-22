@@ -1,5 +1,5 @@
 * Temporary Memo
-  + Excel 단축키 : https://blog.naver.com/kye3230/222275334974
+  + Excel 단축키 : https://blog.naver.com/kye3230/222275334974 <details><summary>Detail</summary><div markdown="3">
     |Ctrl|Ctrl + Shift|Alt|Shift|
     |:--|:--|:--|:--|
     |+ A 모두 선택|+ 1 숫자서식|+ F1 차트삽입|+ F1 설명|
@@ -23,6 +23,7 @@
     |+ Home 워크시트 처음으로||||
     |+ End 워크시트 마지막으로||||
     |+ - 삭제||||
+    </div></details>
   + SAP AG
     - TechEd
     - Developers<sup><a href="https://www.youtube.com/@sapdevs" target="_blank">YouTube Home</a></sup>
