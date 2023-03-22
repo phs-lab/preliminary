@@ -1,29 +1,5 @@
 * Temporary Memo
-  + Excel 단축키 : https://blog.naver.com/kye3230/222275334974 <details><summary>Detail</summary><div markdown="3">
-    |Ctrl|Ctrl + Shift|Alt|Shift|
-    |:--|:--|:--|:--|
-    |+ A 모두 선택|+ 1 숫자서식|+ F1 차트삽입|+ F1 설명|
-    |+ B 굵게|+ 2 시간서식|+ F2 다른이름으로저장|+ F2 메모편집|
-    |+ C 복사|+ 3 날짜서식|+ F4 종료|+ F3 함수 마법사|
-    |+ G 이동|+ 5 백분율서식|+ = 자동합계|+ F4 다음찾기|
-    |+ I 기울림 글꼴 |+ 8 현재영역선택|+ T 도구 메뉴|+ F5 찾기|
-    |+ K 하이퍼링크 삽입|+ F 글꼴|+ D 데이터 메뉴|+ F6 이전 창틀로 이동|
-    |+ O 통합문서열기|+ O 메모 셀 선택|+ W 창 메뉴|+ F8 추가선택|
-    |+ P 인쇄|+ F3 이름만들기|+ F11 VB편집기|+ F9 시트재계산|
-    |+ S 저장|+ F12 인쇄|+ E 편집 메뉴|+ F10 바로잡기 메뉴|
-    |+ V 붙여넣기|+ - 테두리지우기|+ F 파일 메뉴|+ F11 새 시트 삽입|
-    |+ W 통합문서 닫기|+ ; 시간삽입|+ I 삽입 메뉴|+ F12 다른 이름으로 저장|
-    |+ U 밑줄|+ ' 윗셀값복사|+ F8 매크로 대화 상자|+ Space bar 열선택|
-    |+ X 잘라내기|+ Tab 이전 창|+ ' 스타일||
-    |+ Z 실행취소|+ Enter 배열수식입력|+ Enter 한셀 두줄 입력||
-    |+ ; 날짜 삽입|+ ↑ 위쪽 데이터 모두 선택|||
-    |+ ~ 수식보기|+ ↓ 아래쪽 데이터 모두 선택|||
-    |+ Space bar 행선택|+ → 오른쪽 데이터 모두 선택|||
-    |+ Enter 선택한범위 모두 채우기|+ ←️ 왼쪽 데이터 모두 선택|||
-    |+ Home 워크시트 처음으로||||
-    |+ End 워크시트 마지막으로||||
-    |+ - 삭제||||
-    </div></details>
+  + Excel <a href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f" target="_blank">단축키</a>
   + SAP AG
     - TechEd
     - Developers<sup><a href="https://www.youtube.com/@sapdevs" target="_blank">YouTube Home</a></sup>
