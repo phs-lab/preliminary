@@ -1,4 +1,4 @@
-<details><summary>Prompt Template</summary><div markdown="3"> 
+<details><summary>Prompt Template</summary><div markdown="3"> <!-- https://https://naver.me/G3PQfKXA "이석현, 2025, 일잘러의 챗GPT 프롬프트 74가지" -->
 
 <pre># 프롬프트 이력
 【프롬프트 이력 : 2025-11-21 (금) 20:50:37】
