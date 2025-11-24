@@ -24,6 +24,7 @@
 
 ////////////////////////////////////////// Tip //////////////////////////////////////////
 o https://gemini.google.com
+o 참조 : https://naver.me/G3PQfKXA - 이석현 지음, 제이펍 · 2025-10-23, 일잘러의 챗GPT 프롬프트 74가지
 o 일반적으로는 질문이나 답변을 5W1H(Who, Whom, What/Which, How-to, How many/much/extent, Where, When, Why)로 하는 것이 좋다.
   예: SAP Design Studio"에 대해 문의하는 Prompt
     * (한마디로 설명한다면) 『SAP Design Studio』(이)란 무엇인가?
