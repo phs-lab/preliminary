@@ -41,11 +41,7 @@ o 일반적으로는 질문이나 답변을 5W1H(Who, Whom, What/Which, How-to, 
   - https://gemini.google.com ; https://notebooklm.google
 * 참조 : https://naver.me/G3PQfKXA - 이석현 지음, 제이펍 · 2025-10-23, 일잘러의 챗GPT 프롬프트 74가지
   - [Prompt Engineering Guide](https://www.promptingguide.ai)
-  - https://cloud.google.com/discover/what-is-prompt-engineering 
-  - https://cloud.google.com/blog/products/application-development/five-best-practices-for-prompt-engineering
-  - https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf 
-  - https://workspace.google.com/learning/content/gemini-prompt-guide 
-  - https://ai.google.dev/gemini-api/docs/prompting-strategies 
+  - Google [프롬프트 엔지니어링: 개요 및 가이드](https://cloud.google.com/discover/what-is-prompt-engineering), [6 Tips, 2023-08-15 "Tips to enhance your prompt-engineering abilities"](https://cloud.google.com/blog/products/application-development/five-best-practices-for-prompt-engineering), [Prompting Guide 101 PDF File "https://workspace.google.com/learning/content/gemini-prompt-guide"](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf), [Gemini API 프롬프트 설계 전략](https://ai.google.dev/gemini-api/docs/prompting-strategies)
   - https://github.blog/developer-skills/github/how-to-write-better-prompts-for-github-copilot 
   - https://docs.github.com/en/copilot/get-started/best-practices 
 </div></details>
