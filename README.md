@@ -40,7 +40,7 @@ o 일반적으로는 질문이나 답변을 5W1H(Who, Whom, What/Which, How-to, 
 * LLM(Large Language Model) Chatbot Service
   - https://gemini.google.com ; https://notebooklm.google
 * 참조 : https://naver.me/G3PQfKXA - 이석현 지음, 제이펍 · 2025-10-23, 일잘러의 챗GPT 프롬프트 74가지
-  - https://www.promptingguide.ai
+  - [Prompt Engineering Guide](https://www.promptingguide.ai)
   - https://cloud.google.com/discover/what-is-prompt-engineering 
   - https://cloud.google.com/blog/products/application-development/five-best-practices-for-prompt-engineering
   - https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf 
