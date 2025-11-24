@@ -38,7 +38,7 @@ o 일반적으로는 질문이나 답변을 5W1H(Who, Whom, What/Which, How-to, 
 * 어떤 조건(예: License, 권한, 자료·문서 수령 등을 득한 후에) 하에 
 * 누가, 누구를 위해, 무엇을, 어떻게(어떤 방식이나 절차로, 만약 해당된다면, 어떤 비용/Resource를 대가로), 얼마나(어느 정도로), 어떤 (수행) 환경에서, 어떤 시점에, 왜 하는 것인가?</pre>
 * LLM(Large Language Model) Chatbot Service
-  - https://gemini.google.com ; https://notebooklm.google
+  - https://gemini.google.com ; https://notebooklm.google ; https://musely.ai
 * 참조 : https://naver.me/G3PQfKXA - 이석현 지음, 제이펍 · 2025-10-23, 일잘러의 챗GPT 프롬프트 74가지
   - [Prompt Engineering Guide](https://www.promptingguide.ai)
   - Google : [프롬프트 엔지니어링: 개요 및 가이드](https://cloud.google.com/discover/what-is-prompt-engineering), [6 Tips(2023-08-15)](https://cloud.google.com/blog/products/application-development/five-best-practices-for-prompt-engineering "Tips to enhance your prompt-engineering abilities"), [Prompting Guide 101 PDF File](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf "https://workspace.google.com/learning/content/gemini-prompt-guide"), [Gemini API 프롬프트 설계 전략](https://ai.google.dev/gemini-api/docs/prompting-strategies)
